@@ -1,0 +1,10 @@
+# no dataset content, ever
+data/
+*.parquet
+*.ckpt
+*.bin
+secrets*
+.env*
+__pycache__/
+*.pyc
+.DS_Store
