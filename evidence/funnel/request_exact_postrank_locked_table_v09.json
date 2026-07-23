@@ -1,0 +1,163 @@
+{
+  "changed_precision_overall": {
+    "action_ok_yes": 107,
+    "high": 0.99834832833248,
+    "low": 0.9489506437051968,
+    "n": 107,
+    "point": 0.9906542056074766,
+    "promoted_satisfies_yes": 107,
+    "successes": 106,
+    "valid_request_yes": 106
+  },
+  "coverage": [
+    {
+      "already_front": 46,
+      "gold_differs": 41,
+      "gold_requested": 41,
+      "missing_top100": 17,
+      "n_directives": 82,
+      "promoted": 19,
+      "split": "devset"
+    },
+    {
+      "already_front": 139,
+      "gold_differs": 212,
+      "gold_requested": 35,
+      "missing_top100": 20,
+      "n_directives": 247,
+      "promoted": 88,
+      "split": "val"
+    }
+  ],
+  "detector_precision": {
+    "high": 0.9929037664980127,
+    "low": 0.8045593626380625,
+    "n": 25,
+    "point": 0.96,
+    "successes": 24
+  },
+  "detector_summary": "docs/evidence/request_correction_adjudication_devset_labels_v07.summary.json",
+  "label_summary": "docs/evidence/request_exact_postrank_strict_v09_changed_rows_labels_v0.summary.json",
+  "official_noninferiority_margin": 0.001,
+  "preference_summary": "docs/evidence/request_preference_v09_score.json",
+  "preference_validation": {
+    "n_rows": 94,
+    "policy_preferred_rate": {
+      "high": 0.03926207629154474,
+      "low": 0.0,
+      "n": 94,
+      "point": 0.0,
+      "successes": 0
+    },
+    "request_preferred_rate": {
+      "high": 0.9999999999999999,
+      "low": 0.9607379237084551,
+      "n": 94,
+      "point": 1.0,
+      "successes": 94
+    },
+    "request_satisfying_rate": {
+      "high": 0.9999999999999999,
+      "low": 0.9607379237084551,
+      "n": 94,
+      "point": 1.0,
+      "successes": 94
+    }
+  },
+  "splits": [
+    {
+      "affected_corrected_ci95": [
+        0.03880415562733454,
+        0.19238690089393637
+      ],
+      "affected_corrected_delta": 0.11014942616829083,
+      "affected_official_ci95": [
+        -0.02093119543651642,
+        0.0
+      ],
+      "affected_official_delta": -0.007437996081353573,
+      "affected_sessions": 29,
+      "changed_precision": {
+        "action_ok_yes": 19,
+        "high": 1.0,
+        "low": 0.8318207759473837,
+        "n": 19,
+        "point": 1.0,
+        "promoted_satisfies_yes": 19,
+        "successes": 19,
+        "valid_request_yes": 19
+      },
+      "changed_rows": 19,
+      "changed_rows_gold_differs": 12,
+      "changed_rows_gold_requested": 7,
+      "corrected_baseline": 0.18429208242776055,
+      "corrected_candidate": 0.1856151989847163,
+      "corrected_ci95": [
+        0.0004794106907368569,
+        0.002398440352875666
+      ],
+      "corrected_delta": 0.001323116556955772,
+      "exact_version_records": 43,
+      "exact_version_unique_turns": 43,
+      "official_baseline": 0.18268732173861785,
+      "official_candidate": 0.1831114580807406,
+      "official_ci95": [
+        4.551588757935513e-05,
+        0.0008948282820770176
+      ],
+      "official_delta": 0.00042413634212279573,
+      "prediction_rows": 8000,
+      "requested_present_top100": 65,
+      "retrieval_coverage": 0.7926829268292683,
+      "split": "devset",
+      "strict_request_turns": 82
+    },
+    {
+      "affected_corrected_ci95": [
+        0.13764790730303517,
+        0.22696085899405458
+      ],
+      "affected_corrected_delta": 0.18060041449956069,
+      "affected_official_ci95": [
+        -0.0339783646229783,
+        -0.010783944725395733
+      ],
+      "affected_official_delta": -0.02146022262280289,
+      "affected_sessions": 117,
+      "changed_precision": {
+        "action_ok_yes": 88,
+        "high": 0.9979912146822955,
+        "low": 0.9384050610770144,
+        "n": 88,
+        "point": 0.9886363636363636,
+        "promoted_satisfies_yes": 88,
+        "successes": 87,
+        "valid_request_yes": 87
+      },
+      "changed_rows": 88,
+      "changed_rows_gold_differs": 82,
+      "changed_rows_gold_requested": 6,
+      "corrected_baseline": 0.2615989851995946,
+      "corrected_candidate": 0.26449651061221346,
+      "corrected_ci95": [
+        0.002086219977606025,
+        0.00382251811146711
+      ],
+      "corrected_delta": 0.002897525412618908,
+      "exact_version_records": 215,
+      "exact_version_unique_turns": 212,
+      "official_baseline": 0.25591861271606714,
+      "official_candidate": 0.255811196879231,
+      "official_ci95": [
+        -0.0003381667237222288,
+        0.00013683163765944713
+      ],
+      "official_delta": -0.00010741583683613381,
+      "prediction_rows": 16000,
+      "requested_present_top100": 227,
+      "retrieval_coverage": 0.9190283400809717,
+      "split": "val",
+      "strict_request_turns": 247
+    }
+  ]
+}

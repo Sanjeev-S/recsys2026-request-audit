@@ -1,0 +1,12 @@
+{
+  "backend": "claude",
+  "blinding": "candidates A/B randomized by build_request_preference_annotation_set.py (key withheld from the model)",
+  "date": "2026-07-23",
+  "input": "/tmp/claude-0/-root-sanjeev-recsys-challenge-2026/fc45f04c-af58-4807-b3ab-916167538fbe/scratchpad/request_preference_dev_v11_annotation.jsonl",
+  "labels_output": "/tmp/claude-0/-root-sanjeev-recsys-challenge-2026/fc45f04c-af58-4807-b3ab-916167538fbe/scratchpad/request_preference_dev_v11_labels_claude.jsonl",
+  "mode": "adjudication",
+  "model": "opus",
+  "n_rows": 12,
+  "prompt_sha256": "72d2390e505a47b3ced4a727210c09a093d3cdb67f7f40f4283559f4a7cd4f8c",
+  "prompt_template": "You are an independent annotator for a music-recommendation dialogue study.\n\nBelow is the user's message from one dialogue turn, and two candidate tracks, A and B.\nJudge only from the visible user message and the candidate metadata shown. Do not use\nposition to guess anything about where the candidates came from.\n\nUser message:\n{user_text}\n\nCandidate A: \"{a_track}\" by {a_artist} (album: {a_album}, released {a_release})\nCandidate B: \"{b_track}\" by {b_artist} (album: {b_album}, released {b_release})\n\nAnswer these questions:\n1. preferred_item: Which candidate better matches what the user asked for in this message? (A/B/tie/unclear)\n2. request_satisfying_item: Which candidate satisfies the user's explicit request, if any? (A/B/both/neither/unclear)\n3. explicit_request_visible: Does the message contain an explicit request for a specific song? (yes/no/unclear)\n4. confidence: high/medium/low\n5. notes: one short sentence of rationale\n\nRespond with a single JSON object with keys exactly:\npreferred_item, request_satisfying_item, explicit_request_visible, confidence, notes.\nOutput only the JSON object, nothing else."
+}

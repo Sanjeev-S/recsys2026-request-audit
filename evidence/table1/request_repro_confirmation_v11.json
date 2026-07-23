@@ -1,0 +1,18 @@
+{
+  "generated": "2026-07-23",
+  "provenance": "post-hoc reproduction pass for artifact release (ADR-0006: confirmation only; no frozen readout altered)",
+  "confirmations": {
+    "detector_chain": "request_correction_labels.py --split devset + filter (exact_track_request, version_duplicate_equivalence) reproduces docs/evidence/request_corrections_devset_exact_version_v09.jsonl canonically hash-identical (43 records = 42 exact + 1 version)",
+    "funnel_devset": "analyze_request_postrank_coverage.py vs exp/inference/devset/rerank_F10_scaled_devset.json reproduces 82 directives / 41 gold_differs / 46 already_front / 19 promoted / 17 missing_top100 (=65 present@100) exactly",
+    "funnel_val": "247 directives / 212 gold_differs / already_front 139 / turn-bucket conflict shares reproduce exactly; promoted/missing_top100 (68/40 vs frozen 88/20) differ because the original val top-500 ranking file is lost and the pool was rescored from the val feature parquet (availability numbers for val are not paper-cited)",
+    "table1_cells": "evaluate_request_corrections.py recomputed all six cells from the retrain20260712 gated prediction files: bit-identical to request_fulltrain_result_card_v09.json (0.19075286/0.19135590; 0.19223842/0.19428464; 0.52313643/0.80177079)",
+    "table1_bootstrap": "bootstrap_request_corrected_dev.py --split devset --scoring best_hit --n-boot 10000 --seed 20260701 --family exact_track_request --family version_duplicate_equivalence reproduces request_exact_version_fulltrain_bootstrap_official_vs_specialist_dev_v09.json with zero numeric mismatches (all three Table-1 CIs verbatim)",
+    "added_rows": "see request_added_rows_reconciliation_v11.json (canonical 1,878 recomputed; retrain 1,877 = HF-cache val-parquet drift)"
+  },
+  "restored_files": [
+    "docs/evidence/request_exact_postrank_coverage_v09_devset.json/.md (exact restoration, same source ranking)",
+    "docs/evidence/request_exact_postrank_coverage_v09_val.json/.md (regenerated ranking; availability caveat embedded)"
+  ],
+  "bit_identity_note": "retrain20260712 models were trained on a drifted HF-cache val parquet yet reproduce identical dev nDCG cells: nDCG@20 is a discrete function of induced top-20 orderings, and the gated protocol confines differences to the 82 gated turns, where both models induce identical top-20 orderings.",
+  "canonical_bootstrap_invocation": "scripts/bootstrap_request_corrected_dev.py --baseline-prediction <control_w1_devset.json> --candidate-prediction <specialist_w1_devset.json> --corrections <exact_version sidecar> --split devset --scoring best_hit --n-boot 10000 --seed 20260701 --family exact_track_request --family version_duplicate_equivalence"
+}

@@ -1,0 +1,234 @@
+{
+  "blind_b": {
+    "blocking_kinds": [],
+    "expected_outputs_absent": 4,
+    "expected_outputs_total": 4,
+    "feature_set": "F10_R54SRC",
+    "feature_set_exists": true,
+    "missing_feature_parquet": "<repo-root>/exp/features/features_rerank_blindset_B_R54src_F10R54.parquet",
+    "only_blocked_by_feature_parquet": false,
+    "preflight_status": "ready_not_run_outputs_absent",
+    "preregistration_ok": true,
+    "ready": true
+  },
+  "capsule": "request-reproducibility-v0.9",
+  "date": "2026-06-22",
+  "do_not_claim": [
+    "The paper repairs TalkPlay or replaces the official target.",
+    "The benchmark target is broadly erroneous.",
+    "Exact/version has completed frozen transfer.",
+    "Blind B is already completed transfer evidence.",
+    "Full-train results are completed evidence before the pod jobs run.",
+    "Hard-artist is an admitted correction family.",
+    "Album, year/decade, or broad semantic mined candidates clear the admission bar.",
+    "Switch-away is used in the main training result.",
+    "LLM adjudication establishes human evidence.",
+    "The result proves global recommender quality improves."
+  ],
+  "external_confirmatory_runs": [
+    {
+      "blocked_by": [],
+      "not_performance_evidence_until": "the frozen Blind B run exists and is interpreted only under the pre-registered protocol",
+      "run": "Blind B exact/version transfer",
+      "status": "ready_not_run_outputs_absent"
+    },
+    {
+      "blocked_by": [],
+      "not_performance_evidence_until": "exact/version primary readout is present; hard-drop secondary and Blind B transfer remain separate",
+      "run": "full organizer-train exact/version and hard-drop pod readouts",
+      "status": "exact_version_primary_readout_present"
+    }
+  ],
+  "family_decisions": {
+    "exact/version": "passes_development_gates_transfer_pending",
+    "hard artist simple/non-negated": "supporting_training_evidence_not_admitted",
+    "rejection/switch-away": "diagnostic_negative_no_main_fix"
+  },
+  "fulltrain": {
+    "eval_runner_commands": 4,
+    "eval_runner_fixed_blend_failures": 0,
+    "eval_runner_mismatches": 0,
+    "eval_runner_ok": true,
+    "eval_runner_protocol_commands": 4,
+    "exact_primary_blend_weight": 1.0,
+    "exact_readout": {
+      "official_ndcg20": 0.0006030324460290226,
+      "official_ndcg20_text": "+0.00060",
+      "positive_slice_request_positive_ndcg20": 0.278634361309424,
+      "positive_slice_request_positive_ndcg20_text": "+0.27863",
+      "request_positive_ndcg20": 0.0020462161090059328,
+      "request_positive_ndcg20_text": "+0.00205"
+    },
+    "hard_primary_blend_weight": 0.5,
+    "hard_secondary_status": "pending_outputs",
+    "heldout_readout": "devset",
+    "performance_evidence": true,
+    "protocol": "request-fulltrain-v0.9-frozen-readout",
+    "requires_approval": null,
+    "result_card_answer": "yes_on_frozen_primary_readout",
+    "status": "exact_version_primary_readout_present",
+    "train_n_groups": 121592,
+    "train_n_rows": 203221270,
+    "training_sources": [
+      "train_lt_105k",
+      "val"
+    ]
+  },
+  "local_rebuild_commands": [
+    {
+      "artifact": "training claim ledger",
+      "command": "python scripts/build_request_training_claim_ledger.py",
+      "requires_external_state": false
+    },
+    {
+      "artifact": "training result card",
+      "command": "python scripts/build_request_training_result_card.py",
+      "requires_external_state": false
+    },
+    {
+      "artifact": "paper tables",
+      "command": "python scripts/build_request_paper_tables.py",
+      "requires_external_state": false
+    },
+    {
+      "artifact": "scope/prevalence card",
+      "command": ".venv/bin/python scripts/build_request_scope_prevalence_card.py",
+      "requires_external_state": false
+    },
+    {
+      "artifact": "detector validity capsule",
+      "command": "python scripts/build_request_detector_validity_capsule.py",
+      "requires_external_state": false
+    },
+    {
+      "artifact": "additional family mining audit",
+      "command": ".venv/bin/python scripts/build_request_additional_family_mining_audit.py",
+      "requires_external_state": false
+    },
+    {
+      "artifact": "broad semantic screening audit",
+      "command": ".venv/bin/python scripts/build_request_broad_semantic_screening_audit.py",
+      "requires_external_state": false
+    },
+    {
+      "artifact": "hard-artist selector ladder",
+      "command": "python scripts/build_request_hard_artist_selector_ladder.py",
+      "requires_external_state": false
+    },
+    {
+      "artifact": "switch-away oracle top-100 bound",
+      "command": "python scripts/analyze_request_switchaway_oracle_bound.py --prediction-path ${MCRS_EXPLORE_ROOT}/exp/inference/devset/rerank_F10_scaled_devset.json --corrections docs/evidence/request_corrections_devset_v09_strict_switch.jsonl --k-filter 100 --output-prediction docs/evidence/request_switchaway_strict_oracle_top100_rerank_F10_scaled_devset.json --output docs/evidence/request_switchaway_strict_oracle_top100_bound_v09.json --output-rows docs/evidence/request_switchaway_strict_oracle_top100_bound_rows_v09.jsonl",
+      "requires_external_state": false
+    },
+    {
+      "artifact": "family admission audit",
+      "command": "python scripts/build_request_family_admission_audit.py",
+      "requires_external_state": false
+    },
+    {
+      "artifact": "family-search ledger",
+      "command": ".venv/bin/python scripts/build_request_family_search_ledger.py",
+      "requires_external_state": false
+    },
+    {
+      "artifact": "human-check packet",
+      "command": ".venv/bin/python scripts/build_request_human_check_packet.py",
+      "requires_external_state": false
+    },
+    {
+      "artifact": "reviewer risk matrix",
+      "command": ".venv/bin/python scripts/build_request_reviewer_risk_matrix.py",
+      "requires_external_state": false
+    },
+    {
+      "artifact": "transfer evidence capsule",
+      "command": "python scripts/build_request_transfer_evidence_capsule.py",
+      "requires_external_state": false
+    },
+    {
+      "artifact": "non-oracle input audit",
+      "command": "python scripts/build_request_nonoracle_audit.py",
+      "requires_external_state": false
+    },
+    {
+      "artifact": "selection-pressure audit",
+      "command": "python scripts/build_request_selection_pressure_audit.py",
+      "requires_external_state": false
+    },
+    {
+      "artifact": "goal completion audit",
+      "command": "python scripts/build_request_goal_completion_audit.py",
+      "requires_external_state": false
+    },
+    {
+      "artifact": "submission package manifest",
+      "command": "python scripts/build_request_submission_package_manifest.py",
+      "requires_external_state": false
+    }
+  ],
+  "local_verification_commands": [
+    {
+      "command": "python scripts/verify_request_submission_spine.py --include-draft",
+      "expected": "pass"
+    },
+    {
+      "command": ".venv/bin/python scripts/verify_request_paper_safety.py --package-manuscript --package-evidence",
+      "expected": "pass"
+    },
+    {
+      "command": ".venv/bin/python scripts/check_request_blind_b_transfer_ready.py --allow-not-ready",
+      "expected": "blind_b_transfer_preflight_report_only_not_paper_evidence"
+    },
+    {
+      "command": "python scripts/verify_request_blind_b_preregistration.py --preregistration docs/evidence/request_blind_b_transfer_preregistration_v09.json",
+      "expected": "pass"
+    },
+    {
+      "command": "python scripts/verify_request_freeze.py",
+      "expected": "pass"
+    },
+    {
+      "command": "python scripts/verify_request_hard_v010_freeze.py",
+      "expected": "pass"
+    },
+    {
+      "command": "python scripts/verify_request_fulltrain_freeze.py",
+      "expected": "pass"
+    },
+    {
+      "command": ".venv/bin/python scripts/verify_request_fulltrain_eval_runner.py",
+      "expected": "pass"
+    },
+    {
+      "command": ".venv/bin/python scripts/verify_request_benchmark_audit_template.py",
+      "expected": "pass"
+    },
+    {
+      "command": "python scripts/verify_request_submission_package_manifest.py",
+      "expected": "pass_after_manifest_generation"
+    },
+    {
+      "command": ".venv/bin/python -m pytest tests/test_request_corrections.py -q",
+      "expected": "pass"
+    }
+  ],
+  "mined_candidate_decisions": {
+    "genre, mood, instrumentation, language, popularity": "not_admitted_no_reusable_target_set",
+    "hard album constraint": "mined_not_admitted",
+    "hard year/decade constraint": "mined_not_admitted"
+  },
+  "overall_status": "active_not_complete",
+  "paper_safe_center": "Exact/version passes the development gates and is the main training result; hard constraints are supporting; switch-away is diagnostic negative; Blind B transfer is pending.",
+  "purpose": "Separate locally reproducible evidence from frozen external-only confirmatory runs and guard against overclaiming.",
+  "source_artifacts": [
+    "docs/evidence/request_goal_completion_audit_v09.json",
+    "docs/evidence/request_family_admission_audit_v09.json",
+    "docs/evidence/request_additional_family_mining_audit_v09.json",
+    "docs/evidence/request_broad_semantic_screening_audit_v09.json",
+    "docs/evidence/request_transfer_evidence_capsule_v09.json",
+    "docs/evidence/request_blind_b_transfer_preflight_2026_06_22.json",
+    "docs/evidence/request_fulltrain_freeze_manifest_v09.json",
+    "docs/evidence/request_fulltrain_eval_runner_verification_v09.json",
+    "docs/evidence/request_submission_package_manifest_v09.md"
+  ]
+}

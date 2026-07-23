@@ -1,0 +1,152 @@
+{
+  "answer": "yes_narrowly_on_development_splits",
+  "biggest_remaining_empirical_hole": "Run the frozen Blind B transfer protocol once the F10_R54SRC Blind B feature parquet exists.",
+  "controls": [
+    {
+      "control": "official-label control",
+      "dev_corrected_delta": "-0.00369 [-0.00502, -0.00246]",
+      "dev_request_first": "2/82",
+      "result": "fails",
+      "rules_out": "visible feature/gate alone",
+      "val_corrected_delta": "-0.00482 [-0.00615, -0.00366]",
+      "val_request_first": "9/247"
+    },
+    {
+      "control": "no-feature corrected control",
+      "dev_corrected_delta": "+0.00227 [+0.00127, +0.00342]",
+      "dev_request_first": "64/82",
+      "result": "supporting but weaker",
+      "rules_out": "generic relabeling as deployment-grade enough",
+      "val_corrected_delta": "+0.00344 [+0.00242, +0.00458]",
+      "val_request_first": "209/247"
+    },
+    {
+      "control": "same-count wrong-positive control",
+      "dev_corrected_delta": "-0.00451 [-0.00606, -0.00306]",
+      "dev_request_first": "0/82",
+      "result": "fails",
+      "rules_out": "arbitrary extra positives on the slice",
+      "val_corrected_delta": "-0.00605 [-0.00765, -0.00468]",
+      "val_request_first": "1/247"
+    },
+    {
+      "control": "cross-dialogue request-positive control",
+      "dev_corrected_delta": "-0.00474 [-0.00633, -0.00327]",
+      "dev_request_first": "0/82",
+      "result": "fails",
+      "rules_out": "request-looking positives not aligned to this dialogue",
+      "val_corrected_delta": "-0.00616 [-0.00783, -0.00469]",
+      "val_request_first": "1/247"
+    }
+  ],
+  "date": "2026-06-22",
+  "main_result": [
+    {
+      "baseline_request_first": "40/82",
+      "corrected_delta": "+0.00344 [+0.00213, +0.00494]",
+      "exact_slice_corrected_delta": "+0.52981 [+0.39607, +0.65882]",
+      "mcnemar_exact_p": 4.547473508864641e-13,
+      "mcnemar_exact_p_text": "4.55e-13",
+      "official_delta": "+0.00068 [+0.00017, +0.00130]",
+      "paired_gains_losses": "42/0",
+      "specialist_request_first": "82/82",
+      "split": "devset"
+    },
+    {
+      "baseline_request_first": "121/247",
+      "corrected_delta": "+0.00465 [+0.00350, +0.00594]",
+      "exact_slice_corrected_delta": "+0.34712 [+0.28385, +0.41072]",
+      "mcnemar_exact_p": 4.70197740328915e-38,
+      "mcnemar_exact_p_text": "4.70e-38",
+      "official_delta": "-0.00013 [-0.00052, +0.00026]",
+      "paired_gains_losses": "125/0",
+      "specialist_request_first": "246/247",
+      "split": "val"
+    }
+  ],
+  "one_sentence_claim": "A 1,661-group exact/version specialist trained with current-dialogue request-positive labels learns request-first behavior on visible exact requests, improves auxiliary request-positive nDCG, and stays within the predeclared whole-split official small-loss threshold; matched controls fail.",
+  "question": "Do exact/version request positives train better request behavior while staying within the official dev/val small-loss threshold?",
+  "reviewer_caveats": [
+    "Exact/version is a small slice, so global metric gains are small by construction.",
+    "The result is parser-conditioned and catalog-grounded, not broad semantic request understanding.",
+    "On affected val exact rows, request satisfaction trades off against official single-label score.",
+    "LLM adjudication supports the scoring contract but is not a human user study.",
+    "Hard-artist remains supporting; switch-away remains diagnostic negative evidence."
+  ],
+  "sources": [
+    "docs/evidence/request_training_claim_ledger_v09.json",
+    "docs/evidence/request_training_behavior_stats_v09.json",
+    "docs/evidence/request_paper_tables_v09.json",
+    "docs/evidence/request_training_provenance_manifest_v09.md",
+    "docs/evidence/request_transfer_evidence_capsule_v09.md",
+    "docs/evidence/request_blind_b_transfer_preregistration_v09.md"
+  ],
+  "system_overview": [
+    {
+      "corrected_delta_dev_val": "+0.00344 [+0.00213, +0.00494] / +0.00465 [+0.00350, +0.00594]",
+      "interpretation": "main training result",
+      "official_delta_dev_val": "+0.00068 [+0.00017, +0.00130] / -0.00013 [-0.00052, +0.00026]",
+      "request_first_dev_val": "82/82 / 246/247",
+      "system": "request-positive exact/version specialist"
+    },
+    {
+      "corrected_delta_dev_val": "-0.00369 [-0.00502, -0.00246] / -0.00482 [-0.00615, -0.00366]",
+      "interpretation": "feature/gate alone fails",
+      "official_delta_dev_val": "-0.00266 [-0.00374, -0.00166] / -0.00060 [-0.00122, +0.00004]",
+      "request_first_dev_val": "2/82 / 9/247",
+      "system": "official-label control"
+    },
+    {
+      "corrected_delta_dev_val": "+0.00227 [+0.00127, +0.00342] / +0.00344 [+0.00242, +0.00458]",
+      "interpretation": "labels carry signal; parser feature stabilizes",
+      "official_delta_dev_val": "+0.00032 [-0.00006, +0.00076] / -0.00058 [-0.00101, -0.00017]",
+      "request_first_dev_val": "64/82 / 209/247",
+      "system": "no-feature corrected control"
+    },
+    {
+      "corrected_delta_dev_val": "-0.00451 [-0.00606, -0.00306] / -0.00605 [-0.00765, -0.00468]",
+      "interpretation": "extra positives alone fail",
+      "official_delta_dev_val": "-0.00335 [-0.00458, -0.00224] / -0.00141 [-0.00208, -0.00077]",
+      "request_first_dev_val": "0/82 / 1/247",
+      "system": "same-count wrong-positive control"
+    },
+    {
+      "corrected_delta_dev_val": "-0.00474 [-0.00633, -0.00327] / -0.00616 [-0.00783, -0.00469]",
+      "interpretation": "positive must satisfy current request",
+      "official_delta_dev_val": "-0.00362 [-0.00498, -0.00236] / -0.00152 [-0.00226, -0.00080]",
+      "request_first_dev_val": "0/82 / 1/247",
+      "system": "cross-dialogue request-positive control"
+    }
+  ],
+  "training_setup": [
+    "1,661 exact/version groups from the 105k train-side reranker pool",
+    "official positives plus exact/version request-positive sidecar labels",
+    "visible exact_request_match feature",
+    "activated only on dialogue-detected exact/version turns",
+    "no official label, sidecar, auxiliary request-positive metric, adjudication label, trace, or leaderboard feedback at inference"
+  ],
+  "transfer_status": {
+    "blocking": [
+      {
+        "feature_set": "F10_R54SRC",
+        "kind": "feature_parquet_missing",
+        "path": "<repo-root>/exp/features/features_rerank_blindset_B_R54src_F10R54.parquet",
+        "split": "blindset_B"
+      }
+    ],
+    "ready": false,
+    "verdict": "pending_external_dependency"
+  },
+  "what_it_does_not_support": [
+    "It does not prove broad recommender-quality improvement.",
+    "It does not solve hard constraints or switch-away requests.",
+    "It does not show that affected conflict rows preserve the official single-label target.",
+    "It is not yet an untouched Blind B transfer result."
+  ],
+  "what_it_supports": [
+    "The exact/version development proxy boundary is learnable, not only detectable after evaluation.",
+    "The behavior change is conditional and large on visible exact requests.",
+    "The useful supervision is current-dialogue request satisfaction, not arbitrary extra positives.",
+    "The visible request-match predicate makes the learned module reliable enough for the stated non-oracle deployment contract."
+  ]
+}

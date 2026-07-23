@@ -1,0 +1,108 @@
+{
+  "capsule": "request-detector-validity-v0.9",
+  "date": "2026-06-22",
+  "frame_ablation": {
+    "buckets": {
+      "quoted_not_strict_detected": {
+        "active_exact": {
+          "high": 0.19864233524310543,
+          "low": 0.025836025774588198,
+          "n": 40,
+          "point": 0.075,
+          "successes": 3
+        },
+        "n": 40,
+        "title_overlap_among_active": {
+          "high": 0.5614970317550454,
+          "low": 5.551115123125783e-17,
+          "n": 3,
+          "point": 0.0,
+          "successes": 0
+        }
+      },
+      "strict_detected_exact_request": {
+        "active_exact": {
+          "high": 0.9741639742254119,
+          "low": 0.8013576647568946,
+          "n": 40,
+          "point": 0.925,
+          "successes": 37
+        },
+        "n": 40,
+        "title_overlap_among_active": {
+          "high": 1.0,
+          "low": 0.9059421741627975,
+          "n": 37,
+          "point": 1.0,
+          "successes": 37
+        }
+      },
+      "unquoted_request_like": {
+        "active_exact": {
+          "high": 0.08762160119728664,
+          "low": 0.0,
+          "n": 40,
+          "point": 0.0,
+          "successes": 0
+        },
+        "n": 40,
+        "title_overlap_among_active": {
+          "high": 0.0,
+          "low": 0.0,
+          "n": 0,
+          "point": 0.0,
+          "successes": 0
+        }
+      }
+    },
+    "control_active": {
+      "high": 0.10454720090045115,
+      "low": 0.012834568919911402,
+      "n": 80,
+      "point": 0.0375,
+      "successes": 3
+    },
+    "detector_positive_active": {
+      "high": 0.9741639742254119,
+      "low": 0.8013576647568946,
+      "n": 40,
+      "point": 0.925,
+      "successes": 37
+    },
+    "min_confidence": "medium",
+    "n_rows": 120,
+    "status": "stratified_annotation_check_not_prevalence_estimate",
+    "strict_detector_title_overlap_among_active": {
+      "high": 1.0,
+      "low": 0.9059421741627975,
+      "n": 37,
+      "point": 1.0,
+      "successes": 37
+    }
+  },
+  "limitations": [
+    "The frame ablation is stratified and estimates detector validity, not population prevalence.",
+    "The metadata baseline does not prove user preference; it rules out a simpler catalog-dedup explanation for changed conflicts."
+  ],
+  "metadata_baseline": {
+    "n_conflict_rows": 94,
+    "same_album": 26,
+    "same_artist": 51,
+    "same_canonical_title": 0,
+    "same_normalized_title": 0,
+    "same_release_year": 31,
+    "status": "changed_conflicts_are_not_duplicate_version_cleanup"
+  },
+  "paper_question": "Does the exact/version detector identify an active request frame, and is the resulting conflict more than generic duplicate/version cleanup?",
+  "reviewer_answer": [
+    "The detector is not merely finding quotation marks: strict positives are active exact requests far more often than quoted and unquoted controls.",
+    "When the independent annotation marks strict positives active, it names the same requested title in 37/37 cases.",
+    "Changed exact/version conflicts are 0/94 same-canonical-title cases, so the result is not explained by ordinary duplicate/version cleanup."
+  ],
+  "source_artifacts": [
+    "docs/evidence/request_frame_ablation_val_v08_score.json",
+    "docs/evidence/request_frame_ablation_val_v08_score.md",
+    "docs/evidence/request_conflict_metadata_baseline_v09.json",
+    "docs/evidence/request_conflict_metadata_baseline_v09.md"
+  ]
+}

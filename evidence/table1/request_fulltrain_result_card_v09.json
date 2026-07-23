@@ -1,0 +1,93 @@
+{
+  "answer": "yes_on_frozen_primary_readout",
+  "date": "2026-06-23",
+  "exact_version": {
+    "blend_weight": 1.0,
+    "control": {
+      "official_ndcg20": 0.19075286484778692,
+      "positive_slice_request_positive_ndcg20": 0.5231364316629893,
+      "prediction_path": "docs/evidence/dev_predictions/request_corrected_F10_R54SRC_blend_exact_version_v09_fulltrain_official_control_reqfeat_dialogue_w1_devset.json",
+      "request_positive_ndcg20": 0.19223842387824117
+    },
+    "delta_request_minus_control": {
+      "official_ndcg20": 0.0006030324460290226,
+      "official_ndcg20_text": "+0.00060",
+      "positive_slice_request_positive_ndcg20": 0.278634361309424,
+      "positive_slice_request_positive_ndcg20_text": "+0.27863",
+      "request_positive_ndcg20": 0.0020462161090059328,
+      "request_positive_ndcg20_text": "+0.00205"
+    },
+    "outputs": {
+      "control": {
+        "bytes": 2205,
+        "exists": true,
+        "path": "docs/evidence/request_exact_version_fulltrain_official_control_blend_dev_v09.json"
+      },
+      "request": {
+        "bytes": 2231,
+        "exists": true,
+        "path": "docs/evidence/request_exact_version_fulltrain_exact_positive_weighted_blend_dev_v09.json"
+      }
+    },
+    "passes_official_small_loss_threshold": true,
+    "positive_slice_gain": true,
+    "request": {
+      "official_ndcg20": 0.19135589729381594,
+      "positive_slice_request_positive_ndcg20": 0.8017707929724133,
+      "prediction_path": "docs/evidence/dev_predictions/request_corrected_F10_R54SRC_blend_exact_version_v09_fulltrain_exact_positive_weighted_reqfeat_dialogue_w1_devset.json",
+      "request_positive_ndcg20": 0.1942846399872471
+    },
+    "request_positive_gain": true,
+    "status": "present"
+  },
+  "exact_version_bootstrap": {
+    "exact_track_slice": {
+      "ci95_text": "[+0.16262, +0.40017]",
+      "n_sessions": 29,
+      "observed_delta_text": "+0.27653"
+    },
+    "n_boot": 10000,
+    "note": "The version/duplicate component has one session, so slice uncertainty is reported for exact-track requests only.",
+    "official": {
+      "ci95_text": "[+0.00018, +0.00115]",
+      "n_sessions": 1000,
+      "observed_delta_text": "+0.00060"
+    },
+    "path": "docs/evidence/request_exact_version_fulltrain_bootstrap_official_vs_specialist_dev_v09.json",
+    "request_satisfying": {
+      "ci95_text": "[+0.00107, +0.00321]",
+      "n_sessions": 1000,
+      "observed_delta_text": "+0.00205"
+    },
+    "seed": 20260701,
+    "status": "present",
+    "unit": "session"
+  },
+  "hard_is_secondary": true,
+  "hard_violation_drop": {
+    "outputs": {
+      "control": {
+        "bytes": null,
+        "exists": false,
+        "path": "docs/evidence/request_hard_simple_nonneg_fulltrain_official_control_blend_dev_v09.json"
+      },
+      "request": {
+        "bytes": null,
+        "exists": false,
+        "path": "docs/evidence/request_hard_simple_nonneg_fulltrain_violation_drop_blend_dev_v09.json"
+      }
+    },
+    "status": "pending_outputs"
+  },
+  "question": "Does the frozen full-train exact/version readout preserve official dev score while improving request-positive dev score?",
+  "read": "This card is pending-safe: before full-train eval outputs exist it reports readiness only; after they exist it computes the fixed primary readout deltas without tuning on repo devset.",
+  "sources": [
+    "docs/evidence/request_fulltrain_approval_packet_2026_06_23.md",
+    "docs/evidence/request_fulltrain_eval_readiness_2026_06_23.md",
+    "docs/evidence/request_exact_version_fulltrain_protocol_v09.md",
+    "docs/evidence/request_exact_version_fulltrain_bootstrap_official_vs_specialist_dev_v09.json",
+    "docs/evidence/request_exact_version_fulltrain_bootstrap_official_vs_specialist_dev_v09.md",
+    "docs/evidence/request_hard_simple_nonneg_fulltrain_violation_drop_protocol_v09.md"
+  ],
+  "status": "present"
+}

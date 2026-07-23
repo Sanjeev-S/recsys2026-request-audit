@@ -1,0 +1,117 @@
+{
+  "date": "2026-06-22",
+  "git_state": {
+    "base_sha": "8f06d21ecec6b3d913153401fcd79acd65786558",
+    "commit_stable": false,
+    "note": "Research-line worktree has many untracked evidence artifacts; commit or snapshot before paper use."
+  },
+  "feature_set": "F10_R54SRC",
+  "preset": "r54_shallow_topk20",
+  "num_boost_round": 50,
+  "training_scope": {
+    "description": "1,661 exact/version groups selected from the 105k train-side reranker pool",
+    "source_candidate_rows": 177937551,
+    "selected_groups": 1661,
+    "selected_candidate_rows": 2728776,
+    "missing_correction_groups": 0,
+    "slice_summary": "docs/evidence/request_exact_slice_105k_feature_parquet_v09.json",
+    "train_corrections": "docs/evidence/request_corrections_train_lt_exact_version_v09.jsonl"
+  },
+  "models": {
+    "official_baseline": {
+      "path": "docs/evidence/models/request_corrected_F10_R54SRC_official_exact_version_v09_medium50_trainonly.json",
+      "sha256": "3bb980e2dee4aff9f08af86b25a403cd532da5c4a719bb8ec6519e0846e1c53f"
+    },
+    "corrected_label_specialist": {
+      "path": "docs/evidence/models/request_corrected_F10_R54SRC_exact_positive_exact_version_v09_slice105k_reqfeat_medium50_trainonly.json",
+      "sha256": "e4b3d69e6ba969a3b18fb5d059504d02eedf73541aab86b795f9dbc22cd45303"
+    },
+    "corrected_label_no_feature_control": {
+      "path": "docs/evidence/models/request_corrected_F10_R54SRC_exact_positive_exact_version_v09_slice105k_nofeature_medium50_trainonly.json",
+      "sha256": "474eb9f2096151aecaf4832cd0d6840c33f48b6835b5aa427b394a713bdc8ca5"
+    },
+    "in_pool_wrong_positive_control": {
+      "path": "docs/evidence/models/request_corrected_F10_R54SRC_exact_positive_exact_version_v09_slice105k_wrongpos_reqfeat_seed17_medium50_trainonly.json",
+      "sha256": "b79ba5d60737685e6a643aad36693c4b7efd7f02bef7884992cb205a2428ba4e"
+    },
+    "official_label_control": {
+      "path": "docs/evidence/models/request_corrected_F10_R54SRC_official_exact_version_v09_slice105k_official_reqfeat_medium50_trainonly.json",
+      "sha256": "7087dd9f87362bbcc90676d099c5885192a5f2d73e5d1484dc37d43d284f365e"
+    },
+    "cross_dialogue_request_positive_control": {
+      "path": "docs/evidence/models/request_corrected_F10_R54SRC_exact_positive_exact_version_v09_slice105k_crossdialogue_reqfeat_seed23_medium50_trainonly.json",
+      "sha256": "a264b3b7e6b44be65cc2fde95a30d70a264aa3f2e693ef2113c904b7c244721e"
+    }
+  },
+  "deployment_contract": {
+    "gate_mode": "dialogue",
+    "request_feature": "exact_request_match",
+    "allowed_inputs": [
+      "visible dialogue",
+      "track catalog metadata",
+      "candidate-pool membership",
+      "official-model scores",
+      "request-specialist scores"
+    ],
+    "forbidden_inputs": [
+      "official policy-selected label",
+      "request-correction sidecar",
+      "corrected metric",
+      "adjudication labels",
+      "synthetic thought traces"
+    ]
+  },
+  "evaluation_artifacts": {
+    "exact_version_sidecar_bootstraps": [
+      "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_plain_blend_dev_exact_version_v09_w1.json",
+      "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_plain_blend_val_exact_version_v09_w1.json",
+      "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_plain_blend_dev_exact_version_v09_w0p75.json",
+      "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_plain_blend_val_exact_version_v09_w0p75.json",
+      "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_nofeature_blend_dev_exact_version_v09_w1.json",
+      "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_nofeature_blend_val_exact_version_v09_w1.json",
+      "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_official_control_blend_dev_exact_version_v09_w1.json",
+      "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_official_control_blend_val_exact_version_v09_w1.json",
+      "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_wrongpos_reqfeat_blend_dev_exact_version_v09_w1.json",
+      "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_wrongpos_reqfeat_blend_val_exact_version_v09_w1.json",
+      "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_crossdialogue_reqfeat_blend_dev_exact_version_v09_w1.json",
+      "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_crossdialogue_reqfeat_blend_val_exact_version_v09_w1.json"
+    ],
+    "full_sidecar_bootstraps": [
+      "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_plain_w1_exact_only_dev_all_v09.json",
+      "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_plain_w1_exact_only_val_all_v09.json",
+      "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_plain_w1_plus_hard_simple_dev_all_v09.json",
+      "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_plain_w1_plus_hard_simple_val_all_v09.json"
+    ],
+    "behavior_audits": [
+      "docs/evidence/request_slice105k_plain_behavior_dev_exact_version_v09.md",
+      "docs/evidence/request_slice105k_plain_behavior_val_exact_version_v09.md",
+      "docs/evidence/request_slice105k_plain_w0p75_behavior_dev_exact_version_v09.md",
+      "docs/evidence/request_slice105k_plain_w0p75_behavior_val_exact_version_v09.md",
+      "docs/evidence/request_slice105k_nofeature_behavior_dev_exact_version_v09.md",
+      "docs/evidence/request_slice105k_nofeature_behavior_val_exact_version_v09.md",
+      "docs/evidence/request_slice105k_official_control_behavior_dev_exact_version_v09.md",
+      "docs/evidence/request_slice105k_official_control_behavior_val_exact_version_v09.md",
+      "docs/evidence/request_slice105k_wrongpos_reqfeat_behavior_dev_exact_version_v09.md",
+      "docs/evidence/request_slice105k_wrongpos_reqfeat_behavior_val_exact_version_v09.md",
+      "docs/evidence/request_slice105k_crossdialogue_reqfeat_behavior_dev_exact_version_v09.md",
+      "docs/evidence/request_slice105k_crossdialogue_reqfeat_behavior_val_exact_version_v09.md"
+    ],
+    "stable_cache_summaries": {
+      "docs/evidence/request_slice105k_label_cache_exact_positive_v09.summary.json": "984aba051493f5c4acf819c5c494b51d681814d39e66cd32fadfdf029d6bd846",
+      "docs/evidence/request_slice105k_label_cache_official_control_v09.summary.json": "b89ee64ab59088fe451a44ee30bf88284f1ab8f60c4f9a64b24dafe3b41690e1",
+      "docs/evidence/request_slice105k_label_cache_wrongpos_reqfeat_seed17_v09.summary.json": "c6d499d35a18852dfd7f0d3b2a337cfa1177dc276529553c9a2f081d75be738a",
+      "docs/evidence/request_slice105k_label_cache_crossdialogue_reqfeat_seed23_v09.summary.json": "04830a42eb6870e3f8a90258f2612e36616da297689ea5d1ca4ec729da6d69ae",
+      "docs/evidence/request_slice105k_request_feature_train_lt_105k_v09.summary.json": "04552284cdeb993fa38ae905ce6aac0417ddeb152a89c3fad59889b42211ef8e"
+    }
+  },
+  "reproduction": {
+    "xgb_preset": "r54_shallow_topk20",
+    "num_boost_round": 50,
+    "default_seed": 42,
+    "wrong_positive_seed": 17,
+    "cross_dialogue_request_positive_seed": 23,
+    "main_train_output": "docs/evidence/request_exact_slice_expert_train_105k_v09.json",
+    "wrong_positive_train_output": "docs/evidence/request_exact_slice_wrongpos_reqfeat_train_105k_v09.json",
+    "cross_dialogue_train_output": "docs/evidence/request_exact_slice_crossdialogue_reqfeat_train_105k_v09.json"
+  }
+}

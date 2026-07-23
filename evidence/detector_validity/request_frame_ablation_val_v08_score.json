@@ -1,0 +1,114 @@
+{
+  "by_bucket": {
+    "quoted_not_strict_detected": {
+      "active_exact": {
+        "high": 0.19864233524310543,
+        "low": 0.025836025774588198,
+        "n": 40,
+        "point": 0.075,
+        "successes": 3
+      },
+      "confidence_counts": {
+        "high": 39,
+        "medium": 1
+      },
+      "explicit_counts": {
+        "no": 37,
+        "yes": 3
+      },
+      "n": 40,
+      "reference_counts": {
+        "no": 3,
+        "unclear": 1,
+        "yes": 36
+      },
+      "title_overlap_among_active": {
+        "high": 0.5614970317550454,
+        "low": 5.551115123125783e-17,
+        "n": 3,
+        "point": 0.0,
+        "successes": 0
+      }
+    },
+    "strict_detected_exact_request": {
+      "active_exact": {
+        "high": 0.9741639742254119,
+        "low": 0.8013576647568946,
+        "n": 40,
+        "point": 0.925,
+        "successes": 37
+      },
+      "confidence_counts": {
+        "high": 39,
+        "medium": 1
+      },
+      "explicit_counts": {
+        "no": 3,
+        "yes": 37
+      },
+      "n": 40,
+      "reference_counts": {
+        "no": 36,
+        "yes": 4
+      },
+      "title_overlap_among_active": {
+        "high": 1.0,
+        "low": 0.9059421741627975,
+        "n": 37,
+        "point": 1.0,
+        "successes": 37
+      }
+    },
+    "unquoted_request_like": {
+      "active_exact": {
+        "high": 0.08762160119728664,
+        "low": 0.0,
+        "n": 40,
+        "point": 0.0,
+        "successes": 0
+      },
+      "confidence_counts": {
+        "high": 37,
+        "medium": 3
+      },
+      "explicit_counts": {
+        "no": 37,
+        "unclear": 3
+      },
+      "n": 40,
+      "reference_counts": {
+        "no": 12,
+        "yes": 28
+      },
+      "title_overlap_among_active": {
+        "high": 0.0,
+        "low": 0.0,
+        "n": 0,
+        "point": 0.0,
+        "successes": 0
+      }
+    }
+  },
+  "control_active_rate": {
+    "high": 0.10454720090045115,
+    "low": 0.012834568919911402,
+    "n": 80,
+    "point": 0.0375,
+    "successes": 3
+  },
+  "detector_positive_active_rate": {
+    "high": 0.9741639742254119,
+    "low": 0.8013576647568946,
+    "n": 40,
+    "point": 0.925,
+    "successes": 37
+  },
+  "key": "docs/evidence/request_frame_ablation_val_v08_key.jsonl",
+  "label_files": [
+    "docs/evidence/request_frame_ablation_val_v08_labels_batch1.jsonl",
+    "docs/evidence/request_frame_ablation_val_v08_labels_batch2.jsonl",
+    "docs/evidence/request_frame_ablation_val_v08_labels_batch3.jsonl"
+  ],
+  "min_confidence": "medium",
+  "n_rows": 120
+}

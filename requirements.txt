@@ -1,0 +1,8 @@
+# Environment pins for the request-audit pipeline (Python 3.12).
+# These are the versions recorded at the July 2026 full-train retrain; the
+# eval/audit chain is not version-sensitive beyond xgboost (model loading).
+xgboost==3.2.0
+pyarrow==24.0.0
+numpy==2.4.4
+datasets==4.8.5
+huggingface_hub==1.15.0

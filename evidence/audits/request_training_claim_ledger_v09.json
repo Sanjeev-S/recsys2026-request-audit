@@ -1,0 +1,243 @@
+{
+  "claims": [
+    {
+      "claim": "The 1,661-group exact/version specialist improves request-positive nDCG on dev and val while preserving whole-split official nDCG.",
+      "evidence": [
+        "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_plain_blend_dev_exact_version_v09_w1.json",
+        "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_plain_blend_val_exact_version_v09_w1.json"
+      ],
+      "id": "exact_version_corrected_training_improves_and_preserves_official",
+      "interpretation": "This is the main training result. It supports a narrow learnability claim, not a global recommender-quality claim.",
+      "metrics": {
+        "corrected_delta": {
+          "devset": "+0.00344 [+0.00213, +0.00494]",
+          "val": "+0.00465 [+0.00350, +0.00594]"
+        },
+        "exact_slice_corrected_delta": {
+          "devset": "+0.52981 [+0.39607, +0.65882]",
+          "val": "+0.34712 [+0.28385, +0.41072]"
+        },
+        "official_delta": {
+          "devset": "+0.00068 [+0.00017, +0.00130]",
+          "val": "-0.00013 [-0.00052, +0.00026]"
+        },
+        "official_noninferiority_margin": -0.001
+      },
+      "verdict": "pass"
+    },
+    {
+      "claim": "The corrected-label specialist learns to rank the request-satisfying item first.",
+      "evidence": [
+        "docs/evidence/request_training_behavior_stats_v09.json",
+        "docs/evidence/request_slice105k_plain_behavior_dev_exact_version_v09.json",
+        "docs/evidence/request_slice105k_plain_behavior_val_exact_version_v09.json"
+      ],
+      "id": "exact_version_training_changes_request_first_behavior",
+      "interpretation": "The behavior result is stronger than the small global nDCG movement: the slice is small, but the conditional behavior change is large.",
+      "metrics": {
+        "devset": {
+          "baseline_request_first": "40/82",
+          "gains": 42,
+          "losses": 0,
+          "mcnemar_exact_p": 4.547473508864641e-13,
+          "system_request_first": "82/82"
+        },
+        "val": {
+          "baseline_request_first": "121/247",
+          "gains": 125,
+          "losses": 0,
+          "mcnemar_exact_p": 4.70197740328915e-38,
+          "system_request_first": "246/247"
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "claim": "The trained specialist matches the transparent full-pool rule on request-first behavior.",
+      "evidence": [
+        "docs/evidence/request_slice105k_plain_behavior_dev_exact_version_v09.json",
+        "docs/evidence/request_slice105k_plain_behavior_val_exact_version_v09.json"
+      ],
+      "id": "learned_specialist_matches_transparent_fullpool_rule_on_request_first",
+      "interpretation": "This links the training claim to the simpler non-oracle rule: the model learns the request-first behavior the rule would enforce.",
+      "metrics": {
+        "devset": {
+          "fullpool_request_first": 82,
+          "n_directives": 82,
+          "specialist_request_first": 82
+        },
+        "val": {
+          "fullpool_request_first": 246,
+          "n_directives": 247,
+          "specialist_request_first": 246
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "claim": "Matched official-label, wrong-positive, and cross-dialogue request-positive controls fail, isolating current-request corrected positives as the useful signal.",
+      "evidence": [
+        "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_official_control_blend_dev_exact_version_v09_w1.json",
+        "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_official_control_blend_val_exact_version_v09_w1.json",
+        "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_wrongpos_reqfeat_blend_dev_exact_version_v09_w1.json",
+        "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_wrongpos_reqfeat_blend_val_exact_version_v09_w1.json",
+        "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_crossdialogue_reqfeat_blend_dev_exact_version_v09_w1.json",
+        "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_crossdialogue_reqfeat_blend_val_exact_version_v09_w1.json"
+      ],
+      "id": "matched_controls_rule_out_feature_gate_and_extra_positive_count",
+      "interpretation": "The result is not explained by the visible feature/gate alone, arbitrary extra positives, or tracks that are request-positive in a different dialogue.",
+      "metrics": {
+        "cross_dialogue_control_corrected_delta": {
+          "devset": "-0.00474 [-0.00633, -0.00327]",
+          "val": "-0.00616 [-0.00783, -0.00469]"
+        },
+        "official_label_control_corrected_delta": {
+          "devset": "-0.00369 [-0.00502, -0.00246]",
+          "val": "-0.00482 [-0.00615, -0.00366]"
+        },
+        "wrong_positive_control_corrected_delta": {
+          "devset": "-0.00451 [-0.00606, -0.00306]",
+          "val": "-0.00605 [-0.00765, -0.00468]"
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "claim": "Corrected labels alone carry signal, but the visible request-match feature is needed for the clean deployment-grade tradeoff.",
+      "evidence": [
+        "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_nofeature_blend_dev_exact_version_v09_w1.json",
+        "docs/evidence/request_corrected_bootstrap_official_vs_slice105k_nofeature_blend_val_exact_version_v09_w1.json",
+        "docs/evidence/request_training_behavior_stats_v09.json"
+      ],
+      "id": "labels_alone_learn_weaker_behavior_but_need_visible_boundary_feature",
+      "interpretation": "This strengthens the causal story while also limiting the claim: the best system is parser-conditioned, not generic relabeling.",
+      "metrics": {
+        "nofeature_corrected_delta": {
+          "devset": "+0.00227 [+0.00127, +0.00342]",
+          "val": "+0.00344 [+0.00242, +0.00458]"
+        },
+        "nofeature_official_delta": {
+          "devset": "+0.00032 [-0.00006, +0.00076]",
+          "val": "-0.00058 [-0.00101, -0.00017]"
+        },
+        "nofeature_request_first": {
+          "devset": "64/82",
+          "val": "209/247"
+        }
+      },
+      "verdict": "supporting"
+    },
+    {
+      "claim": "Composing exact/version with a learned simple/non-negated hard specialist gives the strongest full-sidecar corrected result so far.",
+      "evidence": [
+        "docs/evidence/request_corrected_bootstrap_official_vs_learned_exact_plus_learned_simple_nonneg_hard_dev_all_v09.json",
+        "docs/evidence/request_corrected_bootstrap_official_vs_learned_exact_plus_learned_simple_nonneg_hard_val_all_v09.json",
+        "docs/evidence/request_noninferiority_margin_official_vs_learned_exact_plus_learned_simple_nonneg_hard_val_all_v09.json"
+      ],
+      "id": "multi_family_learned_composition_is_best_readout_but_not_main_claim",
+      "interpretation": "Useful for breadth, but hard remains supporting because selector precision and untouched transfer are weaker than exact/version.",
+      "metrics": {
+        "corrected_delta": {
+          "devset": "+0.00420 [+0.00279, +0.00581]",
+          "val": "+0.00481 [+0.00367, +0.00609]"
+        },
+        "hard_artist_corrected_delta": {
+          "devset": "+0.19353 [+0.09639, +0.30447]",
+          "val": "+0.12144 [+0.07702, +0.16789]"
+        },
+        "official_delta": {
+          "devset": "+0.00080 [+0.00021, +0.00149]",
+          "val": "-0.00044 [-0.00090, +0.00001]"
+        }
+      },
+      "verdict": "supporting"
+    },
+    {
+      "claim": "The organizer-train full-train readout is frozen; the exact/version primary readout is present and interpreted as organizer-train-to-devset same-benchmark evidence.",
+      "evidence": [
+        "docs/evidence/request_fulltrain_freeze_manifest_v09.json",
+        "docs/evidence/request_fulltrain_freeze_protocol_v09.md",
+        "docs/evidence/request_fulltrain_eval_runner_verification_v09.json",
+        "docs/evidence/request_fulltrain_result_card_v09.json",
+        "docs/evidence/request_exact_version_fulltrain_train_v09.json",
+        "docs/evidence/request_exact_version_fulltrain_official_control_blend_dev_v09.json",
+        "docs/evidence/request_exact_version_fulltrain_exact_positive_weighted_blend_dev_v09.json",
+        "scripts/verify_request_fulltrain_freeze.py",
+        "scripts/verify_request_fulltrain_eval_runner.py"
+      ],
+      "id": "fulltrain_primary_readout_status",
+      "interpretation": "This reduces the independence/leakage concern created by folding val back into train. When present, it is performance evidence for the frozen organizer-train-to-devset exact/version readout, not external Blind B transfer.",
+      "metrics": {
+        "artifact_mismatches": 0,
+        "eval_runner_commands": 4,
+        "eval_runner_fixed_blend_failures": 0,
+        "eval_runner_mismatches": 0,
+        "eval_runner_ok": true,
+        "eval_runner_protocol_commands": 4,
+        "exact": {
+          "added_positive_rows": 1878,
+          "corrected_group_weight": 0.1,
+          "downweighted_groups": 1873,
+          "feature_matched_groups": 2186,
+          "feature_matched_rows": 2207,
+          "primary_blend_weight": 1.0
+        },
+        "exact_readout": {
+          "official_ndcg20_delta_request_minus_control": 0.0006030324460290226,
+          "official_ndcg20_delta_text": "+0.00060",
+          "positive_slice_request_positive_ndcg20_delta_request_minus_control": 0.278634361309424,
+          "positive_slice_request_positive_ndcg20_delta_text": "+0.27863",
+          "request_positive_ndcg20_delta_request_minus_control": 0.0020462161090059328,
+          "request_positive_ndcg20_delta_text": "+0.00205"
+        },
+        "fulltrain_freeze_ok": true,
+        "fulltrain_result_answer": "yes_on_frozen_primary_readout",
+        "hard": {
+          "dropped_groups": 361,
+          "feature_matched_groups": 760,
+          "feature_matched_rows": 34153,
+          "primary_blend_weight": 0.5
+        },
+        "hard_secondary_status": "pending_outputs",
+        "heldout_readout": "devset",
+        "invariant_failures": [],
+        "n_artifacts": 31,
+        "n_scripts": 12,
+        "num_boost_round": 50,
+        "performance_evidence_present": true,
+        "script_mismatches": 0,
+        "train_n_groups": 121592,
+        "train_n_rows": 203221270,
+        "training_sources": [
+          "train_lt_105k",
+          "val"
+        ]
+      },
+      "verdict": "pass_exact_version_primary_readout"
+    },
+    {
+      "claim": "The untouched Blind B transfer test is frozen and preflighted, but not yet run.",
+      "evidence": [
+        "docs/evidence/request_blind_b_transfer_preregistration_v09.json",
+        "docs/evidence/request_blind_b_transfer_preflight_2026_06_22.json"
+      ],
+      "id": "blind_b_transfer_is_preregistered_but_not_run",
+      "interpretation": "This is an acceptance-risk control, not current performance evidence. The current paper should call Blind B pending until the frozen run exists and is interpreted under the pre-registered protocol.",
+      "metrics": {
+        "blocking": [],
+        "expected_outputs_absent": 4,
+        "expected_outputs_total": 4,
+        "feature_set": {
+          "exists": true,
+          "n_features": 49,
+          "name": "F10_R54SRC"
+        },
+        "preregistration_ok": true,
+        "ready": true
+      },
+      "verdict": "ready_not_run_outputs_absent"
+    }
+  ],
+  "date": "2026-06-22",
+  "official_noninferiority_margin": -0.001
+}

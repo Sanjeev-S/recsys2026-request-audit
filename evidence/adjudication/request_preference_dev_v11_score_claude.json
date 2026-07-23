@@ -1,0 +1,49 @@
+{
+  "by_split": {
+    "devset": {
+      "request_preferred": 12,
+      "request_satisfying": 12
+    }
+  },
+  "confidence_counts": {
+    "high": 12
+  },
+  "explicit_request_visible_counts": {
+    "yes": 12
+  },
+  "key": "/tmp/claude-0/-root-sanjeev-recsys-challenge-2026/fc45f04c-af58-4807-b3ab-916167538fbe/scratchpad/request_preference_dev_v11_key.jsonl",
+  "label_files": [
+    "/tmp/claude-0/-root-sanjeev-recsys-challenge-2026/fc45f04c-af58-4807-b3ab-916167538fbe/scratchpad/request_preference_dev_v11_labels_claude.jsonl"
+  ],
+  "min_confidence": "medium",
+  "n_rows": 12,
+  "policy_preferred_rate": {
+    "high": 0.24249400665524085,
+    "low": 2.7755575615628914e-17,
+    "n": 12,
+    "point": 0.0,
+    "successes": 0
+  },
+  "preferred_item_counts": {
+    "A": 9,
+    "B": 3
+  },
+  "request_preferred_rate": {
+    "high": 1.0,
+    "low": 0.7575059933447592,
+    "n": 12,
+    "point": 1.0,
+    "successes": 12
+  },
+  "request_satisfying_item_counts": {
+    "A": 9,
+    "B": 3
+  },
+  "request_satisfying_rate": {
+    "high": 1.0,
+    "low": 0.7575059933447592,
+    "n": 12,
+    "point": 1.0,
+    "successes": 12
+  }
+}

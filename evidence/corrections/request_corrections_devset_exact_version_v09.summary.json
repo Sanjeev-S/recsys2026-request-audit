@@ -1,0 +1,20 @@
+{
+  "by_action": {
+    "add_positive": 43
+  },
+  "by_family": {
+    "exact_track_request": 42,
+    "version_duplicate_equivalence": 1
+  },
+  "detector_versions": [
+    "request-corrections-v0.9"
+  ],
+  "included_families": [
+    "exact_track_request",
+    "version_duplicate_equivalence"
+  ],
+  "n_records": 43,
+  "n_unique_turns": 43,
+  "out": "docs/evidence/request_corrections_devset_exact_version_v09.jsonl",
+  "source": "/tmp/request_corrections_devset_with_year_v09.jsonl"
+}

@@ -1,0 +1,182 @@
+{
+  "completion_blockers": [
+    "Hard-drop full-train secondary readout is still pending; exact/version full-train primary readout is present.",
+    "Untouched Blind B transfer is locally ready but not run; expected Blind B transfer outputs are absent.",
+    "Hard constraints and switch-away do not clear the main admission bar.",
+    "No additional high-confidence family beyond exact/version and supporting hard has cleared the contract."
+  ],
+  "date": "2026-06-22",
+  "overall_status": "active_not_complete",
+  "paper_safe_center": "Exact/version passes the development gates and is the main training result; hard constraints are supporting; switch-away is diagnostic negative; Blind B transfer is pre-registered and locally ready but not run.",
+  "requirements": [
+    {
+      "evidence": [
+        "detector sample 24/25 (0.960 [0.805, 0.993])",
+        "changed-row strict precision 106/107 (0.991 [0.949, 0.998])",
+        "visible exact directives: 82 devset, 247 val",
+        "requested present top100: 65/82 devset; 227/247 val",
+        "reachable promotion slice: 19/82 devset; 88/247 val",
+        "frame ablation active strict positives vs controls: 37/40 vs 3/80",
+        "metadata duplicate baseline: same canonical title 0/94"
+      ],
+      "id": "detect_exact_track_requests",
+      "next_action": "Run the frozen Blind B transfer command; do not use it for tuning.",
+      "paper_claim": "Exact-track requests pass the development gates, with frozen transfer pending.",
+      "requirement": "Detect exact-track visible request conflicts.",
+      "status": "development_gate_pass_transfer_pending"
+    },
+    {
+      "evidence": [
+        "included in exact/version sidecar",
+        "1 dev record; train has 5 version records"
+      ],
+      "id": "detect_version_duplicate_equivalents",
+      "next_action": "Keep bundled with exact/version unless untouched transfer reveals more coverage.",
+      "paper_claim": "Version/duplicate equivalents share the exact-track contract but are low-prevalence.",
+      "requirement": "Detect version/duplicate equivalents.",
+      "status": "proven_but_rare"
+    },
+    {
+      "evidence": [
+        "main claim verdict: pass",
+        "dev corrected +0.00344 [+0.00213, +0.00494]; val corrected +0.00465 [+0.00350, +0.00594]",
+        "dev official +0.00068 [+0.00017, +0.00130]; val official -0.00013 [-0.00052, +0.00026]",
+        "request-first dev 40/82 -> 82/82; val 121/247 -> 246/247",
+        "controls verdict: pass"
+      ],
+      "id": "train_exact_version_request_specialist",
+      "next_action": "Use as the headline empirical result; keep claim narrow.",
+      "paper_claim": "Current-dialogue request positives train request-first behavior under matched controls.",
+      "requirement": "Train with exact/version request-positive labels and preserve official dev/val.",
+      "status": "proven_main_training_result"
+    },
+    {
+      "evidence": [
+        "simple/non-negated add-positive val corrected +0.00047 [+0.00014, +0.00085]",
+        "simple/non-negated hard-family val +0.23479 [+0.10767, +0.36663]",
+        "learned multi-family val corrected +0.00481 [+0.00367, +0.00609]; official -0.00044 [-0.00090, +0.00001]",
+        "broad changed-action precision only 37/50; simple selector 12/13 on existing labels",
+        "selector ladder: broad val changed rows 50, no-exact 33, simple/no-exact 13; independent labels cover postrank changed rows, not learned changed rows"
+      ],
+      "id": "detect_and_train_hard_constraints",
+      "next_action": "Freeze and transfer the simple/non-negated hard protocol before admission.",
+      "paper_claim": "Hard constraints broaden the training story but remain supporting evidence.",
+      "requirement": "Detect hard positive constraints and train request-satisfying positives beyond exact/version.",
+      "status": "supporting_training_evidence_not_correction_grade"
+    },
+    {
+      "evidence": [
+        "strict sidecar: 28 dev records, 315 val records",
+        "replace-top1 auxiliary request-positive delta -0.00043 [-0.00083, -0.00014]",
+        "replace-top1 violation@1 0.964 -> 0.214; violation@20 1.000 -> 1.000",
+        "top100 suppressor auxiliary request-positive delta -0.00099 [-0.00191, -0.00029]; switch-family auxiliary request-positive delta -0.21058 [-0.31558, -0.11139]",
+        "top100 violation@1 0.964 -> 0.214; violation@20 1.000 -> 1.000; gold moved down 21/28",
+        "oracle sidecar top-100 bound: clean top-20 feasible 0/28; gold violating 28/28"
+      ],
+      "id": "detect_rejection_switchaway_violations",
+      "next_action": "Design a replacement selector that reduces violations without demoting gold as the main mechanism.",
+      "paper_claim": "Switch-away exposes a visible boundary, but even aggressive visible-rule filtering does not jointly preserve official score and satisfy the request.",
+      "requirement": "Detect rejection/switch-away violations and test conservative masking/downweighting.",
+      "status": "diagnostic_negative_no_main_fix"
+    },
+    {
+      "evidence": [
+        "trace request-corroborated 32/258",
+        "trace mentions policy title 251/258",
+        "trace names policy-not-request 204/258",
+        "assistant names request while trace names policy 19/258",
+        "qualitative examples: 6",
+        "additional mining: hard album constraint 77 train, 7 val, 0 dev; mined_not_admitted",
+        "additional mining: hard year/decade constraint 5110 train, 783 val, 189 dev; mined_not_admitted",
+        "additional mining: genre, mood, instrumentation, language, popularity 87136 train, 13374 val, 6678 dev; not_admitted_no_reusable_target_set",
+        "broad semantic screening: request-like 23-25/25 per category; trusted target sets 0/125",
+        "no additional family currently clears the label-contract admission bar"
+      ],
+      "id": "mine_traces_and_additional_families",
+      "next_action": "Use traces for qualitative audit examples only; keep deployable detectors visible-dialogue based.",
+      "paper_claim": "Traces support the policy-selected-label vocabulary but are not detector inputs.",
+      "requirement": "Mine synthetic traces and search for additional high-confidence families.",
+      "status": "audit_framing_only_no_new_admitted_family"
+    },
+    {
+      "evidence": [
+        "policy-selected label vs request-satisfying target vocabulary",
+        "family label contract written",
+        "skeptical reviewer memo: borderline leaning weak accept as benchmark construct-validity paper",
+        "reviewer critique action log written",
+        "generated family admission audit written",
+        "generated training result card and package manifest",
+        "non-oracle input audit verdict: pass_for_declared_inference_scope",
+        "selection-pressure audit verdict: development_evidence_strong_controls_reduce_selection_risk_transfer_pending",
+        "reproducibility capsule local rebuilds/external runs: 18/2",
+        "result status ledger and full-train run readiness written"
+      ],
+      "id": "novel_framing_and_review_critique",
+      "next_action": "Keep exact/version first and hard/switch as limits.",
+      "paper_claim": "Submit as benchmark construct-validity/measurement, not recommender architecture novelty.",
+      "requirement": "Prioritize a novel/elegant framing and use subagent critique.",
+      "status": "paper_package_ready_for_exact_version_framing"
+    },
+    {
+      "evidence": [
+        "fulltrain freeze verdict: pass_exact_version_primary_readout",
+        "run readiness: protocol_ready=True, ready_for_approval=True, exact_primary_performance_evidence_present=True",
+        "train groups/rows: 121592/203221270",
+        "exact primary lambda: 1.0",
+        "hard primary lambda: 0.5",
+        "exact full-train readout: official delta +0.00060; request-positive delta +0.00205; exact-slice delta +0.27863",
+        "hard secondary status: pending_outputs",
+        "eval runner protocol parity: 4/4 commands; mismatches=0; fixed_blend_failures=0",
+        "invariant failures: 0"
+      ],
+      "id": "freeze_fulltrain_readout",
+      "next_action": "Report exact/version full-train as the headline training readout; keep Blind B as pending external transfer.",
+      "paper_claim": "Exact/version has a frozen organizer-train-to-devset primary readout; hard-drop remains secondary/pending.",
+      "requirement": "Freeze the full organizer-train readout after folding val back into train.",
+      "status": "exact_version_primary_readout_present"
+    },
+    {
+      "evidence": [
+        "preflight ready=True",
+        "preflight status=ready_not_run_outputs_absent",
+        "preregistration_ok=True",
+        "blocking: none",
+        "Blind A rehearsal: 80 groups, 7 exact directives, 2 target-turn directives",
+        "Blind A request-first: 1/2 baseline -> 2/2 full-pool, 2/2 specialist",
+        "Blind B preflight outputs absent: 4/4"
+      ],
+      "id": "untouched_transfer",
+      "next_action": "Run the frozen command and interpret outputs only under the pre-registered protocol.",
+      "paper_claim": "Blind B is pre-registered but not yet performance evidence.",
+      "requirement": "Run an untouched transfer check for the frozen exact/version protocol.",
+      "status": "ready_not_run_outputs_absent"
+    }
+  ],
+  "sources": [
+    "docs/evidence/request_training_claim_ledger_v09.json",
+    "docs/evidence/request_paper_tables_v09.json",
+    "docs/evidence/request_reviewer_critique_action_log_2026_06_22.md",
+    "docs/evidence/request_family_admission_audit_v09.json",
+    "docs/evidence/request_nonoracle_audit_v09.json",
+    "docs/evidence/request_reproducibility_capsule_v09.json",
+    "docs/evidence/request_selection_pressure_audit_v09.json",
+    "docs/evidence/request_exact_robustness_table_v09.json",
+    "docs/evidence/request_detector_validity_capsule_v09.json",
+    "docs/evidence/request_hard_artist_selector_ladder_v09.json",
+    "docs/evidence/request_trace_corroboration_exact_version_v09.summary.json",
+    "docs/evidence/request_trace_boundary_examples_v09.json",
+    "docs/evidence/request_additional_family_mining_audit_v09.json",
+    "docs/evidence/request_broad_semantic_screening_audit_v09.json",
+    "docs/evidence/request_switchaway_strict_scopeall_top20_replace_top1_bootstrap_vs_rerank_F10_scaled_strict_switch_v09.json",
+    "docs/evidence/request_switchaway_strict_scopeall_top20_replace_top1_overlap_audit_v09.json",
+    "docs/evidence/request_switchaway_strict_top100_bootstrap_vs_rerank_F10_scaled_strict_switch_v09.json",
+    "docs/evidence/request_switchaway_strict_top100_overlap_audit_v09.json",
+    "docs/evidence/request_switchaway_strict_oracle_top100_bound_v09.json",
+    "docs/evidence/request_fulltrain_freeze_manifest_v09.json",
+    "docs/evidence/request_fulltrain_eval_runner_verification_v09.json",
+    "docs/evidence/request_fulltrain_run_readiness_2026_06_23.json",
+    "docs/evidence/request_result_status_ledger_2026_06_22.md",
+    "docs/evidence/request_transfer_evidence_capsule_v09.json",
+    "docs/evidence/request_blind_b_transfer_preflight_2026_06_22.json"
+  ]
+}

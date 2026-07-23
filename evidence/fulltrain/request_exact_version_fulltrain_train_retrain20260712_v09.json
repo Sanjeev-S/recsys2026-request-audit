@@ -1,0 +1,96 @@
+{
+  "add_exact_request_feature": true,
+  "add_hard_artist_feature": false,
+  "cache_dmatrix": true,
+  "cells": {
+    "exact_positive_weighted": {
+      "best_iteration": 49,
+      "corrected_per_turn": null,
+      "corrected_val_ndcg20": null,
+      "corrected_val_recoverable": null,
+      "delta_corrected_minus_official": null,
+      "model_path": "docs/evidence/models/request_corrected_F10_R54SRC_exact_positive_weighted_exact_version_v09_fulltrain_trainval_reqfeat_gw0p1_medium50_retrain20260712.json",
+      "official_per_turn": null,
+      "official_val_ndcg20": null,
+      "official_val_recoverable": null,
+      "request_features": [
+        {
+          "name": "exact_request_match",
+          "train_summaries": [
+            "/workspace/request_exact_feature_cache/F10_R54SRC_train_lt_105k_exact_request_match_18c19a9dcfaa1400_1dc0ac26e.summary.json",
+            "/workspace/request_exact_feature_cache/F10_R54SRC_val_exact_request_match_18c19aa3dd629800_48977e97.summary.json"
+          ],
+          "train_summary": "/workspace/request_exact_feature_cache/F10_R54SRC_train_lt_105k_exact_request_match_18c19a9dcfaa1400_1dc0ac26e.summary.json",
+          "val_summary": null
+        }
+      ],
+      "train_label_cache_summaries": [
+        "/workspace/request_exact_label_cache/F10_R54SRC_train_lt_105k_exact_positive_weighted_gw0p1_request_corrections_train_lt_exact_version_v09_18c19a9dcfaa1400_1dc0ac26e.summary.json",
+        "/workspace/request_exact_label_cache/F10_R54SRC_val_exact_positive_weighted_gw0p1_request_corrections_val_exact_version_v09_18c19aa3dd629800_48977e97.summary.json"
+      ],
+      "train_label_cache_summary": "/workspace/request_exact_label_cache/F10_R54SRC_train_lt_105k_exact_positive_weighted_gw0p1_request_corrections_train_lt_exact_version_v09_18c19a9dcfaa1400_1dc0ac26e.summary.json",
+      "train_request_feature_summary": "/workspace/request_exact_feature_cache/F10_R54SRC_val_exact_request_match_18c19aa3dd629800_48977e97.summary.json",
+      "val_label_cache_summary": null,
+      "val_request_feature_summary": null
+    }
+  },
+  "early_stopping_rounds": 40,
+  "extra_train_corrections": [
+    "docs/evidence/request_corrections_val_exact_version_v09.jsonl"
+  ],
+  "feature_set": "F10_R54SRC",
+  "hard_artist_feature": {
+    "exclude_exact_requests": false,
+    "simple_artist_only": false,
+    "strict": true
+  },
+  "num_boost_round": 50,
+  "preset": "r54_shallow_topk20",
+  "request_feature": {
+    "name": "exact_request_match",
+    "train_summaries": [
+      "/workspace/request_exact_feature_cache/F10_R54SRC_train_lt_105k_exact_request_match_18c19a9dcfaa1400_1dc0ac26e.summary.json",
+      "/workspace/request_exact_feature_cache/F10_R54SRC_val_exact_request_match_18c19aa3dd629800_48977e97.summary.json"
+    ],
+    "train_summary": "/workspace/request_exact_feature_cache/F10_R54SRC_train_lt_105k_exact_request_match_18c19a9dcfaa1400_1dc0ac26e.summary.json",
+    "val_summary": null
+  },
+  "request_features": [
+    {
+      "name": "exact_request_match",
+      "train_summaries": [
+        "/workspace/request_exact_feature_cache/F10_R54SRC_train_lt_105k_exact_request_match_18c19a9dcfaa1400_1dc0ac26e.summary.json",
+        "/workspace/request_exact_feature_cache/F10_R54SRC_val_exact_request_match_18c19aa3dd629800_48977e97.summary.json"
+      ],
+      "train_summary": "/workspace/request_exact_feature_cache/F10_R54SRC_train_lt_105k_exact_request_match_18c19a9dcfaa1400_1dc0ac26e.summary.json",
+      "val_summary": null
+    }
+  ],
+  "skip_val_dmatrix": true,
+  "train_corrections": "docs/evidence/request_corrections_train_lt_exact_version_v09.jsonl",
+  "train_feature_path": "exp/features/features_rerank_train_lt_105k_R54src_F10R54.parquet",
+  "train_group_sizes_path": "exp/features/group_sizes_train_lt_105k_R54src.npy",
+  "train_n_groups": 121592,
+  "train_n_rows": 204885082,
+  "train_sources": [
+    {
+      "corrections_path": "docs/evidence/request_corrections_train_lt_exact_version_v09.jsonl",
+      "group_sizes_path": "exp/features/group_sizes_train_lt_105k_R54src.npy",
+      "n_groups": 105592,
+      "n_rows": 177937551,
+      "path": "exp/features/features_rerank_train_lt_105k_R54src_F10R54.parquet",
+      "split": "train_lt_105k"
+    },
+    {
+      "corrections_path": "docs/evidence/request_corrections_val_exact_version_v09.jsonl",
+      "group_sizes_path": "exp/features/group_sizes_val_R54src.npy",
+      "n_groups": 16000,
+      "n_rows": 26947531,
+      "path": "exp/features/features_rerank_val_R54src_F10R54.parquet",
+      "split": "val"
+    }
+  ],
+  "val_corrections": null,
+  "val_feature_path": "/workspace/request_exact/exp/features/features_rerank_val_R54src_F10R54.parquet",
+  "val_group_sizes_path": null
+}

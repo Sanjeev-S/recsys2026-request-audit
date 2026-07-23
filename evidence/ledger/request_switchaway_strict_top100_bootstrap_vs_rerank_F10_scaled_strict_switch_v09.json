@@ -1,0 +1,64 @@
+{
+  "baseline_name": "rerank_F10_scaled",
+  "baseline_prediction": "<repo-root>/exp/inference/devset/rerank_F10_scaled_devset.json",
+  "candidate_name": "switchaway_strict_top100",
+  "candidate_prediction": "docs/evidence/request_switchaway_strict_top100_suppressed_rerank_F10_scaled_devset.json",
+  "corrected": {
+    "baseline_mean": 0.18695804828713733,
+    "candidate_mean": 0.18596619150575192,
+    "delta": {
+      "bootstrap_median": -0.0009577105792331297,
+      "ci95_high": -0.00028945703941612685,
+      "ci95_low": -0.0019145937003296077,
+      "n_sessions": 1000,
+      "observed_delta": -0.000991856781385453,
+      "p_delta_le_0": 0.9997
+    }
+  },
+  "corrections": "docs/evidence/request_corrections_devset_v09_strict_switch.jsonl",
+  "families": {
+    "rejection_switchaway_violation": {
+      "corrected": {
+        "baseline_mean": 0.4430185842086011,
+        "candidate_mean": 0.23244314266891994,
+        "delta": {
+          "bootstrap_median": -0.2081082719120278,
+          "ci95_high": -0.11139276655655204,
+          "ci95_low": -0.31558414259004736,
+          "n_sessions": 18,
+          "observed_delta": -0.21057544153968108,
+          "p_delta_le_0": 1.0
+        }
+      },
+      "n_sessions": 18,
+      "official": {
+        "baseline_mean": 0.4430185842086011,
+        "candidate_mean": 0.23244314266891994,
+        "delta": {
+          "bootstrap_median": -0.2090141360571895,
+          "ci95_high": -0.11318104866252424,
+          "ci95_low": -0.31364397221627904,
+          "n_sessions": 18,
+          "observed_delta": -0.21057544153968108,
+          "p_delta_le_0": 1.0
+        }
+      }
+    }
+  },
+  "n_boot": 10000,
+  "official": {
+    "baseline_mean": 0.18268732173861785,
+    "candidate_mean": 0.18178988363946758,
+    "delta": {
+      "bootstrap_median": -0.0008587004893314963,
+      "ci95_high": -0.00021115928792448223,
+      "ci95_low": -0.0018108285276135269,
+      "n_sessions": 1000,
+      "observed_delta": -0.0008974380991502313,
+      "p_delta_le_0": 0.9987
+    }
+  },
+  "scoring": "best_hit",
+  "seed": 42,
+  "split": "devset"
+}

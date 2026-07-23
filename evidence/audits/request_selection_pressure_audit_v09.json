@@ -1,0 +1,177 @@
+{
+  "audit": "request-selection-pressure-audit-v0.9",
+  "date": "2026-06-22",
+  "external_readouts": {
+    "blind_b": {
+      "interpretation": "This is an acceptance-risk control, not current performance evidence. The current paper should call Blind B pending until the feature parquet exists.",
+      "status": "pending_only_feature_parquet",
+      "verdict": "pending_external_dependency"
+    },
+    "fulltrain": {
+      "exact_readout": {
+        "official_ndcg20_delta_request_minus_control": 0.0006030324460290226,
+        "official_ndcg20_delta_text": "+0.00060",
+        "positive_slice_request_positive_ndcg20_delta_request_minus_control": 0.278634361309424,
+        "positive_slice_request_positive_ndcg20_delta_text": "+0.27863",
+        "request_positive_ndcg20_delta_request_minus_control": 0.0020462161090059328,
+        "request_positive_ndcg20_delta_text": "+0.00205"
+      },
+      "interpretation": "This reduces the independence/leakage concern created by folding val back into train. When present, it is performance evidence for the frozen organizer-train-to-devset exact/version readout, not external Blind B transfer.",
+      "performance_evidence_present": true,
+      "status": "ready_for_approved_pod_training",
+      "training_sources": [
+        "train_lt_105k",
+        "val"
+      ],
+      "verdict": "pass_exact_version_primary_readout"
+    }
+  },
+  "family_decisions": {
+    "exact/version": "passes_development_gates_transfer_pending",
+    "hard artist simple/non-negated": "supporting_training_evidence_not_admitted",
+    "rejection/switch-away": "diagnostic_negative_no_main_fix"
+  },
+  "paper_safe_claim": "The exact/version result is strong development evidence with matched controls; it is not yet an untouched-transfer result.",
+  "primary_result": {
+    "claim": "The 1,661-group exact/version specialist improves request-positive nDCG on dev and val while preserving whole-split official nDCG.",
+    "corrected_delta": {
+      "devset": "+0.00344 [+0.00213, +0.00494]",
+      "val": "+0.00465 [+0.00350, +0.00594]"
+    },
+    "official_delta": {
+      "devset": "+0.00068 [+0.00017, +0.00130]",
+      "val": "-0.00013 [-0.00052, +0.00026]"
+    },
+    "paper_use": "headline training result, caveated as development evidence",
+    "request_first": {
+      "devset": {
+        "baseline_request_first": "40/82",
+        "gains": 42,
+        "losses": 0,
+        "mcnemar_exact_p": 4.547473508864641e-13,
+        "system_request_first": "82/82"
+      },
+      "val": {
+        "baseline_request_first": "121/247",
+        "gains": 125,
+        "losses": 0,
+        "mcnemar_exact_p": 4.70197740328915e-38,
+        "system_request_first": "246/247"
+      }
+    },
+    "status": "main development result",
+    "system": "exact/version request-feature specialist, dialogue gated, lambda=1.0"
+  },
+  "purpose": "Separate the main development result from tuned variants, controls, supporting families, and pending confirmatory runs.",
+  "remaining_selection_risks": [
+    {
+      "paper_action": "call the result development evidence; keep frozen transfer pending",
+      "risk": "exact/version detector and lambda were developed on dev/val"
+    },
+    {
+      "paper_action": "report hard-artist as supporting only, not an admitted correction family",
+      "risk": "hard-artist simple selector was motivated by observed failures"
+    },
+    {
+      "paper_action": "do not make it the headline because hard-family admission is weaker",
+      "risk": "multi-family composition has the strongest auxiliary request-positive point estimate"
+    },
+    {
+      "paper_action": "report full-train exact/version as the frozen organizer-train readout, and keep Blind B pending as external transfer",
+      "risk": "Blind B transfer is not yet performance evidence; full-train exact/version is still same benchmark devset"
+    }
+  ],
+  "reproducibility_guardrail": {
+    "external_runs": 2,
+    "local_rebuilds": 18
+  },
+  "risk_reducers": [
+    {
+      "evidence": "trained reranker changes request-first behavior on dev and val",
+      "risk": "metric-only post-hoc scoring",
+      "source": "docs/evidence/request_training_claim_ledger_v09.json",
+      "status": "pass"
+    },
+    {
+      "evidence": "official-label control fails request-first and auxiliary request-positive metrics",
+      "risk": "visible feature/gate alone explains result",
+      "source": "docs/evidence/request_training_claim_ledger_v09.json",
+      "status": "pass"
+    },
+    {
+      "evidence": "same-count wrong-positive control is auxiliary-score-negative on dev and val",
+      "risk": "arbitrary extra positives explain result",
+      "source": "docs/evidence/request_training_claim_ledger_v09.json",
+      "status": "pass"
+    },
+    {
+      "evidence": "cross-dialogue request-positive control is auxiliary-score-negative on dev and val",
+      "risk": "request-like positives from any dialogue explain result",
+      "source": "docs/evidence/request_training_claim_ledger_v09.json",
+      "status": "pass"
+    },
+    {
+      "evidence": "no-feature request-positive control learns weaker behavior and misses val official threshold",
+      "risk": "labels only are enough for a deployable story",
+      "source": "docs/evidence/request_training_claim_ledger_v09.json",
+      "status": "supporting"
+    },
+    {
+      "evidence": "Blind B protocol and hashes are pre-registered before the missing feature parquet exists",
+      "risk": "tuned blind transfer after seeing outcomes",
+      "source": "docs/evidence/request_transfer_evidence_capsule_v09.json",
+      "status": "pending_only_feature_parquet"
+    },
+    {
+      "evidence": "full organizer-train exact/hard readouts are frozen; exact/version primary readout has fixed devset output when present",
+      "risk": "folding val into train creates untracked readout freedom",
+      "source": "docs/evidence/request_fulltrain_freeze_manifest_v09.json",
+      "status": "pass_exact_version_primary_readout"
+    }
+  ],
+  "source_artifacts": [
+    "docs/evidence/request_training_claim_ledger_v09.json",
+    "docs/evidence/request_family_admission_audit_v09.json",
+    "docs/evidence/request_transfer_evidence_capsule_v09.json",
+    "docs/evidence/request_fulltrain_freeze_manifest_v09.json",
+    "docs/evidence/request_reproducibility_capsule_v09.json"
+  ],
+  "supporting_not_headline": {
+    "multi_family_composition": {
+      "metrics": {
+        "corrected_delta": {
+          "devset": "+0.00420 [+0.00279, +0.00581]",
+          "val": "+0.00481 [+0.00367, +0.00609]"
+        },
+        "hard_artist_corrected_delta": {
+          "devset": "+0.19353 [+0.09639, +0.30447]",
+          "val": "+0.12144 [+0.07702, +0.16789]"
+        },
+        "official_delta": {
+          "devset": "+0.00080 [+0.00021, +0.00149]",
+          "val": "-0.00044 [-0.00090, +0.00001]"
+        }
+      },
+      "reason_not_headline": "hard-artist transfer/action precision is weaker than exact/version",
+      "verdict": "supporting"
+    },
+    "nofeature_control": {
+      "metrics": {
+        "nofeature_corrected_delta": {
+          "devset": "+0.00227 [+0.00127, +0.00342]",
+          "val": "+0.00344 [+0.00242, +0.00458]"
+        },
+        "nofeature_official_delta": {
+          "devset": "+0.00032 [-0.00006, +0.00076]",
+          "val": "-0.00058 [-0.00101, -0.00017]"
+        },
+        "nofeature_request_first": {
+          "devset": "64/82",
+          "val": "209/247"
+        }
+      },
+      "verdict": "supporting"
+    }
+  },
+  "verdict": "development_evidence_strong_controls_reduce_selection_risk_transfer_pending"
+}

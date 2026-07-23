@@ -1,0 +1,12 @@
+{
+  "backend": "claude",
+  "blinding": "unblinded action review; policy label not shown",
+  "date": "2026-07-23",
+  "input": "/tmp/claude-0/-root-sanjeev-recsys-challenge-2026/fc45f04c-af58-4807-b3ab-916167538fbe/scratchpad/request_changed_rows_devset_v11.jsonl",
+  "labels_output": "/tmp/claude-0/-root-sanjeev-recsys-challenge-2026/fc45f04c-af58-4807-b3ab-916167538fbe/scratchpad/request_strict_review_dev_v11_labels_claude.jsonl",
+  "mode": "strict-review",
+  "model": "opus",
+  "n_rows": 19,
+  "prompt_sha256": "caaf0286ce95b2c6b349aab82bea77ecaa198b0eafde02d1fe80e386aa3be60f",
+  "prompt_template": "You are strictly reviewing one changed row of a request-aware ranking intervention\nin a music-recommendation dialogue benchmark.\n\nA detector flagged a visible exact-song request in the user's message, resolved it\nagainst the track catalog, and the intervention promoted the resolved track(s).\nReview whether this specific action was correct, strictly from the message text and\nthe metadata shown.\n\nUser message:\n{user_text}\n\nDetector-extracted requested title(s): {requested_titles}\nPromoted track(s):\n{promoted_block}\n\nAnswer these questions:\n1. valid_request: Does the message contain a genuine, active request for a specific song\n   (not a passing mention, a reference to something already played, or a broad preference)? (yes/no)\n2. promoted_satisfies: Do the promoted track(s) satisfy that request \u2014 the same titled work,\n   by the referenced artist where the message identifies one? (yes/no)\n3. action_ok: Overall, was promoting these track(s) the right request-satisfying action for\n   this turn? (yes/no)\n4. confidence: high/medium/low\n5. notes: one short sentence of rationale\n\nRespond with a single JSON object with keys exactly:\nvalid_request, promoted_satisfies, action_ok, confidence, notes.\nOutput only the JSON object, nothing else."
+}

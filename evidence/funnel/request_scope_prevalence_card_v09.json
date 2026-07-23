@@ -1,0 +1,58 @@
+{
+  "artifact": "request-scope-prevalence-card-v0.9",
+  "read": "Exact/version is deliberately narrow. The global auxiliary nDCG movement should be read together with per-1k prevalence, reachable coverage, and a unit-bounded prevalence ceiling; official preservation is whole-split, while exact-slice official deltas can be negative when request-satisfying items displace policy-selected labels.",
+  "rows": [
+    {
+      "already_request_first": 46,
+      "baseline_request_first": 40,
+      "fullpool_auxiliary_request_positive_delta": "+0.00344 [+0.00213, +0.00494]",
+      "fullpool_exact_slice_official_delta": "+0.00703 [-0.02280, +0.05535]",
+      "policy_request_conflicts": 41,
+      "policy_request_conflicts_per_1k_turns": 5.125,
+      "reachable_changed_rows": 19,
+      "reachable_changed_rows_per_1k_turns": 2.375,
+      "request_first_gain": 42,
+      "request_first_gain_per_1k_turns": 5.25,
+      "request_first_gain_unit_ceiling": 0.00525,
+      "requested_absent_top100": 17,
+      "requested_present_top100": 65,
+      "specialist_auxiliary_request_positive_delta": "+0.00344 [+0.00213, +0.00494]",
+      "specialist_exact_slice_official_delta": "+0.00133 [-0.04448, +0.05919]",
+      "specialist_request_first": 82,
+      "split": "devset",
+      "total_turns": 8000,
+      "visible_directive_unit_ceiling": 0.01025,
+      "visible_directives": 82,
+      "visible_directives_per_1k_turns": 10.25
+    },
+    {
+      "already_request_first": 139,
+      "baseline_request_first": 121,
+      "fullpool_auxiliary_request_positive_delta": "+0.00465 [+0.00350, +0.00594]",
+      "fullpool_exact_slice_official_delta": "-0.03094 [-0.04554, -0.01800]",
+      "policy_request_conflicts": 212,
+      "policy_request_conflicts_per_1k_turns": 13.25,
+      "reachable_changed_rows": 88,
+      "reachable_changed_rows_per_1k_turns": 5.5,
+      "request_first_gain": 125,
+      "request_first_gain_per_1k_turns": 7.8125,
+      "request_first_gain_unit_ceiling": 0.0078125,
+      "requested_absent_top100": 20,
+      "requested_present_top100": 227,
+      "specialist_auxiliary_request_positive_delta": "+0.00465 [+0.00350, +0.00594]",
+      "specialist_exact_slice_official_delta": "-0.03961 [-0.06140, -0.01877]",
+      "specialist_request_first": 246,
+      "split": "val",
+      "total_turns": 16000,
+      "visible_directive_unit_ceiling": 0.0154375,
+      "visible_directives": 247,
+      "visible_directives_per_1k_turns": 15.4375
+    }
+  ],
+  "sources": [
+    "docs/evidence/request_exact_postrank_locked_table_v09.json",
+    "docs/evidence/request_exact_robustness_table_v09.json",
+    "docs/evidence/request_paper_tables_v09.json"
+  ],
+  "unit_ceiling_note": "The unit ceilings are simple prevalence ceilings for a unit-bounded per-turn score if only that slice could change; they are explanatory denominator math, not a replacement for paired bootstrap metrics."
+}

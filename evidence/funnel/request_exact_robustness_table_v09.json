@@ -1,0 +1,112 @@
+{
+  "artifact": "request-exact-robustness-table-v0.9",
+  "read": "Exact/version requests are small but not a single cherry-picked row: they appear across turns, include reachable and missing-top100 cases, and version/duplicate equivalents are explicitly rare.",
+  "sources": {
+    "devset": {
+      "coverage": "docs/evidence/request_exact_postrank_coverage_v09_devset.json",
+      "sidecar": "docs/evidence/request_corrections_devset_exact_version_v09.jsonl"
+    },
+    "val": {
+      "coverage": "docs/evidence/request_exact_postrank_coverage_v09_val.json",
+      "sidecar": "docs/evidence/request_corrections_val_exact_version_v09.jsonl"
+    }
+  },
+  "splits": [
+    {
+      "already_front": 46,
+      "family_counts": {
+        "exact_track_request": 42,
+        "version_duplicate_equivalence": 1
+      },
+      "gold_differs": 41,
+      "gold_requested": 41,
+      "n_directives": 82,
+      "not_retrieved_top100": 17,
+      "promoted": 19,
+      "rank_bucket_counts": {
+        "1": 46,
+        "2-5": 8,
+        "6-20": 11,
+        ">100/missing": 17
+      },
+      "requested_present_top100": 65,
+      "sidecar_records": 43,
+      "sidecar_unique_turns": 43,
+      "split": "devset",
+      "turn_rows": [
+        {
+          "already_front": 30,
+          "gold_differs": 5,
+          "n": 30,
+          "not_retrieved_top100": 0,
+          "promoted": 0,
+          "turn_bucket": "turn 1"
+        },
+        {
+          "already_front": 12,
+          "gold_differs": 24,
+          "n": 35,
+          "not_retrieved_top100": 16,
+          "promoted": 7,
+          "turn_bucket": "turns 2-4"
+        },
+        {
+          "already_front": 4,
+          "gold_differs": 12,
+          "n": 17,
+          "not_retrieved_top100": 1,
+          "promoted": 12,
+          "turn_bucket": "turns 5-8"
+        }
+      ]
+    },
+    {
+      "already_front": 139,
+      "family_counts": {
+        "exact_track_request": 215
+      },
+      "gold_differs": 212,
+      "gold_requested": 35,
+      "n_directives": 247,
+      "not_retrieved_top100": 20,
+      "promoted": 88,
+      "rank_bucket_counts": {
+        "1": 139,
+        "2-5": 28,
+        "21-100": 20,
+        "6-20": 40,
+        ">100/missing": 20
+      },
+      "requested_present_top100": 227,
+      "sidecar_records": 215,
+      "sidecar_unique_turns": 212,
+      "split": "val",
+      "turn_rows": [
+        {
+          "already_front": 60,
+          "gold_differs": 47,
+          "n": 63,
+          "not_retrieved_top100": 1,
+          "promoted": 2,
+          "turn_bucket": "turn 1"
+        },
+        {
+          "already_front": 49,
+          "gold_differs": 60,
+          "n": 69,
+          "not_retrieved_top100": 7,
+          "promoted": 13,
+          "turn_bucket": "turns 2-4"
+        },
+        {
+          "already_front": 30,
+          "gold_differs": 105,
+          "n": 115,
+          "not_retrieved_top100": 12,
+          "promoted": 73,
+          "turn_bucket": "turns 5-8"
+        }
+      ]
+    }
+  ]
+}

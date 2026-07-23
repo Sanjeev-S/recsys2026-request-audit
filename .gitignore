@@ -1,5 +1,6 @@
 # no dataset content, ever
-data/
+data/*
+!data/train_val_split_seed42.json
 *.parquet
 *.ckpt
 *.bin
@@ -8,3 +9,4 @@ secrets*
 __pycache__/
 *.pyc
 .DS_Store
+work/

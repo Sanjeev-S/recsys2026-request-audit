@@ -1,0 +1,35 @@
+{
+  "annotation_output": "<worktree>/docs/evidence/request_human_check_packet_v09_annotation.jsonl",
+  "annotation_source": "<worktree>/docs/evidence/request_preference_v09_annotation.jsonl",
+  "artifact": "request-human-check-packet-v0.9",
+  "by_split": {
+    "devset": 12,
+    "val": 38
+  },
+  "forbidden_annotation_fields": [
+    "gold_track",
+    "gold_track_id",
+    "music_thought",
+    "policy_side",
+    "policy_track",
+    "policy_track_id",
+    "request_side",
+    "request_track",
+    "request_track_id",
+    "thought",
+    "trace"
+  ],
+  "forbidden_field_hits": {},
+  "include_all_dev": true,
+  "key_output": "<worktree>/docs/evidence/request_human_check_packet_v09_key.jsonl",
+  "key_source": "<worktree>/docs/evidence/request_preference_v09_key.jsonl",
+  "label_template_output": "<worktree>/docs/evidence/request_human_check_packet_v09_label_template.jsonl",
+  "n_selected": 50,
+  "n_source_annotations": 94,
+  "read": "This is a blinded packet for a future human check of exact/request conflict rows. It is not human evidence until independent labels are collected and scored. The annotation file contains visible dialogue and two candidate metadata blocks only; request/policy side labels are kept in the separate key.",
+  "request_side_counts_in_key": {
+    "A": 28,
+    "B": 22
+  },
+  "seed": 20260623
+}

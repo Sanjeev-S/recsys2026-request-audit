@@ -1,0 +1,91 @@
+{
+  "blind_a_rehearsal": {
+    "baseline_missing_topk": 1,
+    "baseline_request_first": "1/2",
+    "evaluable_directives": 2,
+    "feature_set": "F10_R54SRC",
+    "fullpool_missing_topk": 0,
+    "fullpool_request_first": "2/2",
+    "interpretation": "portability/readiness check only; Blind A has no local labels, so no official or auxiliary request-positive nDCG is claimed",
+    "non_target_directives": 5,
+    "prediction_groups": 80,
+    "specialist_missing_topk": 0,
+    "specialist_request_first": "2/2",
+    "split": "blindset_A",
+    "visible_exact_directives": 7
+  },
+  "blind_b_preflight": {
+    "blocking_kinds": [],
+    "expected_outputs_absent": 4,
+    "expected_outputs_total": 4,
+    "feature_set_exists": true,
+    "frozen_hashes_checked": 6,
+    "frozen_hashes_ok": true,
+    "missing_feature_parquet": "<repo-root>/exp/features/features_rerank_blindset_B_R54src_F10R54.parquet",
+    "n_features": 49,
+    "preregistration_ok": true,
+    "ready": true
+  },
+  "blind_b_preregistration": {
+    "allowed_inputs": [
+      "visible dialogue",
+      "track catalog metadata",
+      "candidate-pool membership",
+      "official-model scores",
+      "request-specialist scores"
+    ],
+    "forbidden_inputs": [
+      "official policy-selected labels",
+      "request-correction sidecars",
+      "auxiliary request-positive metrics",
+      "LLM adjudication labels",
+      "synthetic thought traces",
+      "Blind B leaderboard feedback for parser/model selection"
+    ],
+    "frozen_items": {
+      "correction_label_helpers": "scripts/request_correction_labels.py",
+      "exact_request_parser": "scripts/apply_request_exact_postrank.py",
+      "official_baseline_model": "docs/evidence/models/request_corrected_F10_R54SRC_official_exact_version_v09_medium50_trainonly.json",
+      "request_feature_builder": "scripts/request_corrected_rerank_train.py",
+      "request_slice_specialist": "docs/evidence/models/request_corrected_F10_R54SRC_exact_positive_exact_version_v09_slice105k_reqfeat_medium50_trainonly.json",
+      "transfer_runner": "scripts/request_exact_transfer_protocol.py"
+    },
+    "invalid_if": [
+      "parser/model/ranking code edited before the run",
+      "Blind B labels, sidecars, traces, or leaderboard feedback used to alter the protocol",
+      "first run discarded and replaced by a tuned rerun"
+    ],
+    "protocol": "request-exact-transfer-v0.9-blind-b-preregistered",
+    "required_unlabeled_readout": [
+      "prediction groups",
+      "visible exact directives",
+      "evaluable directives",
+      "exact-match candidate groups",
+      "baseline request-first",
+      "full-pool request-first",
+      "specialist request-first",
+      "baseline missing top-k",
+      "specialist recovery"
+    ],
+    "target_split": "blindset_B"
+  },
+  "capsule": "request-transfer-evidence-v0.9",
+  "claim_under_test": "Frozen exact/version protocol should transfer visible request-first improvements to an untouched split without label, sidecar, trace, or leaderboard inputs.",
+  "date": "2026-06-22",
+  "paper_status": {
+    "blind_a_rehearsal": "ran_unlabeled_blind_style_protocol",
+    "blind_b_transfer": "ready_not_run_outputs_absent",
+    "performance_claim": "none_until_labeled_or_frozen_blind_b_readout"
+  },
+  "reviewer_answer": [
+    "The dev/val training result is still development evidence, not completed transfer.",
+    "The same exact/version protocol has run once on a blind-style split without labels or sidecars.",
+    "The confirmatory Blind B run is pre-registered and locally ready, but no Blind B output files are present and no Blind B performance evidence is claimed."
+  ],
+  "source_artifacts": [
+    "docs/evidence/request_exact_transfer_protocol_v09.md",
+    "docs/evidence/transfer_predictions/request_exact_transfer_F10_R54SRC_exact_version_v09_slice105k_blindset_A.summary.json",
+    "docs/evidence/request_blind_b_transfer_preregistration_v09.json",
+    "docs/evidence/request_blind_b_transfer_preflight_2026_06_22.json"
+  ]
+}

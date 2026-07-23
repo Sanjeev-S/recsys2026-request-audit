@@ -1,0 +1,55 @@
+{
+  "generated": "2026-07-23",
+  "provenance": "post-hoc recount (ADR-0006: generated after protocol freeze, for artifact-release reconciliation; does not alter any frozen readout)",
+  "question": "paper/freeze manifest say 1,878 added positive rows; Jul-12 retrain label cache says 1,877 (val 214 vs 215). Which is canonical and why do they differ?",
+  "verdict": {
+    "canonical_added_positive_rows": 1878,
+    "canonical_breakdown": {
+      "train_lt": 1663,
+      "val": 215
+    },
+    "corrected_turns": {
+      "train_lt": 1661,
+      "val": 212,
+      "total": 1873
+    },
+    "retrain_20260712_value": 1877,
+    "cause": "input drift, not counting logic: the Jul-12 pod retrain pulled features_rerank_val_R54src_F10R54.parquet from the private HF cache; that copy is a different build (26,947,531 rows, 11,933 base positive rows) than the canonical local file the frozen run used (25,283,719 rows, 12,075 base positives). One val row that flips 0->1 in the canonical pool is not flippable in the drifted copy."
+  },
+  "recount_method": "streamed the canonical local parquets, applied the exact/version corrections sidecars with the trainer's merge rule (exact_track_ids from families exact_track_request + version_duplicate_equivalence), counted rows with base label 0 and track_id in the merged target set",
+  "canonical_parquets": {
+    "train_lt": {
+      "path": "exp/features/features_rerank_train_lt_105k_R54src_F10R54.parquet",
+      "n_rows": 177937551
+    },
+    "val": {
+      "path": "exp/features/features_rerank_val_R54src_F10R54.parquet",
+      "n_rows": 25283719
+    }
+  },
+  "decomposition": {
+    "note": "corrects paper v11 \u00a76 parenthetical '(five turns resolve to two catalog entries through version equivalence)' \u2014 that gloss back-derived 1878-1873=5 and coincided with the 5 version_duplicate_equivalence records in train_lt; neither explains the row arithmetic",
+    "zero_add_turns": {
+      "train_lt": 12,
+      "val": 1,
+      "total": 13,
+      "reason": "resolved track absent from the turn's candidate pool"
+    },
+    "multi_add_turns": {
+      "train_lt": 14,
+      "val": 3,
+      "total": 17,
+      "detail": "train: 14 turns add 2 rows; val: 2 turns add 2 rows, 1 turn adds 3 rows; all family exact_track_request; distinct catalog entries, not duplicate pool rows"
+    },
+    "arithmetic": "1873 turns - 13 zero-add + 18 extra rows from multi-add = 1878",
+    "sidecar_family_counts": {
+      "train_lt": {
+        "exact_track_request": 1680,
+        "version_duplicate_equivalence": 5
+      },
+      "val": {
+        "exact_track_request": 215
+      }
+    }
+  }
+}

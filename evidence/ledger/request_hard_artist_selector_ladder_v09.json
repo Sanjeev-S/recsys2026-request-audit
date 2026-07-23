@@ -1,0 +1,185 @@
+{
+  "audit": "request-hard-artist-selector-ladder-v0.9",
+  "date": "2026-06-22",
+  "interpretation": {
+    "do_not_claim": "hard-artist is an admitted correction family",
+    "independent_label_scope": "Independent labels cover postrank selector changed rows only; learned-specialist action audits are detector-coupled mechanism checks, not independent changed-row precision.",
+    "paper_safe": "Hard-artist is useful supporting evidence: precision improves as the selector abstains, but coverage shrinks and the cleanest slice is post-hoc."
+  },
+  "rungs": [
+    {
+      "description": "strict hard-artist parser, top-20 promotion",
+      "dev": {
+        "changed": 8,
+        "changed_rate": 0.05925925925925926,
+        "directives": 135,
+        "present": 123,
+        "present_rate": 0.9111111111111111
+      },
+      "id": "broad_strict",
+      "name": "broad strict hard-artist",
+      "val": {
+        "changed": 50,
+        "changed_rate": 0.12919896640826872,
+        "changed_rows": 50,
+        "directives": 387,
+        "gold_satisfies_changed_rows": 5,
+        "gold_violates_changed_rows": 45,
+        "present": 332,
+        "present_rate": 0.8578811369509044
+      },
+      "val_label_audit": {
+        "action_ok_yes": 40,
+        "gold_should_not_remain_positive": 46,
+        "n": 50,
+        "promoted_satisfies_yes": 47,
+        "request_and_satisfaction_precision": {
+          "high": 0.956524876008429,
+          "low": 0.7863950966521162,
+          "point": 0.9
+        },
+        "request_and_satisfaction_successes": 45,
+        "strict_intervention_precision": {
+          "high": 0.8412862034863262,
+          "low": 0.6044657801100008,
+          "point": 0.74
+        },
+        "strict_intervention_successes": 37,
+        "valid_request_yes": 46
+      }
+    },
+    {
+      "description": "route exact-title turns to exact/version, then apply hard-artist promotion",
+      "dev": {
+        "changed": 8,
+        "changed_rate": 0.08695652173913043,
+        "directives": 92,
+        "present": 82,
+        "present_rate": 0.8913043478260869
+      },
+      "id": "noexact",
+      "name": "exclude exact-title turns",
+      "val": {
+        "changed": 33,
+        "changed_rate": 0.13524590163934427,
+        "changed_rows": 33,
+        "directives": 244,
+        "gold_satisfies_changed_rows": 4,
+        "gold_violates_changed_rows": 29,
+        "present": 199,
+        "present_rate": 0.8155737704918032
+      },
+      "val_label_audit": {
+        "action_ok_yes": 24,
+        "gold_should_not_remain_positive": 30,
+        "n": 33,
+        "promoted_satisfies_yes": 30,
+        "request_and_satisfaction_precision": {
+          "high": 0.9334964074203904,
+          "low": 0.6907978686153953,
+          "point": 0.8484848484848485
+        },
+        "request_and_satisfaction_successes": 28,
+        "strict_intervention_precision": {
+          "high": 0.7781303383204013,
+          "low": 0.46615872621534094,
+          "point": 0.6363636363636364
+        },
+        "strict_intervention_successes": 21,
+        "valid_request_yes": 29
+      }
+    },
+    {
+      "description": "exclude exact-title turns and abstain on visible title, album, era, lyric, and reference cues",
+      "dev": {
+        "changed": 4,
+        "changed_rate": 0.08,
+        "directives": 50,
+        "present": 44,
+        "present_rate": 0.88
+      },
+      "id": "simple_noexact",
+      "name": "simple/no-exact action selector",
+      "val": {
+        "changed": 13,
+        "changed_rate": 0.1566265060240964,
+        "changed_rows": 13,
+        "directives": 83,
+        "gold_satisfies_changed_rows": 2,
+        "gold_violates_changed_rows": 11,
+        "present": 65,
+        "present_rate": 0.7831325301204819
+      },
+      "val_label_audit": {
+        "action_ok_yes": 13,
+        "gold_should_not_remain_positive": 11,
+        "n": 13,
+        "promoted_satisfies_yes": 13,
+        "request_and_satisfaction_precision": {
+          "high": 0.9862899336203037,
+          "low": 0.6668546607175265,
+          "point": 0.9230769230769231
+        },
+        "request_and_satisfaction_successes": 12,
+        "strict_intervention_precision": {
+          "high": 0.9862899336203037,
+          "low": 0.6668546607175265,
+          "point": 0.9230769230769231
+        },
+        "strict_intervention_successes": 12,
+        "valid_request_yes": 12
+      }
+    }
+  ],
+  "simple_nonneg_sidecar": {
+    "devset": {
+      "dropped_by_reason": {
+        "not_simple_noexact_selector": 15
+      },
+      "input_records": 31,
+      "kept_rate": 0.5161290322580645,
+      "kept_records": 16,
+      "selector_keys_after_nonneg_filter": 49,
+      "selector_keys_before_nonneg_filter": 50
+    },
+    "train_lt": {
+      "dropped_by_reason": {
+        "negated_constraint_artist": 7,
+        "not_simple_noexact_selector": 1251
+      },
+      "input_records": 1587,
+      "kept_rate": 0.20730938878386893,
+      "kept_records": 329,
+      "selector_keys_after_nonneg_filter": 673,
+      "selector_keys_before_nonneg_filter": 715
+    },
+    "val": {
+      "dropped_by_reason": {
+        "negated_constraint_artist": 2,
+        "not_simple_noexact_selector": 121
+      },
+      "input_records": 155,
+      "kept_rate": 0.2064516129032258,
+      "kept_records": 32,
+      "selector_keys_after_nonneg_filter": 71,
+      "selector_keys_before_nonneg_filter": 83
+    }
+  },
+  "sources": [
+    "docs/evidence/request_hard_artist_strict_postrank_top20_rerank_F10_scaled_devset.summary.json",
+    "docs/evidence/request_hard_artist_strict_postrank_top20_rerank_F10_R54SRC_val.summary.json",
+    "docs/evidence/request_hard_artist_strict_top20_changed_rows_val_v09.summary.json",
+    "docs/evidence/request_hard_artist_strict_top20_changed_rows_val_labels_v09.summary.json",
+    "docs/evidence/request_hard_artist_strict_postrank_top20_noexact_rerank_F10_scaled_devset.summary.json",
+    "docs/evidence/request_hard_artist_strict_postrank_top20_noexact_rerank_F10_R54SRC_val.summary.json",
+    "docs/evidence/request_hard_artist_strict_top20_noexact_changed_rows_val_v09.summary.json",
+    "docs/evidence/request_hard_artist_strict_top20_noexact_changed_rows_val_labels_v09.summary.json",
+    "docs/evidence/request_hard_artist_strict_postrank_top20_simple_noexact_rerank_F10_scaled_devset.summary.json",
+    "docs/evidence/request_hard_artist_strict_postrank_top20_simple_noexact_rerank_F10_R54SRC_val.summary.json",
+    "docs/evidence/request_hard_artist_strict_top20_simple_noexact_changed_rows_val_v09.summary.json",
+    "docs/evidence/request_hard_artist_strict_top20_simple_noexact_changed_rows_val_labels_v09.summary.json",
+    "docs/evidence/request_corrections_train_lt_v09_simple_nonneg_hard_artist_only.summary.json",
+    "docs/evidence/request_corrections_devset_v09_simple_nonneg_hard_artist_only.summary.json",
+    "docs/evidence/request_corrections_val_v09_simple_nonneg_hard_artist_only.summary.json"
+  ]
+}

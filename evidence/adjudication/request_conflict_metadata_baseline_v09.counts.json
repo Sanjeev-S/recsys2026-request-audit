@@ -1,0 +1,14 @@
+{
+  "counts": {
+    "n": 94,
+    "same_album": 26,
+    "same_artist": 51,
+    "same_release_year": 31
+  },
+  "rates": {
+    "same_album": 0.2765957446808511,
+    "same_artist": 0.5425531914893617,
+    "same_release_year": 0.32978723404255317
+  },
+  "release_note": "rows/examples removed for release (embedded dialogue text and track metadata); counts include same_canonical_title=0 of 94"
+}

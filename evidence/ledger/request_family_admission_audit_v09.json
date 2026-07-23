@@ -1,0 +1,173 @@
+{
+  "admission_bar": [
+    "detector/action precision",
+    "official preservation",
+    "corrected improvement",
+    "request-satisfying behavior",
+    "non-oracle inference",
+    "frozen transfer"
+  ],
+  "audit": "request-family-admission-v0.9",
+  "conclusion": "Exact/version passes the current development gates with frozen transfer pending. Hard-artist provides supporting learned evidence but is not admitted. Switch-away remains a diagnostic negative. Additional candidate families were mined under the same screening workflow but withheld from admission when they lacked safe actions or trusted target sets.",
+  "date": "2026-06-22",
+  "families": [
+    {
+      "decision": "passes_development_gates_transfer_pending",
+      "family": "exact/version",
+      "gates": {
+        "action_precision": {
+          "evidence": "106/107 (0.991 [0.949, 0.998]); LLM adjudication chose request 94/94 (1.000 [0.961, 1.000]); duplicate baseline same canonical title 0/94",
+          "source": "docs/evidence/request_paper_tables_v09.json",
+          "status": "pass"
+        },
+        "corrected_improvement": {
+          "evidence": "dev +0.00344 [+0.00213, +0.00494]; val +0.00465 [+0.00350, +0.00594]",
+          "source": "docs/evidence/request_paper_tables_v09.json",
+          "status": "pass"
+        },
+        "detector_validity": {
+          "evidence": "24/25 (0.960 [0.805, 0.993]); frame ablation 37/40 strict positives vs 3/80 controls; title overlap 37/37",
+          "source": "docs/evidence/request_detector_validity_capsule_v09.json",
+          "status": "pass"
+        },
+        "frozen_transfer": {
+          "evidence": "Blind B pending_only_feature_parquet; Blind A rehearsal request-first 1/2 -> 2/2",
+          "source": "docs/evidence/request_transfer_evidence_capsule_v09.json",
+          "status": "pending_external_dependency"
+        },
+        "non_oracle_inference": {
+          "evidence": "uses visible dialogue, catalog metadata, candidate membership, and model scores only",
+          "source": "docs/evidence/request_family_label_contract_v09.md",
+          "status": "pass"
+        },
+        "official_preservation": {
+          "evidence": "dev +0.00068 [+0.00017, +0.00130]; val -0.00013 [-0.00052, +0.00026]",
+          "source": "docs/evidence/request_paper_tables_v09.json",
+          "status": "pass"
+        },
+        "request_behavior": {
+          "evidence": "request-first dev 40/82 -> 82/82; val 121/247 -> 246/247",
+          "source": "docs/evidence/request_paper_tables_v09.json",
+          "status": "pass"
+        }
+      },
+      "paper_claim": "main development family; request-positive training result"
+    },
+    {
+      "decision": "supporting_training_evidence_not_admitted",
+      "family": "hard artist simple/non-negated",
+      "gates": {
+        "action_precision": {
+          "evidence": "selector ladder broad 37/50 -> simple/no-exact 12/13 strict precision, but simple changes only 13 val rows and independent labels cover postrank changed rows only",
+          "source": "docs/evidence/request_hard_artist_selector_ladder_v09.md",
+          "status": "partial"
+        },
+        "control_check": {
+          "evidence": "official-label control dev -0.00006 [-0.00049, +0.00039]; val -0.00017 [-0.00041, +0.00007]",
+          "source": "docs/evidence/request_paper_tables_v09.json",
+          "status": "supporting"
+        },
+        "corrected_improvement": {
+          "evidence": "dev +0.00089 [+0.00031, +0.00160]; val +0.00047 [+0.00014, +0.00085]",
+          "source": "docs/evidence/request_paper_tables_v09.json",
+          "status": "pass"
+        },
+        "detector_validity": {
+          "evidence": "broad action precision 37/50; simple abstaining selector 12/13 on existing labels",
+          "source": "docs/evidence/request_hard_artist_strict_top20_simple_noexact_changed_rows_val_labels_v09.summary.json",
+          "status": "partial"
+        },
+        "frozen_transfer": {
+          "evidence": "v0.10 hard protocol is frozen as a candidate; untouched transfer not run",
+          "source": "docs/evidence/request_hard_artist_v010_freeze_protocol.md",
+          "status": "candidate_not_run"
+        },
+        "non_oracle_inference": {
+          "evidence": "simple selector uses visible dialogue and catalog metadata only",
+          "source": "docs/evidence/request_hard_simple_nonneg_training_v09.md",
+          "status": "pass"
+        },
+        "official_preservation": {
+          "evidence": "dev +0.00012 [-0.00015, +0.00045]; val -0.00032 [-0.00059, -0.00007]",
+          "source": "docs/evidence/request_paper_tables_v09.json",
+          "status": "pass"
+        },
+        "request_behavior": {
+          "evidence": "top-1 satisfaction dev +9 (+18.4%); val +18 (+25.4%)",
+          "source": "docs/evidence/request_paper_tables_v09.json",
+          "status": "supporting"
+        }
+      },
+      "paper_claim": "supports breadth of proxy-boundary mechanism; not a correction family yet"
+    },
+    {
+      "decision": "diagnostic_negative_no_main_fix",
+      "family": "rejection/switch-away",
+      "gates": {
+        "action_precision": {
+          "evidence": "violation@1 0.964 -> 0.214, but violation@20 1.000 -> 1.000; gold moved down 21/28; oracle sidecar top-100 clean-top20 feasible 0/28",
+          "source": "docs/evidence/request_switchaway_strict_oracle_top100_bound_v09.json",
+          "status": "fail"
+        },
+        "corrected_improvement": {
+          "evidence": "corrected -0.00099 [-0.00191, -0.00029]; switch-family -0.21058 [-0.31558, -0.11139]",
+          "source": "docs/evidence/request_switchaway_strict_top100_bootstrap_vs_rerank_F10_scaled_strict_switch_v09.json",
+          "status": "fail"
+        },
+        "detector_validity": {
+          "evidence": "strict predicate retained 20 valid rows and dropped 5 invalid rows on inspected sample",
+          "source": "docs/evidence/request_switchaway_strict_v09.md",
+          "status": "diagnostic"
+        },
+        "frozen_transfer": {
+          "evidence": "no admitted switch-away action to transfer",
+          "source": "docs/evidence/request_switchaway_strict_v09.md",
+          "status": "not_ready"
+        },
+        "non_oracle_inference": {
+          "evidence": "suppression uses visible dialogue and predicted candidate metadata, not labels",
+          "source": "docs/evidence/request_switchaway_strict_v09.md",
+          "status": "pass"
+        },
+        "official_preservation": {
+          "evidence": "official -0.00090 [-0.00181, -0.00021]",
+          "source": "docs/evidence/request_switchaway_strict_top100_bootstrap_vs_rerank_F10_scaled_strict_switch_v09.json",
+          "status": "fail"
+        }
+      },
+      "paper_claim": "visible boundary probe; current correction does not jointly preserve official score and satisfy request"
+    }
+  ],
+  "mined_not_admitted": [
+    {
+      "counts": {
+        "devset": 0,
+        "train_lt": 77,
+        "val": 7
+      },
+      "decision": "mined_not_admitted",
+      "family": "hard album constraint",
+      "reason": "The current parser finds real album conflicts, but fuzzy album-name resolution also produces visible false actions. On val, only 3/7 album constraints resolve to an album string literally present in the request, and 4/7 have low token overlap with the visible request. On train, 7/77 album sidecar actions would mask a gold item whose metadata already satisfies the parsed album."
+    },
+    {
+      "counts": {
+        "devset": 189,
+        "train_lt": 5110,
+        "val": 783
+      },
+      "decision": "mined_not_admitted",
+      "family": "hard year/decade constraint",
+      "reason": "The enabled detector has broad coverage but weak action semantics: release_date can mean reissue or catalog date, open-ended era requests are treated as hard single intervals, and the current parser truncates ranges such as 2014-2015 to the first year."
+    },
+    {
+      "counts": {
+        "devset": 6678,
+        "train_lt": 87136,
+        "val": 13374
+      },
+      "decision": "not_admitted_no_reusable_target_set",
+      "family": "genre, mood, instrumentation, language, popularity",
+      "reason": "These requests are frequent and important, but the current catalog does not expose high-precision fields that turn them into reusable request-satisfying target sets without model or human adjudication."
+    }
+  ]
+}

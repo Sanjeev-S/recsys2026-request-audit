@@ -1,0 +1,219 @@
+{
+  "allowed_inference_inputs": [
+    "visible dialogue",
+    "track catalog metadata",
+    "candidate-pool membership",
+    "official-model scores",
+    "request-specialist scores"
+  ],
+  "audit": "request-non-oracle-input-audit-v0.9",
+  "blind_b_preregistration": {
+    "claim": "Frozen exact/version protocol should transfer visible request-first improvements to an untouched split without label, sidecar, trace, or leaderboard inputs.",
+    "invalid_if": [
+      "parser/model/ranking code edited before the run",
+      "Blind B labels, sidecars, traces, or leaderboard feedback used to alter the protocol",
+      "first run discarded and replaced by a tuned rerun"
+    ],
+    "protocol": "request-exact-transfer-v0.9-blind-b-preregistered",
+    "target_split": "blindset_B"
+  },
+  "date": "2026-06-22",
+  "family_decisions": {
+    "exact/version": "passes_development_gates_transfer_pending",
+    "hard artist simple/non-negated": "supporting_training_evidence_not_admitted",
+    "rejection/switch-away": "diagnostic_negative_no_main_fix"
+  },
+  "forbidden_inference_inputs": [
+    "official policy-selected labels",
+    "request-correction sidecars",
+    "auxiliary request-positive metrics",
+    "LLM adjudication labels",
+    "synthetic thought traces",
+    "Blind B leaderboard feedback for parser/model selection"
+  ],
+  "inference_components": [
+    {
+      "allowed_inputs": [
+        "visible dialogue",
+        "track catalog metadata",
+        "candidate-pool membership",
+        "official-model scores",
+        "request-specialist scores"
+      ],
+      "component": "visible exact/version request detector",
+      "forbidden_inputs": [
+        "official policy-selected labels",
+        "request-correction sidecars",
+        "auxiliary request-positive metrics",
+        "LLM adjudication labels",
+        "synthetic thought traces",
+        "Blind B leaderboard feedback for parser/model selection"
+      ],
+      "phase": "inference",
+      "role": "detects user-facing exact-title or version-equivalent requests",
+      "source": "docs/evidence/request_family_label_contract_v09.md",
+      "verdict": "pass"
+    },
+    {
+      "allowed_inputs": [
+        "visible dialogue",
+        "track catalog metadata",
+        "candidate-pool membership",
+        "official-model scores",
+        "request-specialist scores"
+      ],
+      "component": "catalog resolver and exact_request_match feature",
+      "forbidden_inputs": [
+        "official policy-selected labels",
+        "request-correction sidecars",
+        "auxiliary request-positive metrics",
+        "LLM adjudication labels",
+        "synthetic thought traces",
+        "Blind B leaderboard feedback for parser/model selection"
+      ],
+      "phase": "inference",
+      "role": "marks candidate tracks that satisfy the visible request",
+      "source": "docs/evidence/request_training_provenance_manifest_v09.json",
+      "verdict": "pass"
+    },
+    {
+      "allowed_inputs": [
+        "visible dialogue",
+        "track catalog metadata",
+        "candidate-pool membership",
+        "official-model scores",
+        "request-specialist scores"
+      ],
+      "component": "transparent full-pool promotion rule",
+      "forbidden_inputs": [
+        "official policy-selected labels",
+        "request-correction sidecars",
+        "auxiliary request-positive metrics",
+        "LLM adjudication labels",
+        "synthetic thought traces",
+        "Blind B leaderboard feedback for parser/model selection"
+      ],
+      "phase": "inference",
+      "role": "orders exact-match candidates by the official model score",
+      "source": "docs/evidence/request_exact_transfer_protocol_v09.md",
+      "verdict": "pass"
+    },
+    {
+      "allowed_inputs": [
+        "visible dialogue",
+        "track catalog metadata",
+        "candidate-pool membership",
+        "official-model scores",
+        "request-specialist scores"
+      ],
+      "component": "learned exact/version specialist",
+      "forbidden_inputs": [
+        "official policy-selected labels",
+        "request-correction sidecars",
+        "auxiliary request-positive metrics",
+        "LLM adjudication labels",
+        "synthetic thought traces",
+        "Blind B leaderboard feedback for parser/model selection"
+      ],
+      "phase": "inference",
+      "role": "scores the same candidate pool with the frozen request specialist",
+      "source": "docs/evidence/request_training_provenance_manifest_v09.json",
+      "verdict": "pass"
+    },
+    {
+      "allowed_inputs": [
+        "visible dialogue",
+        "track catalog metadata",
+        "candidate-pool membership",
+        "official-model scores",
+        "request-specialist scores"
+      ],
+      "component": "pre-registered Blind B transfer command",
+      "forbidden_inputs": [
+        "official policy-selected labels",
+        "request-correction sidecars",
+        "auxiliary request-positive metrics",
+        "LLM adjudication labels",
+        "synthetic thought traces",
+        "Blind B leaderboard feedback for parser/model selection"
+      ],
+      "phase": "inference",
+      "role": "runs the frozen detector and rankers on an untouched split",
+      "source": "docs/evidence/request_blind_b_transfer_preregistration_v09.json",
+      "verdict": "protocol_pass_run_pending"
+    }
+  ],
+  "offline_only_components": [
+    {
+      "allowed_offline_inputs": [
+        "visible dialogue",
+        "track catalog metadata",
+        "candidate-pool membership",
+        "training split official labels"
+      ],
+      "component": "request-positive sidecar construction",
+      "not_inference_input": true,
+      "phase": "training/evaluation",
+      "role": "constructs additional positives for admitted families and auxiliary request-positive metrics",
+      "source": "docs/evidence/request_family_label_contract_v09.md"
+    },
+    {
+      "allowed_offline_inputs": [
+        "official labels",
+        "request-positive sidecars",
+        "system predictions"
+      ],
+      "component": "auxiliary request-positive nDCG and bootstrap readouts",
+      "not_inference_input": true,
+      "phase": "evaluation",
+      "role": "scores whether request-satisfying targets are ranked well",
+      "source": "docs/evidence/request_training_claim_ledger_v09.json"
+    },
+    {
+      "allowed_offline_inputs": [
+        "sampled conflict rows",
+        "visible dialogue",
+        "catalog metadata"
+      ],
+      "component": "LLM adjudication labels",
+      "not_inference_input": true,
+      "phase": "validation/audit",
+      "role": "validates the request-positive scoring contract on inspected examples",
+      "source": "docs/evidence/request_paper_tables_v09.json"
+    },
+    {
+      "allowed_offline_inputs": [
+        "released synthetic thought traces",
+        "visible dialogue",
+        "policy-selected titles"
+      ],
+      "component": "synthetic thought trace audit",
+      "not_inference_input": true,
+      "phase": "audit/prose",
+      "role": "supports the policy-selected-label vocabulary only",
+      "source": "docs/evidence/request_trace_boundary_examples_v09.json"
+    }
+  ],
+  "purpose": "Make explicit which inputs are allowed at inference and which evidence sources are offline-only.",
+  "reviewer_answer": [
+    "The learned module is trained with sidecar labels, but sidecars are not inference inputs.",
+    "Corrected metrics and adjudication labels are evaluation evidence, not model-selection inputs on blind transfer.",
+    "Synthetic thought traces are used only for offline framing examples, never for deployed detection or ranking.",
+    "The Blind B transfer command forbids labels, sidecars, traces, auxiliary request-positive metrics, adjudication labels, and leaderboard feedback."
+  ],
+  "scope": {
+    "evaluation_can_use_sidecars": true,
+    "inference_can_use_sidecars_or_traces": false,
+    "paper_safe_center": "Exact/version passes the development gates and is the main training result; hard constraints are supporting; switch-away is diagnostic negative; Blind B transfer is pending.",
+    "training_can_use_labels": true
+  },
+  "source_artifacts": [
+    "docs/evidence/request_blind_b_transfer_preregistration_v09.json",
+    "docs/evidence/request_training_provenance_manifest_v09.json",
+    "docs/evidence/request_family_admission_audit_v09.json",
+    "docs/evidence/request_goal_completion_audit_v09.json",
+    "docs/evidence/request_family_label_contract_v09.md",
+    "docs/evidence/request_exact_transfer_protocol_v09.md"
+  ],
+  "verdict": "pass_for_declared_inference_scope"
+}

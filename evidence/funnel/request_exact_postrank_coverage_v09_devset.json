@@ -1,0 +1,1162 @@
+{
+  "category_counts": {
+    "already_front": 46,
+    "not_retrieved_topk": 17,
+    "promoted": 19
+  },
+  "category_rates": {
+    "already_front": 0.5609756097560976,
+    "not_retrieved_topk": 0.2073170731707317,
+    "promoted": 0.23170731707317074
+  },
+  "gold_status_counts": {
+    "gold_differs": 41,
+    "gold_requested": 41
+  },
+  "gold_status_rates": {
+    "gold_differs": 0.5,
+    "gold_requested": 0.5
+  },
+  "k_search": 100,
+  "max_sessions": null,
+  "n_directives": 82,
+  "prediction_path": "exp/inference/devset/rerank_F10_scaled_devset.json",
+  "rank_bucket_counts": {
+    "1": 46,
+    "2-5": 8,
+    "6-20": 11,
+    ">100/missing": 17
+  },
+  "rank_bucket_rates": {
+    "1": 0.5609756097560976,
+    "2-5": 0.0975609756097561,
+    "6-20": 0.13414634146341464,
+    ">100/missing": 0.2073170731707317
+  },
+  "requested_title_count_distribution": {
+    "1": 81,
+    "2": 1
+  },
+  "restored": {
+    "date": "2026-07-23",
+    "note": "frozen original lost; regenerated from the same prediction file (exp/inference/devset/rerank_F10_scaled_devset.json); matches locked-table coverage exactly (46 already_front / 19 promoted / 17 missing_top100; 82 directives, 41 gold_differs)"
+  },
+  "rows": [
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "ca980ee4-8e11-4560-8e0b-e56c9c863a85",
+      "promoted_track_ids": [
+        "ca980ee4-8e11-4560-8e0b-e56c9c863a85"
+      ],
+      "requested_track_ids": [
+        "ca980ee4-8e11-4560-8e0b-e56c9c863a85"
+      ],
+      "session_id": "00c4232f-d8d9-4a39-b444-fdd182ccd345",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "ffc14c3d-21b1-4938-b58e-28c21c4d39a3",
+      "promoted_track_ids": [
+        "ffc14c3d-21b1-4938-b58e-28c21c4d39a3"
+      ],
+      "requested_track_ids": [
+        "ffc14c3d-21b1-4938-b58e-28c21c4d39a3"
+      ],
+      "session_id": "0681d55b-98a0-4773-a9df-075a8050d805",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_differs",
+      "gold_track_id": "bf82355f-0c5f-4409-8da7-705a35f520df",
+      "promoted_track_ids": [
+        "4939c910-10a0-48f9-82bf-027520fea9aa"
+      ],
+      "requested_track_ids": [
+        "4939c910-10a0-48f9-82bf-027520fea9aa"
+      ],
+      "session_id": "09abaffa-dc54-4fee-9b54-2bca234ec4db",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "7bec992f-0388-44eb-9dc0-bc28bfeff90f",
+      "promoted_track_ids": [
+        "7bec992f-0388-44eb-9dc0-bc28bfeff90f"
+      ],
+      "requested_track_ids": [
+        "7bec992f-0388-44eb-9dc0-bc28bfeff90f"
+      ],
+      "session_id": "0b1fcd21-f0d7-4710-a08f-5f2affe38279",
+      "turn_number": 1
+    },
+    {
+      "best_rank": null,
+      "category": "not_retrieved_topk",
+      "gold_status": "gold_differs",
+      "gold_track_id": "a88ddcad-66c1-4464-8618-fb72deea6b50",
+      "promoted_track_ids": [],
+      "requested_track_ids": [
+        "b0c176b2-f0ea-4d53-ba7a-2835e22f75eb"
+      ],
+      "session_id": "0cd2c467-3d37-49b2-8e06-3c31191c3700",
+      "turn_number": 2
+    },
+    {
+      "best_rank": null,
+      "category": "not_retrieved_topk",
+      "gold_status": "gold_differs",
+      "gold_track_id": "1a1b8a69-adc4-4477-96a4-028846ebdf29",
+      "promoted_track_ids": [],
+      "requested_track_ids": [
+        "244ec967-9e6f-4bb2-9ac4-410b0be0c54d"
+      ],
+      "session_id": "1271f258-7501-4c27-876f-528e94a64280",
+      "turn_number": 4
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "924d23c0-4a31-44f6-a278-5ddd07daf23e",
+      "promoted_track_ids": [
+        "924d23c0-4a31-44f6-a278-5ddd07daf23e"
+      ],
+      "requested_track_ids": [
+        "924d23c0-4a31-44f6-a278-5ddd07daf23e"
+      ],
+      "session_id": "157bdbb7-31a4-44aa-b54d-511bbc8c5b2c",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "7b805a8e-85da-4519-ba2c-6cbeda98e1a8",
+      "promoted_track_ids": [
+        "7b805a8e-85da-4519-ba2c-6cbeda98e1a8"
+      ],
+      "requested_track_ids": [
+        "7b805a8e-85da-4519-ba2c-6cbeda98e1a8"
+      ],
+      "session_id": "18389712-d724-4b99-8f04-d1a94324d813",
+      "turn_number": 2
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "998ccf59-814c-4a87-9733-9e1e7a2e891b",
+      "promoted_track_ids": [
+        "998ccf59-814c-4a87-9733-9e1e7a2e891b"
+      ],
+      "requested_track_ids": [
+        "998ccf59-814c-4a87-9733-9e1e7a2e891b"
+      ],
+      "session_id": "196fa0b3-6b4a-4500-96cc-03772919e161",
+      "turn_number": 2
+    },
+    {
+      "best_rank": 6,
+      "category": "promoted",
+      "gold_status": "gold_requested",
+      "gold_track_id": "c7d9b26f-4048-445a-853c-c56aba0c1ae5",
+      "promoted_track_ids": [
+        "c7d9b26f-4048-445a-853c-c56aba0c1ae5"
+      ],
+      "requested_track_ids": [
+        "c7d9b26f-4048-445a-853c-c56aba0c1ae5"
+      ],
+      "session_id": "20486195-9834-426e-a64b-d278f1cb7df8",
+      "turn_number": 6
+    },
+    {
+      "best_rank": 2,
+      "category": "promoted",
+      "gold_status": "gold_requested",
+      "gold_track_id": "8b460aae-030e-4eea-ab16-297da6001dbd",
+      "promoted_track_ids": [
+        "8b460aae-030e-4eea-ab16-297da6001dbd"
+      ],
+      "requested_track_ids": [
+        "8b460aae-030e-4eea-ab16-297da6001dbd"
+      ],
+      "session_id": "20486195-9834-426e-a64b-d278f1cb7df8",
+      "turn_number": 7
+    },
+    {
+      "best_rank": 2,
+      "category": "promoted",
+      "gold_status": "gold_differs",
+      "gold_track_id": "32395231-9b68-4215-8af1-35b91448a963",
+      "promoted_track_ids": [
+        "b5ef4483-61f7-49a1-bf92-90fcac8c0b43"
+      ],
+      "requested_track_ids": [
+        "b5ef4483-61f7-49a1-bf92-90fcac8c0b43"
+      ],
+      "session_id": "20486195-9834-426e-a64b-d278f1cb7df8",
+      "turn_number": 8
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "79acbd8e-d2f9-47c9-8a76-1fd94cf3bda1",
+      "promoted_track_ids": [
+        "79acbd8e-d2f9-47c9-8a76-1fd94cf3bda1"
+      ],
+      "requested_track_ids": [
+        "79acbd8e-d2f9-47c9-8a76-1fd94cf3bda1"
+      ],
+      "session_id": "2c03cbbe-ea58-4878-b2f8-970b2f146607",
+      "turn_number": 1
+    },
+    {
+      "best_rank": null,
+      "category": "not_retrieved_topk",
+      "gold_status": "gold_differs",
+      "gold_track_id": "9fa81260-2bc3-4fd3-a4d9-8cfb6aec4174",
+      "promoted_track_ids": [],
+      "requested_track_ids": [
+        "76182e1e-f41f-4988-87b9-daa849bc1d3b"
+      ],
+      "session_id": "31f6102b-5344-4eb6-8dd4-6a572db93a11",
+      "turn_number": 4
+    },
+    {
+      "best_rank": null,
+      "category": "not_retrieved_topk",
+      "gold_status": "gold_differs",
+      "gold_track_id": "f6756025-861a-49a6-b8e5-d5e7d4653507",
+      "promoted_track_ids": [],
+      "requested_track_ids": [
+        "fe6ef1cd-577f-4569-85b4-a8820f9cf737"
+      ],
+      "session_id": "341c2cf2-1336-460d-95df-93b518f64a75",
+      "turn_number": 2
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "d01f4669-8ba1-426c-8142-a9716d4efb2e",
+      "promoted_track_ids": [
+        "d01f4669-8ba1-426c-8142-a9716d4efb2e"
+      ],
+      "requested_track_ids": [
+        "d01f4669-8ba1-426c-8142-a9716d4efb2e"
+      ],
+      "session_id": "352c0e6e-c1e7-4c68-a8cb-8e282a34a56e",
+      "turn_number": 2
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "81a29e13-6c17-4b60-a0dd-9f45b589b8df",
+      "promoted_track_ids": [
+        "81a29e13-6c17-4b60-a0dd-9f45b589b8df"
+      ],
+      "requested_track_ids": [
+        "81a29e13-6c17-4b60-a0dd-9f45b589b8df"
+      ],
+      "session_id": "3664db63-1623-4ae7-9910-dd8bc3c2bd83",
+      "turn_number": 1
+    },
+    {
+      "best_rank": null,
+      "category": "not_retrieved_topk",
+      "gold_status": "gold_differs",
+      "gold_track_id": "5c899f29-c3b1-40ae-abd9-3830bbf8530e",
+      "promoted_track_ids": [],
+      "requested_track_ids": [
+        "ef42ab71-0775-4790-8d09-d608e1ac4ac2"
+      ],
+      "session_id": "3cb43df7-f840-448b-b782-db6f37563346",
+      "turn_number": 2
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_differs",
+      "gold_track_id": "47090bf8-4f42-4c47-a3f9-2b77c35fdf84",
+      "promoted_track_ids": [
+        "871a66c8-14f9-455b-8c17-4d941ad1e3b9"
+      ],
+      "requested_track_ids": [
+        "871a66c8-14f9-455b-8c17-4d941ad1e3b9"
+      ],
+      "session_id": "3e63dac0-1638-49f1-9d3d-43d81bcc0497",
+      "turn_number": 3
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "5ab8ed3c-99ae-404d-b9e2-fc3903433ce2",
+      "promoted_track_ids": [
+        "5ab8ed3c-99ae-404d-b9e2-fc3903433ce2"
+      ],
+      "requested_track_ids": [
+        "5ab8ed3c-99ae-404d-b9e2-fc3903433ce2"
+      ],
+      "session_id": "3e851e76-ba2a-411c-98be-e1e3c0f7b1a8",
+      "turn_number": 1
+    },
+    {
+      "best_rank": null,
+      "category": "not_retrieved_topk",
+      "gold_status": "gold_differs",
+      "gold_track_id": "ddf24993-46fc-4e13-8dd9-599becb28072",
+      "promoted_track_ids": [],
+      "requested_track_ids": [
+        "20e395f3-cefa-444d-9dfc-786fbf26724f"
+      ],
+      "session_id": "3f0bea58-4b1b-4bce-a965-86f7b9a88020",
+      "turn_number": 2
+    },
+    {
+      "best_rank": null,
+      "category": "not_retrieved_topk",
+      "gold_status": "gold_differs",
+      "gold_track_id": "1c810dc7-482f-459f-bc7d-f577c3bd21fa",
+      "promoted_track_ids": [],
+      "requested_track_ids": [
+        "20e395f3-cefa-444d-9dfc-786fbf26724f"
+      ],
+      "session_id": "3f0bea58-4b1b-4bce-a965-86f7b9a88020",
+      "turn_number": 3
+    },
+    {
+      "best_rank": null,
+      "category": "not_retrieved_topk",
+      "gold_status": "gold_differs",
+      "gold_track_id": "b5f23d59-9993-4fb8-89b0-c844f88242fd",
+      "promoted_track_ids": [],
+      "requested_track_ids": [
+        "20e395f3-cefa-444d-9dfc-786fbf26724f"
+      ],
+      "session_id": "3f0bea58-4b1b-4bce-a965-86f7b9a88020",
+      "turn_number": 4
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "f25cd0ea-9986-44e3-a805-a09094c3aa56",
+      "promoted_track_ids": [
+        "f25cd0ea-9986-44e3-a805-a09094c3aa56"
+      ],
+      "requested_track_ids": [
+        "4c729be5-c1f2-4914-b14f-a7fd65f0082d",
+        "f25cd0ea-9986-44e3-a805-a09094c3aa56"
+      ],
+      "session_id": "42a7236f-cd85-46da-9d72-731f6b8a760a",
+      "turn_number": 2
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_differs",
+      "gold_track_id": "6aadeebf-c080-4d9c-a82a-101e8c11df38",
+      "promoted_track_ids": [
+        "d26d737d-7ca1-4ab5-bb94-d0fe6679b8ac"
+      ],
+      "requested_track_ids": [
+        "d26d737d-7ca1-4ab5-bb94-d0fe6679b8ac"
+      ],
+      "session_id": "45d93bd0-4587-4d5a-afe8-81304f486714",
+      "turn_number": 1
+    },
+    {
+      "best_rank": null,
+      "category": "not_retrieved_topk",
+      "gold_status": "gold_differs",
+      "gold_track_id": "40a5ed29-f28d-417b-8052-286a88b33c5b",
+      "promoted_track_ids": [],
+      "requested_track_ids": [
+        "da6d149f-bc9d-4687-9053-cfb77ac1a2e8"
+      ],
+      "session_id": "48983d67-9569-4eb2-97a5-d99360e83f2c",
+      "turn_number": 3
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_differs",
+      "gold_track_id": "b77a7122-d956-467e-a2a5-2a70e48f0aa3",
+      "promoted_track_ids": [
+        "d2caa012-7420-4bcd-817c-37b96e5fe3e1"
+      ],
+      "requested_track_ids": [
+        "d2caa012-7420-4bcd-817c-37b96e5fe3e1"
+      ],
+      "session_id": "4907e3a7-73d6-4236-ad32-50d46c9bcb30",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 9,
+      "category": "promoted",
+      "gold_status": "gold_differs",
+      "gold_track_id": "c319cc63-e9fa-47a0-b6a3-14d6d374f1ea",
+      "promoted_track_ids": [
+        "d2caa012-7420-4bcd-817c-37b96e5fe3e1"
+      ],
+      "requested_track_ids": [
+        "d2caa012-7420-4bcd-817c-37b96e5fe3e1"
+      ],
+      "session_id": "4907e3a7-73d6-4236-ad32-50d46c9bcb30",
+      "turn_number": 6
+    },
+    {
+      "best_rank": 8,
+      "category": "promoted",
+      "gold_status": "gold_differs",
+      "gold_track_id": "77457343-e424-4421-a163-d266b7b33482",
+      "promoted_track_ids": [
+        "d2caa012-7420-4bcd-817c-37b96e5fe3e1"
+      ],
+      "requested_track_ids": [
+        "d2caa012-7420-4bcd-817c-37b96e5fe3e1"
+      ],
+      "session_id": "4907e3a7-73d6-4236-ad32-50d46c9bcb30",
+      "turn_number": 7
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "3c3b7444-6cf2-44eb-95d4-1b917a4293be",
+      "promoted_track_ids": [
+        "3c3b7444-6cf2-44eb-95d4-1b917a4293be"
+      ],
+      "requested_track_ids": [
+        "3c3b7444-6cf2-44eb-95d4-1b917a4293be"
+      ],
+      "session_id": "4ec03a54-77a8-47bd-bf16-279b5a6d79a3",
+      "turn_number": 5
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "bc7fa5d2-8056-4561-ae81-56b582ff3b90",
+      "promoted_track_ids": [
+        "bc7fa5d2-8056-4561-ae81-56b582ff3b90"
+      ],
+      "requested_track_ids": [
+        "bc7fa5d2-8056-4561-ae81-56b582ff3b90"
+      ],
+      "session_id": "559d063a-9273-4dfb-9e05-e46f844e78f7",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "65684167-c4f8-41a6-ae59-f2d7eab7f6e3",
+      "promoted_track_ids": [
+        "65684167-c4f8-41a6-ae59-f2d7eab7f6e3"
+      ],
+      "requested_track_ids": [
+        "65684167-c4f8-41a6-ae59-f2d7eab7f6e3"
+      ],
+      "session_id": "61b2988c-b5e0-40bd-9f19-3f043ae3e77a",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_differs",
+      "gold_track_id": "323a5e20-de31-4ecf-9f05-e0e77a57c8bf",
+      "promoted_track_ids": [
+        "1c48f4ae-a6e9-4ba6-9381-99f806234e18"
+      ],
+      "requested_track_ids": [
+        "1c48f4ae-a6e9-4ba6-9381-99f806234e18"
+      ],
+      "session_id": "61b2988c-b5e0-40bd-9f19-3f043ae3e77a",
+      "turn_number": 2
+    },
+    {
+      "best_rank": null,
+      "category": "not_retrieved_topk",
+      "gold_status": "gold_differs",
+      "gold_track_id": "b85324fe-6d92-4462-9c2c-d148b337c2f8",
+      "promoted_track_ids": [],
+      "requested_track_ids": [
+        "ea174b42-a9bc-46d3-a215-9cf8a9e9a1db"
+      ],
+      "session_id": "63948e7e-ff5f-41cf-9540-35a0ef0395b9",
+      "turn_number": 4
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "005b6b99-a361-482f-b75e-7a0bc7d5c344",
+      "promoted_track_ids": [
+        "005b6b99-a361-482f-b75e-7a0bc7d5c344"
+      ],
+      "requested_track_ids": [
+        "005b6b99-a361-482f-b75e-7a0bc7d5c344"
+      ],
+      "session_id": "658f10ba-b6ca-4ddd-a4de-9235ad8773b1",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "746e4212-3d49-4d04-adc5-3a67dd8d2954",
+      "promoted_track_ids": [
+        "746e4212-3d49-4d04-adc5-3a67dd8d2954"
+      ],
+      "requested_track_ids": [
+        "746e4212-3d49-4d04-adc5-3a67dd8d2954"
+      ],
+      "session_id": "671a3d59-fd85-4871-b3fa-949e1d4ce4c0",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 5,
+      "category": "promoted",
+      "gold_status": "gold_differs",
+      "gold_track_id": "1a5c7905-8e3b-4ca8-8bdc-2e49eb38f90d",
+      "promoted_track_ids": [
+        "7ec73e11-683f-4f5f-9d24-8c3abee8e2aa"
+      ],
+      "requested_track_ids": [
+        "7ec73e11-683f-4f5f-9d24-8c3abee8e2aa"
+      ],
+      "session_id": "711a7a42-927e-4e45-821c-908b29ffe3a9",
+      "turn_number": 3
+    },
+    {
+      "best_rank": 10,
+      "category": "promoted",
+      "gold_status": "gold_requested",
+      "gold_track_id": "1e590aad-bbb0-47fe-ad65-fb7d028a9f1b",
+      "promoted_track_ids": [
+        "1e590aad-bbb0-47fe-ad65-fb7d028a9f1b"
+      ],
+      "requested_track_ids": [
+        "1e590aad-bbb0-47fe-ad65-fb7d028a9f1b"
+      ],
+      "session_id": "72d67157-8b1c-4654-99ea-beacda87802a",
+      "turn_number": 6
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "c40829ba-62eb-46a3-b39c-36d407648bad",
+      "promoted_track_ids": [
+        "c40829ba-62eb-46a3-b39c-36d407648bad"
+      ],
+      "requested_track_ids": [
+        "c40829ba-62eb-46a3-b39c-36d407648bad"
+      ],
+      "session_id": "76d5b03e-08c9-46bb-bf7b-b842f1cbec8e",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "a9e37ddd-a793-4fb4-9103-1f9912ab9f0e",
+      "promoted_track_ids": [
+        "a9e37ddd-a793-4fb4-9103-1f9912ab9f0e"
+      ],
+      "requested_track_ids": [
+        "a9e37ddd-a793-4fb4-9103-1f9912ab9f0e"
+      ],
+      "session_id": "7b550636-72fe-490e-ad38-a1912d08449f",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "1a1c762d-200e-41d9-a9d0-49fb2392c1ed",
+      "promoted_track_ids": [
+        "1a1c762d-200e-41d9-a9d0-49fb2392c1ed"
+      ],
+      "requested_track_ids": [
+        "1a1c762d-200e-41d9-a9d0-49fb2392c1ed"
+      ],
+      "session_id": "7c3154c5-d1c2-4f07-9b8d-96d187334f1b",
+      "turn_number": 1
+    },
+    {
+      "best_rank": null,
+      "category": "not_retrieved_topk",
+      "gold_status": "gold_differs",
+      "gold_track_id": "c1043251-61b5-4554-9e3d-bfc6ce19df40",
+      "promoted_track_ids": [],
+      "requested_track_ids": [
+        "64229d3f-aa34-4b6c-98b6-58e9798e0a52"
+      ],
+      "session_id": "8071d14d-7e0f-4f72-90a6-0941db80a371",
+      "turn_number": 3
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "0d703d7e-fceb-49de-af2d-1cea0e7da906",
+      "promoted_track_ids": [
+        "0d703d7e-fceb-49de-af2d-1cea0e7da906"
+      ],
+      "requested_track_ids": [
+        "0d703d7e-fceb-49de-af2d-1cea0e7da906"
+      ],
+      "session_id": "80e6df0e-1b39-48bd-b2f7-92d974864a11",
+      "turn_number": 1
+    },
+    {
+      "best_rank": null,
+      "category": "not_retrieved_topk",
+      "gold_status": "gold_differs",
+      "gold_track_id": "6ee9c39f-0e22-40e4-9755-e05241c0141b",
+      "promoted_track_ids": [],
+      "requested_track_ids": [
+        "58c78c02-ed20-4dc7-8abe-0845c5bee1b3"
+      ],
+      "session_id": "850cbbff-820f-4ea5-8b69-c4554b6f03b0",
+      "turn_number": 2
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "0058e941-ea19-40c2-8716-43155197981a",
+      "promoted_track_ids": [
+        "0058e941-ea19-40c2-8716-43155197981a"
+      ],
+      "requested_track_ids": [
+        "0058e941-ea19-40c2-8716-43155197981a"
+      ],
+      "session_id": "8b8398b3-3d66-4129-b354-302a5247e34c",
+      "turn_number": 4
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "92c002ac-488d-47ee-8c7a-f1354b6cd941",
+      "promoted_track_ids": [
+        "92c002ac-488d-47ee-8c7a-f1354b6cd941"
+      ],
+      "requested_track_ids": [
+        "92c002ac-488d-47ee-8c7a-f1354b6cd941"
+      ],
+      "session_id": "8bee6f03-8cae-44ae-9325-455dc1138549",
+      "turn_number": 1
+    },
+    {
+      "best_rank": null,
+      "category": "not_retrieved_topk",
+      "gold_status": "gold_differs",
+      "gold_track_id": "00deb7bb-5a6c-4bd9-a9a2-08da43bc9899",
+      "promoted_track_ids": [],
+      "requested_track_ids": [
+        "f8a7f726-c9c6-4b44-901a-09657c02830f"
+      ],
+      "session_id": "8e746940-b317-40b8-867b-d76a968b5a16",
+      "turn_number": 4
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "528f0bc8-4786-4746-af87-c2dba68d145b",
+      "promoted_track_ids": [
+        "528f0bc8-4786-4746-af87-c2dba68d145b"
+      ],
+      "requested_track_ids": [
+        "528f0bc8-4786-4746-af87-c2dba68d145b"
+      ],
+      "session_id": "93199894-d3db-4335-8278-e1be175944e4",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "b911704b-d8ba-41cd-a996-cddf8f8b63b0",
+      "promoted_track_ids": [
+        "b911704b-d8ba-41cd-a996-cddf8f8b63b0"
+      ],
+      "requested_track_ids": [
+        "b911704b-d8ba-41cd-a996-cddf8f8b63b0"
+      ],
+      "session_id": "9580e0ed-7299-464f-8d74-cc96af55f1ff",
+      "turn_number": 3
+    },
+    {
+      "best_rank": 15,
+      "category": "promoted",
+      "gold_status": "gold_differs",
+      "gold_track_id": "b7adc011-bf7c-452b-9a06-4285fd66253f",
+      "promoted_track_ids": [
+        "5fe8e7e4-f5e7-4457-b5ef-12adf56fe732"
+      ],
+      "requested_track_ids": [
+        "5fe8e7e4-f5e7-4457-b5ef-12adf56fe732"
+      ],
+      "session_id": "9580e0ed-7299-464f-8d74-cc96af55f1ff",
+      "turn_number": 5
+    },
+    {
+      "best_rank": 9,
+      "category": "promoted",
+      "gold_status": "gold_differs",
+      "gold_track_id": "b9ea8a8c-e0e5-4780-9d54-d5cdb8ea8b45",
+      "promoted_track_ids": [
+        "bc3d44ba-84dc-4705-90a7-7f40abf647bd"
+      ],
+      "requested_track_ids": [
+        "bc3d44ba-84dc-4705-90a7-7f40abf647bd"
+      ],
+      "session_id": "9580e0ed-7299-464f-8d74-cc96af55f1ff",
+      "turn_number": 6
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "b0f7d7c6-6b81-4320-82f6-e0bb2b28391b",
+      "promoted_track_ids": [
+        "b0f7d7c6-6b81-4320-82f6-e0bb2b28391b"
+      ],
+      "requested_track_ids": [
+        "b0f7d7c6-6b81-4320-82f6-e0bb2b28391b"
+      ],
+      "session_id": "9b5d0a16-a310-4a00-89ca-741cb7d0763e",
+      "turn_number": 1
+    },
+    {
+      "best_rank": null,
+      "category": "not_retrieved_topk",
+      "gold_status": "gold_differs",
+      "gold_track_id": "25856cc5-0e17-4fa2-a8f5-bd6e28bb3194",
+      "promoted_track_ids": [],
+      "requested_track_ids": [
+        "a0b4ea72-357d-4693-98c3-bb5844c8c209"
+      ],
+      "session_id": "ab3b33fe-a563-4be2-aa21-a393b86e6e36",
+      "turn_number": 3
+    },
+    {
+      "best_rank": null,
+      "category": "not_retrieved_topk",
+      "gold_status": "gold_differs",
+      "gold_track_id": "e9addf83-3edb-4e4a-a5cf-b649889d6097",
+      "promoted_track_ids": [],
+      "requested_track_ids": [
+        "a0b4ea72-357d-4693-98c3-bb5844c8c209"
+      ],
+      "session_id": "ab3b33fe-a563-4be2-aa21-a393b86e6e36",
+      "turn_number": 4
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_differs",
+      "gold_track_id": "98598949-18fd-44d1-b78c-e32ad45f6c97",
+      "promoted_track_ids": [
+        "36867e79-964c-42de-94ff-e7ef0008e625"
+      ],
+      "requested_track_ids": [
+        "36867e79-964c-42de-94ff-e7ef0008e625"
+      ],
+      "session_id": "acbc68e4-0562-4ee6-b293-7e20343ebeb8",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "01b5a2bf-1e7b-4b95-b490-4429b1dcc3f1",
+      "promoted_track_ids": [
+        "01b5a2bf-1e7b-4b95-b490-4429b1dcc3f1"
+      ],
+      "requested_track_ids": [
+        "01b5a2bf-1e7b-4b95-b490-4429b1dcc3f1"
+      ],
+      "session_id": "b3327056-3692-49d1-ac74-d696fda83204",
+      "turn_number": 5
+    },
+    {
+      "best_rank": 2,
+      "category": "promoted",
+      "gold_status": "gold_requested",
+      "gold_track_id": "be6e2045-8253-4fe3-ae3f-1790b1e75a45",
+      "promoted_track_ids": [
+        "be6e2045-8253-4fe3-ae3f-1790b1e75a45"
+      ],
+      "requested_track_ids": [
+        "be6e2045-8253-4fe3-ae3f-1790b1e75a45"
+      ],
+      "session_id": "bed1769d-f899-4e19-bf11-a32beb2af23e",
+      "turn_number": 2
+    },
+    {
+      "best_rank": 3,
+      "category": "promoted",
+      "gold_status": "gold_requested",
+      "gold_track_id": "74301259-c07c-443e-902f-cd9ae0951c0d",
+      "promoted_track_ids": [
+        "74301259-c07c-443e-902f-cd9ae0951c0d"
+      ],
+      "requested_track_ids": [
+        "74301259-c07c-443e-902f-cd9ae0951c0d"
+      ],
+      "session_id": "bed1769d-f899-4e19-bf11-a32beb2af23e",
+      "turn_number": 3
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "907c4763-13d7-4db7-9321-5e8cccd80e71",
+      "promoted_track_ids": [
+        "907c4763-13d7-4db7-9321-5e8cccd80e71"
+      ],
+      "requested_track_ids": [
+        "907c4763-13d7-4db7-9321-5e8cccd80e71"
+      ],
+      "session_id": "bf0b3036-794c-40fa-812e-b45412bc4c81",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 13,
+      "category": "promoted",
+      "gold_status": "gold_differs",
+      "gold_track_id": "072d7273-1bba-4829-b675-e596fc634069",
+      "promoted_track_ids": [
+        "8c8bf79f-4a42-486e-a19b-d5cdb729af10"
+      ],
+      "requested_track_ids": [
+        "8c8bf79f-4a42-486e-a19b-d5cdb729af10"
+      ],
+      "session_id": "c4f95ecd-795c-417b-a04f-2eb48669797c",
+      "turn_number": 3
+    },
+    {
+      "best_rank": 4,
+      "category": "promoted",
+      "gold_status": "gold_requested",
+      "gold_track_id": "81f945a9-f7a3-45d5-a9e1-e9d75cfbed42",
+      "promoted_track_ids": [
+        "81f945a9-f7a3-45d5-a9e1-e9d75cfbed42"
+      ],
+      "requested_track_ids": [
+        "81f945a9-f7a3-45d5-a9e1-e9d75cfbed42"
+      ],
+      "session_id": "c4f95ecd-795c-417b-a04f-2eb48669797c",
+      "turn_number": 4
+    },
+    {
+      "best_rank": 15,
+      "category": "promoted",
+      "gold_status": "gold_differs",
+      "gold_track_id": "4f8aac32-f2f8-41af-a757-5c9dd41caf90",
+      "promoted_track_ids": [
+        "b2a42a8e-1df8-4db5-a8f7-67abd6afdb2a"
+      ],
+      "requested_track_ids": [
+        "b2a42a8e-1df8-4db5-a8f7-67abd6afdb2a"
+      ],
+      "session_id": "c4f95ecd-795c-417b-a04f-2eb48669797c",
+      "turn_number": 7
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "09763b5f-84b2-4fbe-bb9b-b900b6104862",
+      "promoted_track_ids": [
+        "09763b5f-84b2-4fbe-bb9b-b900b6104862"
+      ],
+      "requested_track_ids": [
+        "09763b5f-84b2-4fbe-bb9b-b900b6104862"
+      ],
+      "session_id": "cb99c2a0-1b15-4f62-9a03-9986199d2388",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "19f86e38-92f8-4df1-854b-6f648b2f39b8",
+      "promoted_track_ids": [
+        "19f86e38-92f8-4df1-854b-6f648b2f39b8"
+      ],
+      "requested_track_ids": [
+        "19f86e38-92f8-4df1-854b-6f648b2f39b8"
+      ],
+      "session_id": "cd013fe6-58ad-4024-a608-1872a521d696",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 8,
+      "category": "promoted",
+      "gold_status": "gold_requested",
+      "gold_track_id": "02995258-3253-4c83-b32e-c399a07f1305",
+      "promoted_track_ids": [
+        "02995258-3253-4c83-b32e-c399a07f1305"
+      ],
+      "requested_track_ids": [
+        "02995258-3253-4c83-b32e-c399a07f1305"
+      ],
+      "session_id": "cd013fe6-58ad-4024-a608-1872a521d696",
+      "turn_number": 2
+    },
+    {
+      "best_rank": 3,
+      "category": "promoted",
+      "gold_status": "gold_differs",
+      "gold_track_id": "5d0df80a-3849-40a9-94f4-9720de9c2da1",
+      "promoted_track_ids": [
+        "ba23e2df-8da6-461a-a43e-f60b5d31db4e"
+      ],
+      "requested_track_ids": [
+        "ba23e2df-8da6-461a-a43e-f60b5d31db4e"
+      ],
+      "session_id": "cd013fe6-58ad-4024-a608-1872a521d696",
+      "turn_number": 4
+    },
+    {
+      "best_rank": 16,
+      "category": "promoted",
+      "gold_status": "gold_differs",
+      "gold_track_id": "c2a4a653-2d8a-4c50-b0d1-2f4e400e5ea7",
+      "promoted_track_ids": [
+        "5de8c3fc-98d4-4ce1-9449-dcfaa0ff4032"
+      ],
+      "requested_track_ids": [
+        "5de8c3fc-98d4-4ce1-9449-dcfaa0ff4032"
+      ],
+      "session_id": "cd013fe6-58ad-4024-a608-1872a521d696",
+      "turn_number": 5
+    },
+    {
+      "best_rank": 3,
+      "category": "promoted",
+      "gold_status": "gold_differs",
+      "gold_track_id": "a313a510-3368-4695-be7d-663dcb7e3221",
+      "promoted_track_ids": [
+        "bcfdffc8-5db5-46dd-b83b-59d10198d323"
+      ],
+      "requested_track_ids": [
+        "bcfdffc8-5db5-46dd-b83b-59d10198d323"
+      ],
+      "session_id": "cd013fe6-58ad-4024-a608-1872a521d696",
+      "turn_number": 6
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "a8bf53f6-acd7-4b62-99d4-799fbd8fe9e4",
+      "promoted_track_ids": [
+        "a8bf53f6-acd7-4b62-99d4-799fbd8fe9e4"
+      ],
+      "requested_track_ids": [
+        "a8bf53f6-acd7-4b62-99d4-799fbd8fe9e4"
+      ],
+      "session_id": "d216f37d-a689-4db1-90a3-911ccd626a6a",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "407bbe04-ff88-4dfe-8114-10a95b523592",
+      "promoted_track_ids": [
+        "407bbe04-ff88-4dfe-8114-10a95b523592"
+      ],
+      "requested_track_ids": [
+        "407bbe04-ff88-4dfe-8114-10a95b523592"
+      ],
+      "session_id": "d62387d0-3743-4ddc-bc92-8204c951ccee",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_differs",
+      "gold_track_id": "dd64c1f2-694f-4477-ae4b-248d71e4b72e",
+      "promoted_track_ids": [
+        "847bec30-2d1a-4e3f-abf7-19e6e234572c"
+      ],
+      "requested_track_ids": [
+        "847bec30-2d1a-4e3f-abf7-19e6e234572c"
+      ],
+      "session_id": "d62387d0-3743-4ddc-bc92-8204c951ccee",
+      "turn_number": 6
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_differs",
+      "gold_track_id": "14076558-8561-4004-b4b2-d081da82c9d8",
+      "promoted_track_ids": [
+        "5bf46306-bd40-498a-9f96-edfb9d636211"
+      ],
+      "requested_track_ids": [
+        "5bf46306-bd40-498a-9f96-edfb9d636211"
+      ],
+      "session_id": "daeef24e-b041-4140-9101-882820c63408",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_differs",
+      "gold_track_id": "83f3340a-3560-487a-80bc-f069fd3e339b",
+      "promoted_track_ids": [
+        "5bf46306-bd40-498a-9f96-edfb9d636211"
+      ],
+      "requested_track_ids": [
+        "5bf46306-bd40-498a-9f96-edfb9d636211"
+      ],
+      "session_id": "daeef24e-b041-4140-9101-882820c63408",
+      "turn_number": 3
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_differs",
+      "gold_track_id": "ebe5d6d3-e0ff-43e1-8ae4-0b9d4a689849",
+      "promoted_track_ids": [
+        "5bf46306-bd40-498a-9f96-edfb9d636211"
+      ],
+      "requested_track_ids": [
+        "5bf46306-bd40-498a-9f96-edfb9d636211"
+      ],
+      "session_id": "daeef24e-b041-4140-9101-882820c63408",
+      "turn_number": 4
+    },
+    {
+      "best_rank": 8,
+      "category": "promoted",
+      "gold_status": "gold_differs",
+      "gold_track_id": "87df5ff6-cd6e-4287-93ba-6aec63020098",
+      "promoted_track_ids": [
+        "5ffa5f30-d7d2-4237-9e50-7cdf258eff9b"
+      ],
+      "requested_track_ids": [
+        "5ffa5f30-d7d2-4237-9e50-7cdf258eff9b"
+      ],
+      "session_id": "daeef24e-b041-4140-9101-882820c63408",
+      "turn_number": 7
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "871a66c8-14f9-455b-8c17-4d941ad1e3b9",
+      "promoted_track_ids": [
+        "871a66c8-14f9-455b-8c17-4d941ad1e3b9"
+      ],
+      "requested_track_ids": [
+        "871a66c8-14f9-455b-8c17-4d941ad1e3b9"
+      ],
+      "session_id": "eb4bfaff-98ce-49e1-9901-ffef532d6f66",
+      "turn_number": 3
+    },
+    {
+      "best_rank": null,
+      "category": "not_retrieved_topk",
+      "gold_status": "gold_differs",
+      "gold_track_id": "7800fe11-345a-4f54-9faf-ca3777417e4d",
+      "promoted_track_ids": [],
+      "requested_track_ids": [
+        "a1d45295-b73a-4310-9373-77d608b593e2"
+      ],
+      "session_id": "eb4bfaff-98ce-49e1-9901-ffef532d6f66",
+      "turn_number": 5
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "8402a3bf-7dbd-44ca-bd9c-267315d3d4ed",
+      "promoted_track_ids": [
+        "8402a3bf-7dbd-44ca-bd9c-267315d3d4ed"
+      ],
+      "requested_track_ids": [
+        "8402a3bf-7dbd-44ca-bd9c-267315d3d4ed"
+      ],
+      "session_id": "f78b202b-2544-4cef-ad72-a90494b7660a",
+      "turn_number": 1
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_differs",
+      "gold_track_id": "ae77cfd4-c95a-422f-8f46-0d025dade205",
+      "promoted_track_ids": [
+        "ffc14c3d-21b1-4938-b58e-28c21c4d39a3"
+      ],
+      "requested_track_ids": [
+        "ffc14c3d-21b1-4938-b58e-28c21c4d39a3"
+      ],
+      "session_id": "f78b202b-2544-4cef-ad72-a90494b7660a",
+      "turn_number": 4
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_differs",
+      "gold_track_id": "771a5952-19f2-4f5a-b57e-8a2eedeaef30",
+      "promoted_track_ids": [
+        "9aeed52a-cdab-497f-a722-c481fbc3c149"
+      ],
+      "requested_track_ids": [
+        "9aeed52a-cdab-497f-a722-c481fbc3c149"
+      ],
+      "session_id": "f78b202b-2544-4cef-ad72-a90494b7660a",
+      "turn_number": 6
+    },
+    {
+      "best_rank": null,
+      "category": "not_retrieved_topk",
+      "gold_status": "gold_differs",
+      "gold_track_id": "b3f26e6a-7ef1-4ce9-9dd8-6606422f130d",
+      "promoted_track_ids": [],
+      "requested_track_ids": [
+        "e9142474-4c82-4208-acfc-6a80ecd1a97e"
+      ],
+      "session_id": "f86d58b6-8005-4713-9900-50c1e7558126",
+      "turn_number": 4
+    },
+    {
+      "best_rank": 1,
+      "category": "already_front",
+      "gold_status": "gold_requested",
+      "gold_track_id": "9906b796-9c23-427c-97f8-f02227a877c5",
+      "promoted_track_ids": [
+        "9906b796-9c23-427c-97f8-f02227a877c5"
+      ],
+      "requested_track_ids": [
+        "9906b796-9c23-427c-97f8-f02227a877c5"
+      ],
+      "session_id": "fada63d6-1275-47a1-b3ab-30eae222fd72",
+      "turn_number": 1
+    }
+  ],
+  "split": "devset"
+}
