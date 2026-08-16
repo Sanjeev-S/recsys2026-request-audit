@@ -20,6 +20,13 @@ evidence rather than just reading it.
 - The models in `models/` are a July 12, 2026 retrain, not the bytes
   from the frozen evaluation run. The retrain reproduces every Table 2
   cell exactly; `results/repro_confirmation.json` records the check.
+- An August 16, 2026 validation ran `train.sh` from a fresh public
+  clone on a rented machine, with the matrices downloaded anew: both
+  trained models came out tree-for-tree identical to the shipped
+  dumps (all 50 trees, every split and leaf). Note the val feature
+  file hosted alongside the training data is the drifted build from
+  the added-rows note above, so a fresh download reproduces the
+  shipped models exactly; the canonical count stays 1,878.
 - `results/table1_ranks.idkeyed.jsonl` was extracted from the frozen
   gated evaluation on July 24, 2026 and re-verified against the
   retrain's prediction files with zero differences.

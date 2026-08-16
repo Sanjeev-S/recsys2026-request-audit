@@ -30,8 +30,9 @@ use session, turn, and track IDs only, never dialogue text.
     ./reproduce_table2.sh <control predictions> <specialist predictions>
 
 The commands assume a Python 3.12 environment with the requirements
-installed and active. Training needs the feature matrices described in
-the paper's Section 2; they are built outside this repo and are not
+installed and active. Training runs on CPU only and needs about 13 GB
+of free memory. It also needs the feature matrices described in the
+paper's Section 2; they are built outside this repo and are not
 redistributed. The trained models are included (`evidence/models/`), so
 the tables reproduce without retraining. The two prediction files for
 `reproduce_table2.sh` are rebuilt from the shipped models with
