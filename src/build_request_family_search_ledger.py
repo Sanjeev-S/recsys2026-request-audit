@@ -8,9 +8,9 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parent.parent
-EVID = ROOT / "docs/evidence"
-DEFAULT_JSON = EVID / "request_family_search_ledger_v09.json"
-DEFAULT_MD = EVID / "request_family_search_ledger_v09.md"
+EVID = ROOT / "evidence"
+DEFAULT_JSON = EVID / "ledger/family_search_ledger.json"
+DEFAULT_MD = EVID / "ledger/family_search_ledger.md"
 
 
 def load(path: Path) -> Any:
@@ -313,11 +313,11 @@ def markdown(ledger: dict[str, Any]) -> str:
 
 def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--family-audit", type=Path, default=EVID / "request_family_admission_audit_v09.json")
+    ap.add_argument("--family-audit", type=Path, default=EVID / "ledger/family_admission_audit.json")
     ap.add_argument("--additional", type=Path, default=EVID / "request_additional_family_mining_audit_v09.json")
     ap.add_argument("--broad-screening", type=Path, default=EVID / "request_broad_semantic_screening_audit_v09.json")
     ap.add_argument("--trace-summary", type=Path, default=EVID / "request_trace_corroboration_exact_version_v09.summary.json")
-    ap.add_argument("--selection-audit", type=Path, default=EVID / "request_selection_pressure_audit_v09.json")
+    ap.add_argument("--selection-audit", type=Path, default=EVID / "audits/selection_pressure_audit.json")
     ap.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     ap.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = ap.parse_args(argv)

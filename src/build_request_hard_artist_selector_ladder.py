@@ -14,9 +14,9 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parent.parent
-EVID = ROOT / "docs/evidence"
-DEFAULT_JSON = EVID / "request_hard_artist_selector_ladder_v09.json"
-DEFAULT_MD = EVID / "request_hard_artist_selector_ladder_v09.md"
+EVID = ROOT / "evidence"
+DEFAULT_JSON = EVID / "ledger/hard_artist_selector_ladder.json"
+DEFAULT_MD = EVID / "ledger/hard_artist_selector_ladder.md"
 
 
 RUNGS = [

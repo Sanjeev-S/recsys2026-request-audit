@@ -21,17 +21,17 @@ ROOT="$(cd "$(dirname "$0")" && pwd)"
 CACHE="${TRAIN_CACHE_DIR:-$ROOT/work/train_cache}"
 mkdir -p "$CACHE"/{dmatrix,feature,label} "$ROOT/work/models"
 
-python src/request_hard_artist_rerank_train.py \
+python src/train_request_supplement.py \
   --feature-set F10_R54SRC \
   --preset r54_shallow_topk20 \
   --train-feature-path "$MCRS_EXPLORE_ROOT/exp/features/features_rerank_train_lt_105k_R54src_F10R54.parquet" \
   --train-group-sizes-path "$MCRS_EXPLORE_ROOT/exp/features/group_sizes_train_lt_105k_R54src.npy" \
   --train-split-name train_lt_105k \
-  --train-corrections evidence/corrections/request_corrections_train_lt_exact_version_v09.idkeyed.jsonl \
+  --train-corrections evidence/corrections/corrections_train_lt_exact_version.idkeyed.jsonl \
   --extra-train-feature-path "$MCRS_EXPLORE_ROOT/exp/features/features_rerank_val_R54src_F10R54.parquet" \
   --extra-train-group-sizes-path "$MCRS_EXPLORE_ROOT/exp/features/group_sizes_val_R54src.npy" \
   --extra-train-split-name val \
-  --extra-train-corrections evidence/corrections/request_corrections_val_exact_version_v09.idkeyed.jsonl \
+  --extra-train-corrections evidence/corrections/corrections_val_exact_version.idkeyed.jsonl \
   --cells official exact_positive_weighted \
   --corrected-group-weight 0.1 \
   --num-boost-round 50 \

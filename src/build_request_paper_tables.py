@@ -8,7 +8,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parent.parent
-EVID = ROOT / "docs/evidence"
+EVID = ROOT / "evidence"
 
 
 def load(path: Path) -> Any:
@@ -693,8 +693,8 @@ def markdown(tables: dict[str, Any]) -> str:
 
 def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--json-output", type=Path, default=EVID / "request_paper_tables_v09.json")
-    ap.add_argument("--markdown-output", type=Path, default=EVID / "request_paper_tables_v09.md")
+    ap.add_argument("--json-output", type=Path, default=EVID / "pilot/pilot_readout_tables.json")
+    ap.add_argument("--markdown-output", type=Path, default=EVID / "pilot/pilot_readout_tables.md")
     args = ap.parse_args(argv)
 
     tables = build_tables()

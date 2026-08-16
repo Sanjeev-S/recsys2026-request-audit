@@ -8,9 +8,9 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parent.parent
-EVID = ROOT / "docs/evidence"
-DEFAULT_JSON = EVID / "request_fulltrain_result_card_v09.json"
-DEFAULT_MD = EVID / "request_fulltrain_result_card_v09.md"
+EVID = ROOT / "evidence"
+DEFAULT_JSON = EVID / "results/table2_result_card.json"
+DEFAULT_MD = EVID / "results/table2_result_card.md"
 
 EXACT_CONTROL = "docs/evidence/request_exact_version_fulltrain_official_control_blend_dev_v09.json"
 EXACT_REQUEST = "docs/evidence/request_exact_version_fulltrain_exact_positive_weighted_blend_dev_v09.json"

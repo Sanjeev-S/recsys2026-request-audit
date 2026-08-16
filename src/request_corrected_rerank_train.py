@@ -56,7 +56,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
 sys.path.insert(0, str(SCRIPT_DIR.parent))
 
-from day5_train_ltr import ndcg20  # noqa: E402
+from rerank_train import ndcg20  # noqa: E402
 from apply_request_exact_postrank import request_directives  # noqa: E402
 from evaluate_request_corrections import load_corrections  # noqa: E402
 from request_correction_labels import build_catalog_index, track_satisfies_constraint  # noqa: E402

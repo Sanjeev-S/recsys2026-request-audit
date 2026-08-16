@@ -8,14 +8,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 from pathlib import Path
 from typing import Any
 
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_JSON = ROOT / "docs/evidence/request_fulltrain_eval_runner_v09.json"
-DEFAULT_MD = ROOT / "docs/evidence/request_fulltrain_eval_runner_v09.md"
+DEFAULT_JSON = ROOT / "work/fulltrain_eval_runner.json"
+DEFAULT_MD = ROOT / "work/fulltrain_eval_runner.md"
 
 PRODUCTION_ANCHOR = Path(os.environ.get("MCRS_PRODUCTION_ANCHOR", str(Path(os.environ.get("MCRS_EXPLORE_ROOT", str(Path(__file__).resolve().parent.parent))) / "exp/models/rerank_F10_R54SRC_r54src.json")))
 
@@ -24,23 +25,23 @@ EVAL_SPECS: dict[str, dict[str, Any]] = {
         "family": "exact/version",
         "role": "official-label exact-feature control",
         "primary_blend": "1",
-        "request_model": "docs/evidence/models/request_corrected_F10_R54SRC_official_exact_version_v09_fulltrain_trainval_reqfeat_gw0p1_medium50.json",
-        "corrections": "docs/evidence/request_corrections_devset_exact_version_v09.jsonl",
+        "request_model": "evidence/models/matched_control.json",
+        "corrections": "evidence/corrections/corrections_devset_exact_version.idkeyed.jsonl",
         "gate_mode": "dialogue",
         "feature_flag": "--request-model-add-exact-request-feature",
         "output_tag": "exact_version_v09_fulltrain_official_control_reqfeat_dialogue",
-        "output": "docs/evidence/request_exact_version_fulltrain_official_control_blend_dev_v09.json",
+        "output": "work/exact_version_control_blend_dev.json",
     },
     "exact_version_request_positive": {
         "family": "exact/version",
         "role": "request-positive exact/version specialist",
         "primary_blend": "1",
-        "request_model": "docs/evidence/models/request_corrected_F10_R54SRC_exact_positive_weighted_exact_version_v09_fulltrain_trainval_reqfeat_gw0p1_medium50.json",
-        "corrections": "docs/evidence/request_corrections_devset_exact_version_v09.jsonl",
+        "request_model": "evidence/models/specialist.json",
+        "corrections": "evidence/corrections/corrections_devset_exact_version.idkeyed.jsonl",
         "gate_mode": "dialogue",
         "feature_flag": "--request-model-add-exact-request-feature",
         "output_tag": "exact_version_v09_fulltrain_exact_positive_weighted_reqfeat_dialogue",
-        "output": "docs/evidence/request_exact_version_fulltrain_exact_positive_weighted_blend_dev_v09.json",
+        "output": "work/exact_version_specialist_blend_dev.json",
     },
     "hard_violation_drop_official_control": {
         "family": "hard simple/non-negated",

@@ -8,7 +8,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parent.parent
-EVID = ROOT / "docs/evidence"
+EVID = ROOT / "evidence"
 DEFAULT_JSON = EVID / "request_detector_validity_capsule_v09.json"
 DEFAULT_MD = EVID / "request_detector_validity_capsule_v09.md"
 
@@ -172,7 +172,7 @@ def main(argv: list[str] | None = None) -> None:
     ap.add_argument(
         "--frame-score",
         type=Path,
-        default=EVID / "request_frame_ablation_val_v08_score.json",
+        default=EVID / "detector_validity/detector_audit_stratified120_score.json",
     )
     ap.add_argument(
         "--metadata-baseline",

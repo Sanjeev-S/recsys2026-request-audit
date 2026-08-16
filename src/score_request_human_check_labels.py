@@ -7,7 +7,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from scripts.score_request_preference_labels import (
+from score_request_preference_labels import (
     confidence_ok,
     load_jsonl,
     load_labels,
@@ -17,7 +17,7 @@ from scripts.score_request_preference_labels import (
 
 
 ROOT = Path(__file__).resolve().parent.parent
-EVID = ROOT / "docs/evidence"
+EVID = ROOT / "evidence"
 DEFAULT_KEY = EVID / "request_human_check_packet_v09_key.jsonl"
 DEFAULT_JSON = EVID / "request_human_check_packet_v09_score.json"
 DEFAULT_MD = EVID / "request_human_check_packet_v09_score.md"

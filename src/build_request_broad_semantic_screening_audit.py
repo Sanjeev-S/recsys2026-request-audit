@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts.build_request_additional_family_mining_audit import (
+from build_request_additional_family_mining_audit import (
     BROAD_SEMANTIC_PATTERNS,
     SPLIT_FILE,
     broad_semantic_matches,
@@ -24,7 +24,7 @@ from scripts.build_request_additional_family_mining_audit import (
 )
 
 
-EVID = ROOT / "docs/evidence"
+EVID = ROOT / "evidence"
 DEFAULT_JSON = EVID / "request_broad_semantic_screening_audit_v09.json"
 DEFAULT_MD = EVID / "request_broad_semantic_screening_audit_v09.md"
 

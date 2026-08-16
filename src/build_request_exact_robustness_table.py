@@ -21,12 +21,12 @@ DEFAULT_MD = EVID / "funnel/request_exact_robustness_table_repro.md"
 # sidecars; override with --coverage-<split> / --sidecar-<split> to run over
 # regenerated files (e.g. from run_funnel.py).
 COVERAGE_PATHS = {
-    "devset": EVID / "funnel/request_exact_postrank_coverage_v09_devset.json",
-    "val": EVID / "funnel/request_exact_postrank_coverage_v09_val.json",
+    "devset": EVID / "funnel/coverage_devset.json",
+    "val": EVID / "funnel/coverage_val.json",
 }
 SIDECAR_PATHS = {
-    "devset": EVID / "corrections/request_corrections_devset_exact_version_v09.idkeyed.jsonl",
-    "val": EVID / "corrections/request_corrections_val_exact_version_v09.idkeyed.jsonl",
+    "devset": EVID / "corrections/corrections_devset_exact_version.idkeyed.jsonl",
+    "val": EVID / "corrections/corrections_val_exact_version.idkeyed.jsonl",
 }
 
 

@@ -6,9 +6,10 @@ Runs the frozen detector chain over a split and prints the funnel:
     detector -> exact/version filter -> availability coverage -> changed-rows packet
 
 For the development set with the deployed production ranking this reproduces
-82 visible directives, 41/82 label-request conflicts, 65/82 requested-present-
-top-100, 43 effective correction records, and 19 postrank-changed rows
-(12 of them with a conflicting official label).
+the paper's Section 5 funnel — 82 visible directives, 41/82 label-request
+conflicts, 43 effective correction records — plus two shipped-but-uncited
+readouts: the availability window (65/82 requested tracks in the deployed
+top-100) and the changed-rows packet (19 rows, 12 with a conflicting label).
 
 Requires: the challenge data reachable via HuggingFace datasets (see README
 data-access notes) and a prediction file for the availability window

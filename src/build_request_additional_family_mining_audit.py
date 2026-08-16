@@ -13,7 +13,7 @@ import pyarrow.ipc as ipc
 
 
 ROOT = Path(__file__).resolve().parent.parent
-EVID = ROOT / "docs/evidence"
+EVID = ROOT / "evidence"
 DEFAULT_JSON = EVID / "request_additional_family_mining_audit_v09.json"
 DEFAULT_MD = EVID / "request_additional_family_mining_audit_v09.md"
 BROAD_SCREENING_JSON = EVID / "request_broad_semantic_screening_audit_v09.json"

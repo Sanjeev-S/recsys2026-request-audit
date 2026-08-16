@@ -373,7 +373,7 @@ def main(argv: list[str] | None = None) -> None:
     ap.add_argument("--feature-set", choices=sorted(FEATURE_SETS), default="F10_R54SRC")
     ap.add_argument("--official-model", type=Path, required=True)
     ap.add_argument("--request-model", type=Path)
-    ap.add_argument("--output-dir", type=Path, default=Path("docs/evidence/transfer_predictions"))
+    ap.add_argument("--output-dir", type=Path, default=Path("work/transfer_predictions"))
     ap.add_argument("--output-tag", default="v09")
     ap.add_argument("--request-feature-cache-dir", type=Path, default=Path("/tmp/request_exact_transfer_feature_cache"))
     ap.add_argument("--force-request-feature-cache", action="store_true")

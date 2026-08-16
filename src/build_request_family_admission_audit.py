@@ -9,9 +9,9 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parent.parent
-EVID = ROOT / "docs/evidence"
-DEFAULT_JSON = EVID / "request_family_admission_audit_v09.json"
-DEFAULT_MD = EVID / "request_family_admission_audit_v09.md"
+EVID = ROOT / "evidence"
+DEFAULT_JSON = EVID / "ledger/family_admission_audit.json"
+DEFAULT_MD = EVID / "ledger/family_admission_audit.md"
 DELTA_RE = re.compile(
     r"(?P<point>[+-]\d+\.\d+)\s+\[(?P<low>[+-]\d+\.\d+),\s+(?P<high>[+-]\d+\.\d+)\]"
 )

@@ -10,7 +10,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parent.parent
-EVID = ROOT / "docs/evidence"
+EVID = ROOT / "evidence"
 DEFAULT_ANNOTATION = EVID / "request_human_check_packet_v09_annotation.jsonl"
 DEFAULT_LABEL_TEMPLATE = EVID / "request_human_check_packet_v09_label_template.jsonl"
 DEFAULT_KEY = EVID / "request_human_check_packet_v09_key.jsonl"

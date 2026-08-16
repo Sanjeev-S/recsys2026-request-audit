@@ -38,7 +38,7 @@ from request_corrected_rerank_train import (  # noqa: E402
     build_or_load_exact_request_feature_cache,
     cache_float,
 )
-from request_hard_artist_rerank_train import (  # noqa: E402
+from train_request_supplement import (  # noqa: E402
     HARD_ARTIST_FEATURE,
     build_or_load_hard_artist_feature_cache,
 )
@@ -251,9 +251,9 @@ def main(argv: list[str] | None = None) -> None:
     ap.add_argument("--gate-mode", choices=["sidecar", "dialogue", "hard_artist"], default="sidecar",
                     help="sidecar uses correction rows; dialogue uses visible exact-request directives; hard_artist uses visible hard-artist directives.")
     ap.add_argument("--blend-weight", type=float, action="append", required=True)
-    ap.add_argument("--prediction-dir", type=Path, default=Path("docs/evidence/dev_predictions"))
+    ap.add_argument("--prediction-dir", type=Path, default=Path("work/dev_predictions"))
     ap.add_argument("--output-tag", default="v0")
-    ap.add_argument("--output", type=Path, default=Path("docs/evidence/request_corrected_rerank_blend_v0.json"))
+    ap.add_argument("--output", type=Path, default=Path("work/rerank_blend_eval.json"))
     ap.add_argument("--k", type=int, default=20)
     ap.add_argument("--scoring", choices=["best_hit", "multilabel"], default="best_hit")
     ap.add_argument("--request-model-add-exact-request-feature", action="store_true",

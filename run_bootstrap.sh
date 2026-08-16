@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Table 1 bootstrap — the frozen invocation (paired session-level, 10,000
+# Table 2 bootstrap — the frozen invocation (paired session-level, 10,000
 # resamples, seed 20260701, best_hit scoring, exact/version family slice).
-# Reproduces the three CIs of Table 1 verbatim from the shipped gated
+# Reproduces the paper CIs (Table 2 rows + exact-track slice) verbatim from the shipped gated
 # prediction files (see README for how to regenerate the predictions).
 #
 # Usage: ./run_bootstrap.sh <control_predictions.json> <specialist_predictions.json> [corrections.jsonl] [out.json]
@@ -9,8 +9,8 @@ set -euo pipefail
 
 CONTROL="${1:?control (official-label) gated prediction file}"
 SPECIALIST="${2:?specialist (request-supplemented) gated prediction file}"
-CORRECTIONS="${3:-evidence/corrections/request_corrections_devset_exact_version_v09.idkeyed.jsonl}"
-OUT="${4:-work/bootstrap_table1.json}"
+CORRECTIONS="${3:-evidence/corrections/corrections_devset_exact_version.idkeyed.jsonl}"
+OUT="${4:-work/bootstrap_table2.json}"
 
 mkdir -p "$(dirname "$OUT")"
 python src/bootstrap_request_corrected_dev.py \

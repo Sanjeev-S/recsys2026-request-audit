@@ -8,9 +8,9 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parent.parent
-EVID = ROOT / "docs/evidence"
-DEFAULT_JSON = EVID / "request_scope_prevalence_card_v09.json"
-DEFAULT_MD = EVID / "request_scope_prevalence_card_v09.md"
+EVID = ROOT / "evidence"
+DEFAULT_JSON = EVID / "funnel/scope_prevalence_card.json"
+DEFAULT_MD = EVID / "funnel/scope_prevalence_card.md"
 
 
 def load(path: Path) -> Any:
@@ -173,9 +173,9 @@ def markdown(card: dict[str, Any]) -> str:
 
 def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--locked", type=Path, default=EVID / "request_exact_postrank_locked_table_v09.json")
-    ap.add_argument("--robustness", type=Path, default=EVID / "request_exact_robustness_table_v09.json")
-    ap.add_argument("--paper-tables", type=Path, default=EVID / "request_paper_tables_v09.json")
+    ap.add_argument("--locked", type=Path, default=EVID / "funnel/changed_rows_locked_table.json")
+    ap.add_argument("--robustness", type=Path, default=EVID / "funnel/turn_depth_robustness_table.json")
+    ap.add_argument("--paper-tables", type=Path, default=EVID / "pilot/pilot_readout_tables.json")
     ap.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     ap.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = ap.parse_args(argv)

@@ -1,0 +1,50 @@
+{
+  "label_agrees": {
+    "control": {
+      "absent": 0,
+      "rank_1": 33,
+      "rank_2_20": 8
+    },
+    "specialist": {
+      "absent": 0,
+      "rank_1": 41,
+      "rank_2_20": 0
+    }
+  },
+  "label_conflicts": {
+    "control": {
+      "absent": 18,
+      "rank_1": 13,
+      "rank_2_20": 10
+    },
+    "specialist": {
+      "absent": 1,
+      "rank_1": 25,
+      "rank_2_20": 15
+    }
+  },
+  "n_directives": 82,
+  "pairwise": {
+    "specialist_higher": 35,
+    "specialist_lower": 0,
+    "unchanged": 47
+  },
+  "provenance": {
+    "coverage_source": "evidence/funnel/coverage_devset.json",
+    "gate": "both models deployed behind the inference-time dialogue gate (Section 6)",
+    "per_turn_source": "evidence/results/table1_per_turn_ranks.idkeyed.jsonl",
+    "rank_definition": "position of the first requested track id in the model's top-20; absent = none in top-20"
+  },
+  "rank_first_counts": {
+    "control": 46,
+    "specialist": 66
+  },
+  "specialist_absent_rows": [
+    {
+      "detector_false_fire": true,
+      "session_id": "f86d58b6-8005-4713-9900-50c1e7558126",
+      "turn_number": 4
+    }
+  ],
+  "verified_against_paper_table": true
+}

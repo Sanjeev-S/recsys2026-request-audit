@@ -42,6 +42,32 @@ LIST_NAMES = ["bm25", "meta_prf", "lyr_prf", "attr_prf", "siglip_prf",
 R54_LIST_NAMES = LIST_NAMES + ["r54"]
 
 
+def ndcg20(scores: np.ndarray, y: np.ndarray, gs: np.ndarray, turn: np.ndarray):
+    """Official binary nDCG@20 per group. Returns (pool_bounded_mean, recoverable_mean,
+    per_turn_pool_bounded dict). Rows are group-contiguous in gs order."""
+    starts = np.zeros(len(gs), dtype=np.int64)
+    starts[1:] = np.cumsum(gs)[:-1]
+    vals = np.zeros(len(gs), dtype=np.float64)
+    has_gold = np.zeros(len(gs), dtype=bool)
+    grp_turn = np.zeros(len(gs), dtype=np.int32)
+    for gi in range(len(gs)):
+        st = starts[gi]; sz = gs[gi]
+        sl = slice(st, st + sz)
+        yg = y[sl]
+        grp_turn[gi] = turn[st]
+        if yg.sum() == 0:
+            continue  # gold not in pool -> nDCG 0
+        has_gold[gi] = True
+        order = np.argsort(-scores[sl], kind="stable")
+        rank = int(np.where(yg[order] == 1)[0][0]) + 1
+        if rank <= 20:
+            vals[gi] = 1.0 / np.log2(rank + 1)
+    pool_bounded = float(vals.mean())
+    recoverable = float(vals[has_gold].mean()) if has_gold.any() else 0.0
+    per_turn = {int(t): round(float(vals[grp_turn == t].mean()), 4) for t in np.unique(grp_turn)}
+    return pool_bounded, recoverable, per_turn
+
+
 def per_source_cols(list_names: list[str]) -> list[str]:
     return (
         [f"src_{n}_invrank" for n in list_names]
