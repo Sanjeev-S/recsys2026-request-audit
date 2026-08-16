@@ -20,7 +20,7 @@ evidence rather than just reading it.
 - The models in `models/` are a July 12, 2026 retrain, not the bytes
   from the frozen evaluation run. The retrain reproduces every Table 2
   cell exactly; `results/repro_confirmation.json` records the check.
-- The four training inputs are published as the gated HuggingFace
+- The four training inputs are published as the HuggingFace
   dataset `sanjeevsuresh/recsys2026-request-audit-matrices`;
   `training/published_matrices.json` pins their SHA256s. The published
   val file is the exact build the shipped models trained on (the

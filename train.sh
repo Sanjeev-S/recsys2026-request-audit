@@ -3,7 +3,7 @@
 #
 # This replaces the research repo's cloud launcher with a plain local run of
 # the same training command. It requires the production feature matrices and
-# group-size files, published as the gated HuggingFace dataset
+# group-size files, published as the HuggingFace dataset
 # sanjeevsuresh/recsys2026-request-audit-matrices (hashes pinned in
 # evidence/training/published_matrices.json): set MCRS_EXPLORE_ROOT to a
 # directory containing

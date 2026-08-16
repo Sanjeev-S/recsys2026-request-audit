@@ -33,7 +33,7 @@ use session, turn, and track IDs only, never dialogue text.
 The commands assume a Python 3.12 environment with the requirements
 installed and active. Training runs on CPU only and needs about 13 GB
 of free memory. Its inputs, the feature matrices described in the
-paper's Section 2, are published as a gated HuggingFace dataset,
+paper's Section 2, are published as a HuggingFace dataset,
 [recsys2026-request-audit-matrices](https://huggingface.co/datasets/sanjeevsuresh/recsys2026-request-audit-matrices):
 
     hf download sanjeevsuresh/recsys2026-request-audit-matrices \
