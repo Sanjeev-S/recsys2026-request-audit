@@ -16,9 +16,9 @@ from pathlib import Path
 from typing import Any
 
 try:
-    from request_correction_labels import norm_text
+    from detect_requests import norm_text
 except ModuleNotFoundError:  # pragma: no cover - used when imported from tests
-    from scripts.request_correction_labels import norm_text
+    from scripts.detect_requests import norm_text
 
 
 CONFIDENCE_RANK = {"low": 0, "medium": 1, "high": 2}

@@ -30,9 +30,9 @@
     "unchanged": 47
   },
   "provenance": {
-    "coverage_source": "evidence/funnel/coverage_devset.json",
+    "coverage_source": "evidence/audit/coverage_devset.json",
     "gate": "both models deployed behind the inference-time dialogue gate (Section 6)",
-    "per_turn_source": "evidence/results/table1_per_turn_ranks.idkeyed.jsonl",
+    "per_turn_source": "evidence/results/table1_ranks.idkeyed.jsonl",
     "rank_definition": "position of the first requested track id in the model's top-20; absent = none in top-20"
   },
   "rank_first_counts": {

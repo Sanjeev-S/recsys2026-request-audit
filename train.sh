@@ -27,11 +27,11 @@ python src/train_request_supplement.py \
   --train-feature-path "$MCRS_EXPLORE_ROOT/exp/features/features_rerank_train_lt_105k_R54src_F10R54.parquet" \
   --train-group-sizes-path "$MCRS_EXPLORE_ROOT/exp/features/group_sizes_train_lt_105k_R54src.npy" \
   --train-split-name train_lt_105k \
-  --train-corrections evidence/corrections/corrections_train_lt_exact_version.idkeyed.jsonl \
+  --train-corrections evidence/annotations/train_lt_exact_version.idkeyed.jsonl \
   --extra-train-feature-path "$MCRS_EXPLORE_ROOT/exp/features/features_rerank_val_R54src_F10R54.parquet" \
   --extra-train-group-sizes-path "$MCRS_EXPLORE_ROOT/exp/features/group_sizes_val_R54src.npy" \
   --extra-train-split-name val \
-  --extra-train-corrections evidence/corrections/corrections_val_exact_version.idkeyed.jsonl \
+  --extra-train-corrections evidence/annotations/val_exact_version.idkeyed.jsonl \
   --cells official exact_positive_weighted \
   --corrected-group-weight 0.1 \
   --num-boost-round 50 \
