@@ -20,6 +20,13 @@ evidence rather than just reading it.
 - The models in `models/` are a July 12, 2026 retrain, not the bytes
   from the frozen evaluation run. The retrain reproduces every Table 2
   cell exactly; `results/repro_confirmation.json` records the check.
+- The four training inputs are published as the gated HuggingFace
+  dataset `sanjeevsuresh/recsys2026-request-audit-matrices`;
+  `training/published_matrices.json` pins their SHA256s. The published
+  val file is the exact build the shipped models trained on (the
+  drifted 26,947,531-row copy from the added-rows note, not the
+  canonical local 25,283,719-row one) — deliberate, so retraining on
+  the download reproduces the shipped models byte-for-byte.
 - An August 16, 2026 validation ran `train.sh` from a fresh public
   clone on a rented machine, with the matrices downloaded anew: both
   trained models came out tree-for-tree identical to the shipped

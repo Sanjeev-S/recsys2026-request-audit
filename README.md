@@ -31,11 +31,19 @@ use session, turn, and track IDs only, never dialogue text.
 
 The commands assume a Python 3.12 environment with the requirements
 installed and active. Training runs on CPU only and needs about 13 GB
-of free memory. It also needs the feature matrices described in the
-paper's Section 2; they are built outside this repo and are not
-redistributed. The trained models are included (`evidence/models/`), so
-the tables reproduce without retraining. Both tables also re-derive from the shipped ID-only prediction lists
-in `evidence/results/`, so no matrices are needed for any table.
+of free memory. Its inputs, the feature matrices described in the
+paper's Section 2, are published as a gated HuggingFace dataset
+(accept the research-only terms, then):
+
+    hf download sanjeevsuresh/recsys2026-request-audit-matrices \
+      --repo-type dataset --local-dir <data root>/exp/features
+
+`evidence/training/published_matrices.json` pins the SHA256 of each
+file, and retraining on them reproduces the shipped models exactly.
+Retraining is optional either way: the trained models are included
+(`evidence/models/`), and both tables also re-derive from the shipped
+ID-only prediction lists in `evidence/results/` with no matrices at
+all.
 Regenerating those lists from the models uses `src/run_gated_eval.py`,
 which does need the matrices. Set `MCRS_EXPLORE_ROOT` to your data
 root for the scripts that read them.

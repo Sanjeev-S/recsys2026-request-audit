@@ -3,8 +3,10 @@
 #
 # This replaces the research repo's cloud launcher with a plain local run of
 # the same training command. It requires the production feature matrices and
-# group-size files (not redistributed here — see README "Scope of the training
-# reproduction"): set MCRS_EXPLORE_ROOT to a directory containing
+# group-size files, published as the gated HuggingFace dataset
+# sanjeevsuresh/recsys2026-request-audit-matrices (hashes pinned in
+# evidence/training/published_matrices.json): set MCRS_EXPLORE_ROOT to a
+# directory containing
 #   exp/features/features_rerank_train_lt_105k_R54src_F10R54.parquet
 #   exp/features/group_sizes_train_lt_105k_R54src.npy
 #   exp/features/features_rerank_val_R54src_F10R54.parquet

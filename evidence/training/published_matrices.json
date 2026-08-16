@@ -1,0 +1,25 @@
+{
+  "dataset": "sanjeevsuresh/recsys2026-request-audit-matrices",
+  "url": "https://huggingface.co/datasets/sanjeevsuresh/recsys2026-request-audit-matrices",
+  "access": "gated (accept research-only terms); free HuggingFace account required, same as the challenge data itself",
+  "published": "2026-08-16",
+  "provenance": "the exact bytes the July 12, 2026 retrain consumed; retraining on them reproduces the shipped models tree-for-tree (August 16, 2026 validation)",
+  "files": {
+    "features_rerank_train_lt_105k_R54src_F10R54.parquet": {
+      "bytes": 7986659950,
+      "sha256": "a62248c708d287a10328f5d5a266a7f24f500cbf7a3665f9506d5b82a0cf54fd"
+    },
+    "group_sizes_train_lt_105k_R54src.npy": {
+      "bytes": 844864,
+      "sha256": "05b33de08ae66bda4ba33e80461c18d2b288c9be7ae59f355253caf32f40f731"
+    },
+    "features_rerank_val_R54src_F10R54.parquet": {
+      "bytes": 1217887895,
+      "sha256": "4c9e333e3fbab0191fa9cbe4860c19c340994da39cb7d5005e37e7d2375849a1"
+    },
+    "group_sizes_val_R54src.npy": {
+      "bytes": 128128,
+      "sha256": "eaeeb079b36753cd26e7ea76cedbac830d7189d3e52e451e2d1f62f1f94c61e6"
+    }
+  }
+}
