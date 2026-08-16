@@ -9,7 +9,7 @@ whether the official label agrees with the request (coverage gold_status).
 Two ways to run it:
 
 1. From the shipped evidence (default) — aggregates
-   evidence/results/table1_per_turn_ranks.idkeyed.jsonl and verifies every
+   evidence/results/table1_ranks.idkeyed.jsonl and verifies every
    printed Table 1 number (six cells, rank-1 counts 66/46, pairwise 35
    higher / 0 lower, the single specialist-absent row).
 
@@ -45,7 +45,7 @@ EVID = ROOT / "evidence"
 
 DEFAULT_COVERAGE = EVID / "audit/coverage_devset.json"
 DEFAULT_PER_TURN = EVID / "results/table1_ranks.idkeyed.jsonl"
-DEFAULT_OUTPUT = EVID / "results/table1_rank_readout.json"
+DEFAULT_OUTPUT = ROOT / "work/table1_rank_readout.json"
 
 # Frozen classification from the 2026-07-24 readout walkthrough: the single
 # directive whose requested phrase is a listening vibe, not a catalog track.

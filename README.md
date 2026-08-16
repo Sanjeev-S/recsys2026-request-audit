@@ -29,11 +29,14 @@ use session, turn, and track IDs only, never dialogue text.
     python src/reproduce_table1.py
     ./reproduce_table2.sh <control predictions> <specialist predictions>
 
-Training needs the feature matrices described in the paper's Section 2;
-they are built outside this repo and are not redistributed. The trained
-models are included (`evidence/models/`), so the tables reproduce
-without retraining. Set `MCRS_EXPLORE_ROOT` to your data root for the
-scripts that read feature matrices.
+The commands assume a Python 3.12 environment with the requirements
+installed and active. Training needs the feature matrices described in
+the paper's Section 2; they are built outside this repo and are not
+redistributed. The trained models are included (`evidence/models/`), so
+the tables reproduce without retraining. The two prediction files for
+`reproduce_table2.sh` are rebuilt from the shipped models with
+`src/run_gated_eval.py`, which needs the same feature matrices. Set
+`MCRS_EXPLORE_ROOT` to your data root for the scripts that read them.
 
 `evidence/` also holds validation packets the paper does not cite, and
 [evidence/PROVENANCE.md](evidence/PROVENANCE.md) records where each

@@ -4,7 +4,7 @@ Date: 2026-06-21
 
 This analyzes the locked exact-request postranker before intervention. It uses visible dialogue, catalog metadata, and the baseline prediction list. Policy labels are summarized only after the request frame is resolved.
 
-Prediction file: `/tmp/claude-0/-root-sanjeev-recsys-challenge-2026/fc45f04c-af58-4807-b3ab-916167538fbe/scratchpad/val_predictions/request_corrected_F10_R54SRC_blend_production_anchor_identity_w1_val.json`
+Prediction file: `<work>/val_predictions/request_corrected_F10_R54SRC_blend_production_anchor_identity_w1_val.json`
 k-search: `100`
 
 ## Funnel

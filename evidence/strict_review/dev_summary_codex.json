@@ -1,12 +1,12 @@
 {
   "action_ok_yes": 19,
   "high": 1.0,
-  "labels": "evidence/strict_review/request_strict_review_dev_v11_labels_codex.idkeyed.jsonl",
+  "labels": "evidence/strict_review/dev_labels_codex.idkeyed.jsonl",
   "low": 0.8318207759473837,
   "n": 19,
   "point": 1.0,
   "promoted_satisfies_yes": 19,
-  "protocol": "evidence/strict_review/request_strict_review_dev_v11_protocol_codex.json",
+  "protocol": "evidence/strict_review/dev_protocol_codex.json",
   "successes": 19,
   "valid_request_yes": 19
 }

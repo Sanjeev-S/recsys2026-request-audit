@@ -1,12 +1,12 @@
 {
-  "annotation_output": "/tmp/claude-0/-root-sanjeev-recsys-challenge-2026/fc45f04c-af58-4807-b3ab-916167538fbe/scratchpad/request_preference_dev_v11_annotation.jsonl",
+  "annotation_output": "<work>/request_preference_dev_v11_annotation.jsonl",
   "by_split": {
     "devset": 12
   },
   "changed_rows": [
-    "/tmp/claude-0/-root-sanjeev-recsys-challenge-2026/fc45f04c-af58-4807-b3ab-916167538fbe/scratchpad/request_changed_rows_devset_v11.jsonl"
+    "<work>/request_changed_rows_devset_v11.jsonl"
   ],
-  "key_output": "/tmp/claude-0/-root-sanjeev-recsys-challenge-2026/fc45f04c-af58-4807-b3ab-916167538fbe/scratchpad/request_preference_dev_v11_key.jsonl",
+  "key_output": "<work>/request_preference_dev_v11_key.jsonl",
   "n_annotation_rows": 12,
   "n_conflict_rows_available": 12,
   "n_input_rows": 19,

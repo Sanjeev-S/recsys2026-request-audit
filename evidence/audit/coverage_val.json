@@ -20,7 +20,7 @@
   "k_search": 100,
   "max_sessions": null,
   "n_directives": 247,
-  "prediction_path": "/tmp/claude-0/-root-sanjeev-recsys-challenge-2026/fc45f04c-af58-4807-b3ab-916167538fbe/scratchpad/val_predictions/request_corrected_F10_R54SRC_blend_production_anchor_identity_w1_val.json",
+  "prediction_path": "<work>/val_predictions/request_corrected_F10_R54SRC_blend_production_anchor_identity_w1_val.json",
   "rank_bucket_counts": {
     "1": 139,
     "2-5": 28,

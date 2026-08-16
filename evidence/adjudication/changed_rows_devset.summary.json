@@ -3,6 +3,6 @@
   "n_changed_rows": 19,
   "n_gold_differs": 12,
   "n_gold_requested": 7,
-  "out": "/tmp/claude-0/-root-sanjeev-recsys-challenge-2026/fc45f04c-af58-4807-b3ab-916167538fbe/scratchpad/request_changed_rows_devset_v11.jsonl",
+  "out": "<work>/request_changed_rows_devset_v11.jsonl",
   "split": "devset"
 }

@@ -11,9 +11,9 @@
   "explicit_request_visible_counts": {
     "yes": 12
   },
-  "key": "/tmp/claude-0/-root-sanjeev-recsys-challenge-2026/fc45f04c-af58-4807-b3ab-916167538fbe/scratchpad/request_preference_dev_v11_key.jsonl",
+  "key": "<work>/request_preference_dev_v11_key.jsonl",
   "label_files": [
-    "/tmp/claude-0/-root-sanjeev-recsys-challenge-2026/fc45f04c-af58-4807-b3ab-916167538fbe/scratchpad/request_preference_dev_v11_labels_codex.jsonl"
+    "<work>/request_preference_dev_v11_labels_codex.jsonl"
   ],
   "min_confidence": "medium",
   "n_rows": 12,

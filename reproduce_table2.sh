@@ -2,9 +2,10 @@
 # Table 2 bootstrap — the frozen invocation (paired session-level, 10,000
 # resamples, seed 20260701, best_hit scoring, exact/version family slice).
 # Reproduces the paper CIs (Table 2 rows + exact-track slice) verbatim from the shipped gated
-# prediction files (see README for how to regenerate the predictions).
+# prediction files Regenerate the two prediction files with src/run_gated_eval.py from the
+# shipped models (needs the feature matrices; see the README scope note).
 #
-# Usage: ./run_bootstrap.sh <control_predictions.json> <specialist_predictions.json> [corrections.jsonl] [out.json]
+# Usage: ./reproduce_table2.sh <control_predictions.json> <specialist_predictions.json> [corrections.jsonl] [out.json]
 set -euo pipefail
 
 CONTROL="${1:?control (official-label) gated prediction file}"

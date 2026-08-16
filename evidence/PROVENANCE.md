@@ -10,7 +10,13 @@ evidence rather than just reading it.
   they are kept byte-for-byte rather than rewritten.
 - Table numbering follows the camera-ready paper: Table 1 is the rank
   readout, Table 2 the score readout. Some frozen files use the older
-  internal numbering in their text.
+  internal numbering: the `table1_*` keys in
+  `results/repro_confirmation.json` hold what the paper calls Table 2.
+- Internal tokens inside frozen files, glossed once: `F10_R54SRC` is
+  the production 49-feature set, `train_lt` and `val` are the internal
+  split of the organizer training data (`data/train_val_split_seed42.json`),
+  `best_hit` scores the best-ranked relevant target, `blend`/`w1` is
+  the gate at weight 1.0, and `gw0p1` is the 0.1 group weight.
 - The models in `models/` are a July 12, 2026 retrain, not the bytes
   from the frozen evaluation run. The retrain reproduces every Table 2
   cell exactly; `results/repro_confirmation.json` records the check.
@@ -27,5 +33,7 @@ evidence rather than just reading it.
   were regenerated after the original ranking file was lost; the
   detector-side counts are exact. Nothing in that file is cited by the
   paper.
-- A few files had absolute internal paths rewritten to `<repo-root>`
-  placeholders before release.
+- Absolute internal paths in evidence files were rewritten to
+  `<repo-root>` or `<work>` placeholders before release. Protocol and
+  score records refer to the run-time working files (which carried
+  dialogue text and are withheld) by their original names.
