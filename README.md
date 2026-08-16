@@ -1,6 +1,7 @@
 # recsys2026-request-audit
 
-Code and evidence for the RecSys Challenge 2026 paper "When the Label
+Code and evidence for our [RecSys Challenge 2026](https://www.recsyschallenge.com/2026/)
+paper "When the Label
 Ignores the Request". The paper audits turns where a user asks for an
 exact song by name and the benchmark's official label points to a
 different track, then trains a model that honors those requests without
@@ -9,8 +10,8 @@ hurting the official metric.
 This repo lets you re-run that audit and reproduce the paper's numbers
 against your own copy of the challenge data. The data itself is not
 included: it is licensed CC-BY-NC-ND and stays on HuggingFace
-(`talkpl-ai/TalkPlayData-Challenge-Dataset`,
-`talkpl-ai/TalkPlayData-Challenge-Track-Metadata`). Evidence files here
+([TalkPlayData-Challenge-Dataset](https://huggingface.co/datasets/talkpl-ai/TalkPlayData-Challenge-Dataset),
+[TalkPlayData-Challenge-Track-Metadata](https://huggingface.co/datasets/talkpl-ai/TalkPlayData-Challenge-Track-Metadata)). Evidence files here
 use session, turn, and track IDs only, never dialogue text.
 
 ## What is here
