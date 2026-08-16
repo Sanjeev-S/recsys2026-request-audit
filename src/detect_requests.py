@@ -34,7 +34,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 ROOT = Path(os.environ.get("MCRS_EXPLORE_ROOT", str(Path(__file__).resolve().parent.parent)))
-SPLIT_FILE = ROOT / "data/train_val_split_seed42.json"
+SPLIT_FILE = Path(__file__).resolve().parent.parent / "data/train_val_split_seed42.json"
 DETECTOR_VERSION = "request-corrections-v0.9"
 
 NEGATIVE_CUES = (
