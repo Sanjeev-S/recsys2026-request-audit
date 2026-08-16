@@ -5,11 +5,12 @@
 # prediction files Regenerate the two prediction files with src/run_gated_eval.py from the
 # shipped models (needs the feature matrices; see the README scope note).
 #
-# Usage: ./reproduce_table2.sh <control_predictions.json> <specialist_predictions.json> [corrections.jsonl] [out.json]
+# Usage: ./reproduce_table2.sh [control_predictions.json] [specialist_predictions.json] [annotations.jsonl] [out.json]
+# With no arguments it runs from the shipped ID-only prediction lists.
 set -euo pipefail
 
-CONTROL="${1:?control (official-label) gated prediction file}"
-SPECIALIST="${2:?specialist (request-supplemented) gated prediction file}"
+CONTROL="${1:-evidence/results/gated_predictions_control_devset.idkeyed.json}"
+SPECIALIST="${2:-evidence/results/gated_predictions_specialist_devset.idkeyed.json}"
 CORRECTIONS="${3:-evidence/annotations/devset_exact_version.idkeyed.jsonl}"
 OUT="${4:-work/bootstrap_table2.json}"
 

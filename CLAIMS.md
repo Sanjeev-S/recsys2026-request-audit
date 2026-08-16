@@ -16,7 +16,7 @@ the repo root; evidence paths are under `evidence/`.
 | Dialogue gate: identical scores outside gated turns (Section 6) | `gate_eval.py` | `results/repro_confirmation.json` (bit-identity note) |
 | Table 1: rank buckets 33/8/0 and 13/10/18 to 41/0/0 and 25/15/1; rank 1 on 66 vs 46; higher on 35, lower on none; the one absence is a detector false fire (Section 7) | `reproduce_table1.py` | `results/table1_ranks.idkeyed.jsonl`, `results/table1_rank_readout.json` |
 | Table 2: 0.1908 to 0.1914; 0.1922 to 0.1943; 0.523 to 0.802 (Section 7) | `evaluate_request_slice.py` | `results/table2_scores.json` |
-| Table 2 intervals: +0.0006 [+0.0002, +0.0012]; [+0.0011, +0.0032]; slice +0.277 [+0.163, +0.400] over 29 sessions (Section 7) | `reproduce_table2.sh` | `results/table2_bootstrap.json` |
+| Table 2 intervals: +0.0006 [+0.0002, +0.0012]; [+0.0011, +0.0032]; slice +0.277 [+0.163, +0.400] over 29 sessions (Section 7) | `reproduce_table2.sh` | `results/table2_bootstrap.json`, `results/gated_predictions_*_devset.idkeyed.json` |
 | Hard artist: 74% action precision, 37 of 50 (Section 8) | `hard_artist_ladder.py` | `ledger/hard_artist_ladder.json`, field `strict_intervention_precision` |
 | Switch-away: official loss -0.0009 [-0.0018, -0.0002]; 0 of 28 turns admissible (Section 8) | `switchaway_suppression.py`, `switchaway_oracle_bound.py` | `ledger/switchaway_suppression_bootstrap.json`, `ledger/switchaway_oracle_bound.json` |
 | Broad semantic: 0 of 125 certifiable (Section 8) | `semantic_screening.py` | `ledger/family_search_ledger.json` |

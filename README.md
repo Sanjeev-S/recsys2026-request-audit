@@ -27,17 +27,18 @@ use session, turn, and track IDs only, never dialogue text.
     python run_audit.py --split devset --prediction-path <your ranking>
     ./train.sh
     python src/reproduce_table1.py
-    ./reproduce_table2.sh <control predictions> <specialist predictions>
+    ./reproduce_table2.sh
 
 The commands assume a Python 3.12 environment with the requirements
 installed and active. Training runs on CPU only and needs about 13 GB
 of free memory. It also needs the feature matrices described in the
 paper's Section 2; they are built outside this repo and are not
 redistributed. The trained models are included (`evidence/models/`), so
-the tables reproduce without retraining. The two prediction files for
-`reproduce_table2.sh` are rebuilt from the shipped models with
-`src/run_gated_eval.py`, which needs the same feature matrices. Set
-`MCRS_EXPLORE_ROOT` to your data root for the scripts that read them.
+the tables reproduce without retraining. Both tables also re-derive from the shipped ID-only prediction lists
+in `evidence/results/`, so no matrices are needed for any table.
+Regenerating those lists from the models uses `src/run_gated_eval.py`,
+which does need the matrices. Set `MCRS_EXPLORE_ROOT` to your data
+root for the scripts that read them.
 
 `evidence/` also holds validation packets the paper does not cite, and
 [evidence/PROVENANCE.md](evidence/PROVENANCE.md) records where each
